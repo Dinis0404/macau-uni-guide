@@ -1,0 +1,315 @@
+[
+ {
+  "rank": 1,
+  "rankDisplay": "1",
+  "rankOverall": 63,
+  "name": "北京中医药大学",
+  "nameEn": "Beijing University of Chinese Medicine",
+  "province": "北京",
+  "category": "中医药",
+  "tags": [
+   "双一流",
+   "211"
+  ],
+  "score": 303.3,
+  "slug": "beijing-university-of-chinese-medicine"
+ },
+ {
+  "rank": 2,
+  "rankDisplay": "2",
+  "rankOverall": 69,
+  "name": "上海中医药大学",
+  "nameEn": "Shanghai University of Traditional Chinese Medicine",
+  "province": "上海",
+  "category": "中医药",
+  "tags": [
+   "双一流"
+  ],
+  "score": 292.1,
+  "slug": "shanghai-university-of-traditional-chinese-medicine"
+ },
+ {
+  "rank": 3,
+  "rankDisplay": "3",
+  "rankOverall": 93,
+  "name": "南京中医药大学",
+  "nameEn": "Nanjing University of Chinese Medicine",
+  "province": "江苏",
+  "category": "中医药",
+  "tags": [
+   "双一流"
+  ],
+  "score": 254.6,
+  "slug": "nanjing-university-of-chinese-medicine"
+ },
+ {
+  "rank": 4,
+  "rankDisplay": "4",
+  "rankOverall": 98,
+  "name": "广州中医药大学",
+  "nameEn": "Guangzhou University of Chinese Medicine",
+  "province": "广东",
+  "category": "中医药",
+  "tags": [
+   "双一流"
+  ],
+  "score": 247.5,
+  "slug": "guangzhou-university-of-chinese-medicine"
+ },
+ {
+  "rank": 5,
+  "rankDisplay": "5",
+  "rankOverall": 120,
+  "name": "天津中医药大学",
+  "nameEn": "Tianjin University of Traditional Chinese Medicine",
+  "province": "天津",
+  "category": "中医药",
+  "tags": [
+   "双一流"
+  ],
+  "score": 221.8,
+  "slug": "tianjin-university-of-traditional-chinese-medicine"
+ },
+ {
+  "rank": 6,
+  "rankDisplay": "6",
+  "rankOverall": 121,
+  "name": "成都中医药大学",
+  "nameEn": "Chengdu University of Traditional Chinese Medicine",
+  "province": "四川",
+  "category": "中医药",
+  "tags": [
+   "双一流"
+  ],
+  "score": 219,
+  "slug": "chengdu-university-of-traditional-chinese-medicine"
+ },
+ {
+  "rank": 7,
+  "rankDisplay": "7",
+  "rankOverall": 127,
+  "name": "浙江中医药大学",
+  "nameEn": "Zhejiang Chinese Medical University",
+  "province": "浙江",
+  "category": "中医药",
+  "tags": [],
+  "score": 214.2,
+  "slug": "zhejiang-chinese-medical-university"
+ },
+ {
+  "rank": 8,
+  "rankDisplay": "8",
+  "rankOverall": 169,
+  "name": "山东中医药大学",
+  "nameEn": "Shandong University of Traditional Chinese Medicine",
+  "province": "山东",
+  "category": "中医药",
+  "tags": [],
+  "score": 188.5,
+  "slug": "shandong-university-of-traditional-chinese-medicine"
+ },
+ {
+  "rank": 9,
+  "rankDisplay": "9",
+  "rankOverall": 169,
+  "name": "湖南中医药大学",
+  "nameEn": "Hunan University of Chinese Medicine",
+  "province": "湖南",
+  "category": "中医药",
+  "tags": [],
+  "score": 188.4,
+  "slug": "hunan-university-of-chinese-medicine"
+ },
+ {
+  "rank": 10,
+  "rankDisplay": "10",
+  "rankOverall": 176,
+  "name": "福建中医药大学",
+  "nameEn": "Fujian University of Traditional Chinese Medicine",
+  "province": "福建",
+  "category": "中医药",
+  "tags": [],
+  "score": 186.4,
+  "slug": "fujian-university-of-traditional-chinese-medicine"
+ },
+ {
+  "rank": 11,
+  "rankDisplay": "11",
+  "rankOverall": 179,
+  "name": "河南中医药大学",
+  "nameEn": "Henan University of Chinese Medicine",
+  "province": "河南",
+  "category": "中医药",
+  "tags": [],
+  "score": 183.8,
+  "slug": "henan-university-of-traditional-chinese-medicine"
+ },
+ {
+  "rank": 12,
+  "rankDisplay": "12",
+  "rankOverall": 189,
+  "name": "辽宁中医药大学",
+  "nameEn": "Liaoning University of Traditional Chinese Medicine",
+  "province": "辽宁",
+  "category": "中医药",
+  "tags": [],
+  "score": 180.9,
+  "slug": "liaoning-university-of-traditional-chinese-medicine"
+ },
+ {
+  "rank": 13,
+  "rankDisplay": "13",
+  "rankOverall": 199,
+  "name": "江西中医药大学",
+  "nameEn": "Jiangxi University of Chinese Medicine",
+  "province": "江西",
+  "category": "中医药",
+  "tags": [],
+  "score": 175.1,
+  "slug": "jiangxi-university-of-traditional-chinese-medicine"
+ },
+ {
+  "rank": 14,
+  "rankDisplay": "14",
+  "rankOverall": 205,
+  "name": "湖北中医药大学",
+  "nameEn": "Hubei University of Chinese Medicine",
+  "province": "湖北",
+  "category": "中医药",
+  "tags": [],
+  "score": 173.6,
+  "slug": "hubei-university-of-chinese-medicine"
+ },
+ {
+  "rank": 15,
+  "rankDisplay": "15",
+  "rankOverall": 207,
+  "name": "长春中医药大学",
+  "nameEn": "Changchun University of Chinese Medicine",
+  "province": "吉林",
+  "category": "中医药",
+  "tags": [],
+  "score": 172.6,
+  "slug": "changchun-university-of-chinese-medicine"
+ },
+ {
+  "rank": 16,
+  "rankDisplay": "16",
+  "rankOverall": 211,
+  "name": "黑龙江中医药大学",
+  "nameEn": "Heilongjiang University of Chinese Medicine",
+  "province": "黑龙江",
+  "category": "中医药",
+  "tags": [],
+  "score": 171.6,
+  "slug": "heilongjiang-university-of-chinese-medicine"
+ },
+ {
+  "rank": 17,
+  "rankDisplay": "17",
+  "rankOverall": 218,
+  "name": "安徽中医药大学",
+  "nameEn": "Anhui University of Chinese Medicine",
+  "province": "安徽",
+  "category": "中医药",
+  "tags": [],
+  "score": 168.4,
+  "slug": "anhui-university-of-chinese-medicine"
+ },
+ {
+  "rank": 18,
+  "rankDisplay": "18",
+  "rankOverall": 239,
+  "name": "陕西中医药大学",
+  "nameEn": "Shaanxi University of Chinese Medicine",
+  "province": "陕西",
+  "category": "中医药",
+  "tags": [],
+  "score": 160.1,
+  "slug": "shaanxi-university-of-chinese-medicine"
+ },
+ {
+  "rank": 19,
+  "rankDisplay": "19",
+  "rankOverall": 242,
+  "name": "广西中医药大学",
+  "nameEn": "Guangxi University of Chinese Medicine",
+  "province": "广西",
+  "category": "中医药",
+  "tags": [],
+  "score": 158.8,
+  "slug": "guangxi-university-of-chinese-medicine"
+ },
+ {
+  "rank": 20,
+  "rankDisplay": "20",
+  "rankOverall": 254,
+  "name": "河北中医药大学",
+  "nameEn": "Hebei University of Chinese Medicine",
+  "province": "河北",
+  "category": "中医药",
+  "tags": [],
+  "score": 154.3,
+  "slug": "hebei-university-of-chinese-medicine"
+ },
+ {
+  "rank": 21,
+  "rankDisplay": "21",
+  "rankOverall": 271,
+  "name": "贵州中医药大学",
+  "nameEn": "Guizhou University of Traditional Chinese Medicine",
+  "province": "贵州",
+  "category": "中医药",
+  "tags": [],
+  "score": 150.7,
+  "slug": "guizhou-university-of-traditional-chinese-medicine"
+ },
+ {
+  "rank": 22,
+  "rankDisplay": "22",
+  "rankOverall": 286,
+  "name": "云南中医药大学",
+  "nameEn": "Yunnan University of Chinese Medicine",
+  "province": "云南",
+  "category": "中医药",
+  "tags": [],
+  "score": 144.6,
+  "slug": "yunnan-university-of-chinese-medicine"
+ },
+ {
+  "rank": 23,
+  "rankDisplay": "23",
+  "rankOverall": 289,
+  "name": "山西中医药大学",
+  "nameEn": "Shanxi University of Chinese Medicine",
+  "province": "山西",
+  "category": "中医药",
+  "tags": [],
+  "score": 143,
+  "slug": "shanxi-university-of-traditional-chinese-medicine"
+ },
+ {
+  "rank": 24,
+  "rankDisplay": "24",
+  "rankOverall": 294,
+  "name": "西藏藏医药大学",
+  "nameEn": "Xizang University of Tibetan Medicine",
+  "province": "西藏",
+  "category": "中医药",
+  "tags": [],
+  "score": 141.1,
+  "slug": "tibetan-traditional-medical-college"
+ },
+ {
+  "rank": 25,
+  "rankDisplay": "25",
+  "rankOverall": 301,
+  "name": "甘肃中医药大学",
+  "nameEn": "Gansu University of Chinese Medicine",
+  "province": "甘肃",
+  "category": "中医药",
+  "tags": [],
+  "score": 137.8,
+  "slug": "gansu-university-of-chinese-medicine"
+ }
+]

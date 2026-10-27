@@ -1,0 +1,98 @@
+[
+ {
+  "rank": 1,
+  "rankDisplay": "1",
+  "rankOverall": 45,
+  "name": "香港中文大学（深圳）",
+  "nameEn": "The Chinese University of Hong Kong, Shenzhen",
+  "province": "广东",
+  "category": "综合",
+  "tags": [],
+  "score": 161.7,
+  "slug": "the-chinese-university-of-hong-kong-shenzhen"
+ },
+ {
+  "rank": 2,
+  "rankDisplay": "2",
+  "rankOverall": 73,
+  "name": "上海纽约大学",
+  "nameEn": "NYU Shanghai",
+  "province": "上海",
+  "category": "综合",
+  "tags": [],
+  "score": 148.6,
+  "slug": "new-york-university-shanghai"
+ },
+ {
+  "rank": 3,
+  "rankDisplay": "3",
+  "rankOverall": 76,
+  "name": "宁波诺丁汉大学",
+  "nameEn": "University of Nottingham Ningbo China",
+  "province": "浙江",
+  "category": "综合",
+  "tags": [],
+  "score": 145,
+  "slug": "university-of-nottingham-ningbo-china"
+ },
+ {
+  "rank": 4,
+  "rankDisplay": "4",
+  "rankOverall": 103,
+  "name": "西交利物浦大学",
+  "nameEn": "Xi'an Jiaotong-Liverpool University",
+  "province": "江苏",
+  "category": "综合",
+  "tags": [],
+  "score": 133,
+  "slug": "xian-jiaotong-liverpool-university"
+ },
+ {
+  "rank": 5,
+  "rankDisplay": "5",
+  "rankOverall": 103,
+  "name": "昆山杜克大学",
+  "nameEn": "Duke Kunshan University",
+  "province": "江苏",
+  "category": "综合",
+  "tags": [],
+  "score": 132.9,
+  "slug": "duke-kunshan-university"
+ },
+ {
+  "rank": 6,
+  "rankDisplay": "6",
+  "rankOverall": 106,
+  "name": "深圳北理莫斯科大学",
+  "nameEn": "Shenzhen MSU-BIT University",
+  "province": "广东",
+  "category": "综合",
+  "tags": [],
+  "score": 132,
+  "slug": "shenzhen-msu-bit-university"
+ },
+ {
+  "rank": 7,
+  "rankDisplay": "7",
+  "rankOverall": 124,
+  "name": "北师香港浸会大学",
+  "nameEn": "Beijing Normal-Hong Kong Baptist University",
+  "province": "广东",
+  "category": "综合",
+  "tags": [],
+  "score": 124.7,
+  "slug": "beijing-normal-university-hong-kong-baptist-university-united-international-college"
+ },
+ {
+  "rank": 8,
+  "rankDisplay": "8",
+  "rankOverall": 151,
+  "name": "温州肯恩大学",
+  "nameEn": "Wenzhou-Kean University",
+  "province": "浙江",
+  "category": "综合",
+  "tags": [],
+  "score": 119.4,
+  "slug": "wenzhou-kean-university"
+ }
+]

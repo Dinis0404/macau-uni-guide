@@ -1,0 +1,187 @@
+[
+ {
+  "rank": 1,
+  "rankDisplay": "1",
+  "rankOverall": 132,
+  "name": "上海体育大学",
+  "nameEn": "Shanghai University of Sport",
+  "province": "上海",
+  "category": "体育",
+  "tags": [
+   "双一流"
+  ],
+  "score": 178.3,
+  "slug": "shanghai-university-of-sport"
+ },
+ {
+  "rank": 2,
+  "rankDisplay": "2",
+  "rankOverall": 180,
+  "name": "北京体育大学",
+  "nameEn": "Beijing Sport University",
+  "province": "北京",
+  "category": "体育",
+  "tags": [
+   "双一流",
+   "211"
+  ],
+  "score": 154,
+  "slug": "beijing-sport-university"
+ },
+ {
+  "rank": 3,
+  "rankDisplay": "3",
+  "rankOverall": 244,
+  "name": "首都体育学院",
+  "nameEn": "Capital University of Physical Education and Sports",
+  "province": "北京",
+  "category": "体育",
+  "tags": [],
+  "score": 131.3,
+  "slug": "capital-university-of-physical-education-and-sports"
+ },
+ {
+  "rank": 4,
+  "rankDisplay": "4",
+  "rankOverall": 292,
+  "name": "武汉体育学院",
+  "nameEn": "Wuhan Sports University",
+  "province": "湖北",
+  "category": "体育",
+  "tags": [],
+  "score": 118.1,
+  "slug": "wuhan-sports-university"
+ },
+ {
+  "rank": 5,
+  "rankDisplay": "5",
+  "rankOverall": 303,
+  "name": "沈阳体育学院",
+  "nameEn": "Shenyang Sport University",
+  "province": "辽宁",
+  "category": "体育",
+  "tags": [],
+  "score": 116.4,
+  "slug": "shenyang-sport-university"
+ },
+ {
+  "rank": 6,
+  "rankDisplay": "6",
+  "rankOverall": 336,
+  "name": "天津体育学院",
+  "nameEn": "Tianjin University of Sport",
+  "province": "天津",
+  "category": "体育",
+  "tags": [],
+  "score": 109.9,
+  "slug": "tianjin-university-of-sport"
+ },
+ {
+  "rank": 7,
+  "rankDisplay": "7",
+  "rankOverall": 343,
+  "name": "成都体育学院",
+  "nameEn": "Chengdu Sport University",
+  "province": "四川",
+  "category": "体育",
+  "tags": [],
+  "score": 108.2,
+  "slug": "chengdu-sport-university"
+ },
+ {
+  "rank": 8,
+  "rankDisplay": "8",
+  "rankOverall": 352,
+  "name": "南京体育学院",
+  "nameEn": "Nanjing Sport Institute",
+  "province": "江苏",
+  "category": "体育",
+  "tags": [],
+  "score": 106.4,
+  "slug": "nanjing-sport-institute"
+ },
+ {
+  "rank": 9,
+  "rankDisplay": "9",
+  "rankOverall": 362,
+  "name": "广州体育学院",
+  "nameEn": "Guangzhou Sport University",
+  "province": "广东",
+  "category": "体育",
+  "tags": [],
+  "score": 103.5,
+  "slug": "guangzhou-sport-university"
+ },
+ {
+  "rank": 10,
+  "rankDisplay": "10",
+  "rankOverall": 388,
+  "name": "山东体育学院",
+  "nameEn": "Shandong Sport University",
+  "province": "山东",
+  "category": "体育",
+  "tags": [],
+  "score": 98.5,
+  "slug": "shandong-sport-university"
+ },
+ {
+  "rank": 11,
+  "rankDisplay": "11",
+  "rankOverall": 429,
+  "name": "西安体育学院",
+  "nameEn": "Xi'an Physical Education University",
+  "province": "陕西",
+  "category": "体育",
+  "tags": [],
+  "score": 93.1,
+  "slug": "xian-physical-education-university"
+ },
+ {
+  "rank": 12,
+  "rankDisplay": "12",
+  "rankOverall": 430,
+  "name": "哈尔滨体育学院",
+  "nameEn": "Harbin Sport University",
+  "province": "黑龙江",
+  "category": "体育",
+  "tags": [],
+  "score": 93,
+  "slug": "harbin-sport-university"
+ },
+ {
+  "rank": 13,
+  "rankDisplay": "13",
+  "rankOverall": 465,
+  "name": "吉林体育学院",
+  "nameEn": "Jilin Institute of Physical Education",
+  "province": "吉林",
+  "category": "体育",
+  "tags": [],
+  "score": 89.2,
+  "slug": "jilin-institute-of-physical-education"
+ },
+ {
+  "rank": null,
+  "rankDisplay": "13+",
+  "rankOverall": null,
+  "name": "河北体育学院",
+  "nameEn": "Hebei Sport University",
+  "province": "河北",
+  "category": "体育",
+  "tags": [],
+  "score": null,
+  "slug": "hebei-sport-university"
+ },
+ {
+  "rank": null,
+  "rankDisplay": "13+",
+  "rankOverall": null,
+  "name": "河南体育学院",
+  "nameEn": "Henan Sport University",
+  "province": "河南",
+  "category": "体育",
+  "tags": [],
+  "score": null,
+  "slug": "he-nan-ti-yu-xue-yuan"
+ }
+]

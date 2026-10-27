@@ -1,0 +1,15 @@
+{
+  "generatedAt": "2026-10-27T14:11:56.001Z",
+  "cycle": "2027",
+  "counts": {
+    "universities": 128,
+    "quotaTotal": 1481,
+    "withIntro": 128,
+    "withRank2026": 119,
+    "withHoukong": 70
+  },
+  "sources": {
+    "dsedj": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/index.jsp",
+    "ruanke": "https://www.shanghairanking.cn/rankings/bcur"
+  }
+}

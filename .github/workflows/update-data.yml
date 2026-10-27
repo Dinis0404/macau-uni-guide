@@ -1,0 +1,44 @@
+name: update-data
+
+on:
+  schedule:
+    # 每月 1 號 03:00 UTC（澳門時間 11:00）自動更新資料
+    - cron: "0 3 1 * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 安裝依賴
+        run: npm install
+
+      - name: 抓取 DSEDJ 保送高校名單
+        run: node scripts/fetch-dsedj.mjs
+
+      - name: 抓取軟科大學排名
+        run: node scripts/fetch-ruanke.mjs 2025,2026
+
+      - name: 合併資料
+        run: node scripts/build.mjs
+
+      - name: 有變更才提交
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "資料無變更，跳過提交"
+          else
+            git commit -m "chore(data): 自動更新名單與排名資料"
+            git push
+          fi

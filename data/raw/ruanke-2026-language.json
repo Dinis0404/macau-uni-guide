@@ -1,0 +1,193 @@
+[
+ {
+  "rank": 1,
+  "rankDisplay": "1",
+  "rankOverall": 79,
+  "name": "北京外国语大学",
+  "nameEn": "Beijing Foreign Studies University",
+  "province": "北京",
+  "category": "语言",
+  "tags": [
+   "双一流",
+   "211"
+  ],
+  "score": 236.8,
+  "slug": "beijing-foreign-studies-university"
+ },
+ {
+  "rank": 2,
+  "rankDisplay": "2",
+  "rankOverall": 81,
+  "name": "上海外国语大学",
+  "nameEn": "Shanghai International Studies University",
+  "province": "上海",
+  "category": "语言",
+  "tags": [
+   "双一流",
+   "211"
+  ],
+  "score": 231.5,
+  "slug": "shanghai-international-studies-university"
+ },
+ {
+  "rank": 3,
+  "rankDisplay": "3",
+  "rankOverall": 82,
+  "name": "中国传媒大学",
+  "nameEn": "Communication University of China",
+  "province": "北京",
+  "category": "语言",
+  "tags": [
+   "双一流",
+   "211"
+  ],
+  "score": 230.1,
+  "slug": "communication-university-of-china"
+ },
+ {
+  "rank": 4,
+  "rankDisplay": "4",
+  "rankOverall": 105,
+  "name": "外交学院",
+  "nameEn": "China Foreign Affairs University",
+  "province": "北京",
+  "category": "语言",
+  "tags": [
+   "双一流"
+  ],
+  "score": 208.4,
+  "slug": "china-foreign-affairs-university"
+ },
+ {
+  "rank": 5,
+  "rankDisplay": "5",
+  "rankOverall": 119,
+  "name": "北京语言大学",
+  "nameEn": "Beijing Language and Culture University",
+  "province": "北京",
+  "category": "语言",
+  "tags": [],
+  "score": 197.7,
+  "slug": "beijing-language-and-culture-university"
+ },
+ {
+  "rank": 6,
+  "rankDisplay": "6",
+  "rankOverall": 129,
+  "name": "广东外语外贸大学",
+  "nameEn": "Guangdong University of Foreign Studies",
+  "province": "广东",
+  "category": "语言",
+  "tags": [],
+  "score": 188.1,
+  "slug": "guangdong-university-of-foreign-studies"
+ },
+ {
+  "rank": 7,
+  "rankDisplay": "7",
+  "rankOverall": 213,
+  "name": "北京第二外国语学院",
+  "nameEn": "Beijing International Studies University",
+  "province": "北京",
+  "category": "语言",
+  "tags": [],
+  "score": 151,
+  "slug": "beijing-international-studies-university"
+ },
+ {
+  "rank": 8,
+  "rankDisplay": "8",
+  "rankOverall": 235,
+  "name": "浙江传媒学院",
+  "nameEn": "Communication University of Zhejiang",
+  "province": "浙江",
+  "category": "语言",
+  "tags": [],
+  "score": 142.5,
+  "slug": "communication-university-of-zhejiang"
+ },
+ {
+  "rank": 9,
+  "rankDisplay": "9",
+  "rankOverall": 241,
+  "name": "西安外国语大学",
+  "nameEn": "Xi'an International Studies University",
+  "province": "陕西",
+  "category": "语言",
+  "tags": [],
+  "score": 141.3,
+  "slug": "xian-international-studies-university"
+ },
+ {
+  "rank": 10,
+  "rankDisplay": "10",
+  "rankOverall": 241,
+  "name": "四川外国语大学",
+  "nameEn": "Sichuan International Studies University",
+  "province": "重庆",
+  "category": "语言",
+  "tags": [],
+  "score": 140.9,
+  "slug": "sichuan-international-studies-university"
+ },
+ {
+  "rank": 11,
+  "rankDisplay": "11",
+  "rankOverall": 258,
+  "name": "天津外国语大学",
+  "nameEn": "Tianjin Foreign Studies University",
+  "province": "天津",
+  "category": "语言",
+  "tags": [],
+  "score": 136.8,
+  "slug": "tianjin-foreign-studies-university"
+ },
+ {
+  "rank": 12,
+  "rankDisplay": "12",
+  "rankOverall": 266,
+  "name": "大连外国语大学",
+  "nameEn": "Dalian University of Foreign Languages",
+  "province": "辽宁",
+  "category": "语言",
+  "tags": [],
+  "score": 134.2,
+  "slug": "dalian-university-of-foreign-languages"
+ },
+ {
+  "rank": 13,
+  "rankDisplay": "13",
+  "rankOverall": 270,
+  "name": "浙江外国语学院",
+  "nameEn": "Zhejiang International Studies University",
+  "province": "浙江",
+  "category": "语言",
+  "tags": [],
+  "score": 132.4,
+  "slug": "zhejiang-international-studies-university"
+ },
+ {
+  "rank": 14,
+  "rankDisplay": "14",
+  "rankOverall": 299,
+  "name": "中华女子学院",
+  "nameEn": "China Women's University",
+  "province": "北京",
+  "category": "语言",
+  "tags": [],
+  "score": 123.1,
+  "slug": "china-womens-university"
+ },
+ {
+  "rank": null,
+  "rankDisplay": "14+",
+  "rankOverall": null,
+  "name": "湖南女子学院",
+  "nameEn": "Hunan Women's University",
+  "province": "湖南",
+  "category": "语言",
+  "tags": [],
+  "score": null,
+  "slug": "hunan-womens-university"
+ }
+]

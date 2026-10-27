@@ -1,0 +1,11 @@
+node_modules/
+strips/
+parsed_rows_debug.json
+/dsedj_brief.html
+/dsedj_index.html
+/sr_main.html
+/houkong_752.html
+/houkong_img*.jpg
+/tmp
+.DS_Store
+.vercel
