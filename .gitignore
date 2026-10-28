@@ -9,3 +9,4 @@ parsed_rows_debug.json
 /tmp
 .DS_Store
 .vercel
+sr*.html
