@@ -815,26 +815,67 @@ function router() {
   return pageHome();
 }
 
-/* ---------- 深色／淺色模式 ---------- */
-const THEME_KEY = "macau-uni-theme";
-function applyTheme() {
-  const pref = localStorage.getItem(THEME_KEY);
-  const dark = pref === "dark" || (!pref && matchMedia("(prefers-color-scheme: dark)").matches);
-  document.documentElement.dataset.theme = dark ? "dark" : "light";
-  const btn = document.getElementById("theme-toggle");
-  if (btn) { btn.textContent = dark ? "☀️" : "🌙"; btn.title = dark ? "切換到淺色模式" : "切換到深色模式"; }
+/* ---------- 設置：主題／字體大小／字體／減少動畫 ---------- */
+const SET_KEY = "macau-uni-settings";
+const SET_DEFAULTS = { theme: "system", font: "default", size: "md", reduce: false };
+function loadSettings() {
+  try {
+    const s = { ...SET_DEFAULTS, ...JSON.parse(localStorage.getItem(SET_KEY) || "{}") };
+    const old = localStorage.getItem("macau-uni-theme"); // 舊版主題設置遷移
+    if (old === "dark" || old === "light") { s.theme = old; localStorage.removeItem("macau-uni-theme"); localStorage.setItem(SET_KEY, JSON.stringify(s)); }
+    return s;
+  } catch { return { ...SET_DEFAULTS }; }
 }
-function initTheme() {
-  applyTheme();
-  document.getElementById("theme-toggle").onclick = () => {
-    localStorage.setItem(THEME_KEY, document.documentElement.dataset.theme === "dark" ? "light" : "dark");
-    applyTheme();
+function saveSettings(s) { localStorage.setItem(SET_KEY, JSON.stringify(s)); }
+function applySettings() {
+  const s = loadSettings();
+  const dark = s.theme === "dark" || (s.theme === "system" && matchMedia("(prefers-color-scheme: dark)").matches);
+  const root = document.documentElement;
+  root.dataset.theme = dark ? "dark" : "light";
+  root.dataset.font = s.font;
+  root.dataset.size = s.size;
+  root.dataset.reduce = s.reduce ? "1" : "0";
+  const zoom = { sm: .92, md: 1, lg: 1.1, xl: 1.22 }[s.size] || 1;
+  root.style.zoom = zoom === 1 ? "" : zoom;
+}
+function renderSettingsDrawer() {
+  const s = loadSettings();
+  const seg = (items, key) => items.map(([v, label]) =>
+    `<button class="seg ${s[key] === v ? "active" : ""}" data-key="${key}" data-v="${v}">${label}</button>`).join("");
+  const root2 = document.getElementById("settings-root");
+  root2.innerHTML = `
+  <div class="settings-backdrop" id="settings-backdrop">
+    <aside class="settings-drawer" role="dialog" aria-label="設置">
+      <div class="set-head">⚙️ 設置 <button class="set-close" id="settings-close" aria-label="關閉">✕</button></div>
+      <h4>外觀主題</h4>
+      <div class="seg-group">${seg([["system", "🌙 跟隨系統"], ["light", "☀️ 淺色"], ["dark", "🌚 深色"]], "theme")}</div>
+      <h4>字體大小</h4>
+      <div class="seg-group">${seg([["sm", "小"], ["md", "標準"], ["lg", "大"], ["xl", "特大"]], "size")}</div>
+      <h4>字體</h4>
+      <div class="seg-group">${seg([["default", "黑體（預設）"], ["serif", "宋體‧明體"], ["kai", "楷體"]], "font")}</div>
+      <h4>介面動畫</h4>
+      <div class="set-row"><span>減少動畫效果</span><button class="switch ${s.reduce ? "on" : ""}" id="set-reduce" role="switch" aria-checked="${s.reduce}"></button></div>
+      <p class="set-note">設置會自動保存在此裝置的瀏覽器內。</p>
+    </aside>
+  </div>`;
+  const close = () => { root2.innerHTML = ""; };
+  document.getElementById("settings-close").onclick = close;
+  document.getElementById("settings-backdrop").onclick = (e) => { if (e.target.id === "settings-backdrop") close(); };
+  root2.querySelectorAll(".seg").forEach(b => b.onclick = () => {
+    const s2 = loadSettings(); s2[b.dataset.key] = b.dataset.v; saveSettings(s2); applySettings(); renderSettingsDrawer();
+  });
+  document.getElementById("set-reduce").onclick = () => {
+    const s2 = loadSettings(); s2.reduce = !s2.reduce; saveSettings(s2); applySettings(); renderSettingsDrawer();
   };
-  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", applyTheme);
+}
+function initSettings() {
+  applySettings();
+  document.getElementById("settings-btn").onclick = renderSettingsDrawer;
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => { if (loadSettings().theme === "system") applySettings(); });
 }
 
 (async function init() {
-  initTheme();
+  initSettings();
   await loadData();
   window.addEventListener("hashchange", router);
   router();
