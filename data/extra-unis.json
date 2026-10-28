@@ -1,0 +1,32 @@
+{
+  "_comment": "非 DSEDJ 保送名單、但對澳門生重要的大學（如兩校聯招院校）。此檔人工維護；rankings 由 build.mjs 自動從軟科數據填入。",
+  "_updated": "2026-10-28",
+  "unis": [
+    {
+      "id": "extra-jnu",
+      "nameS": "暨南大学",
+      "region": "廣東省",
+      "scheme": "兩校聯招",
+      "tags": ["211", "雙一流"],
+      "exam": "兩校聯招（3＋X）或免試錄取",
+      "extra": "不參加 DSEDJ 保送計劃。經「兩校聯招」報考：每年 3 月報名、5 月底考試（澳門設考點），另有免試錄取渠道；詳見「聯招·聯考」頁。",
+      "website": "https://www.jnu.edu.cn",
+      "intro": "中國第一所由國家創辦的僑校，位於廣州，素有「華僑最高學府」之稱，港澳台僑學生招生規模全國最大；經濟、文學、新聞傳播、醫學（原暨南醫學院）等學科見長，澳門校友眾多。",
+      "admissionsUrl": "https://lxlz.jnu.edu.cn",
+      "admissionsLabel": "兩校聯招報名系統"
+    },
+    {
+      "id": "extra-hqu",
+      "nameS": "华侨大学",
+      "region": "福建省",
+      "scheme": "兩校聯招",
+      "tags": [],
+      "exam": "兩校聯招（3＋X）或免試錄取",
+      "extra": "不參加 DSEDJ 保送計劃。經「兩校聯招」報考：每年 3 月報名、5 月底考試（澳門設考點），另有免試錄取渠道；詳見「聯招·聯考」頁。",
+      "website": "https://www.hqu.edu.cn",
+      "intro": "中央統戰部領導的著名僑校，本部位於泉州、設廈門校區，港澳台僑學生規模龐大；土木工程、機械、化工、旅遊管理等學科有實力，澳門學生眾多、校友網絡成熟。",
+      "admissionsUrl": "https://zsc.hqu.edu.cn/zsxx.htm",
+      "admissionsLabel": "華僑大學招生處"
+    }
+  ]
+}

@@ -1,6 +1,24 @@
 [
  {
   "date": "2026-10-28",
+  "at": "2026-10-28T03:25:08.547Z",
+  "counts": {
+   "universities": 130,
+   "universitiesBS": 128,
+   "quotaTotal": 1481,
+   "withIntro": 130,
+   "withRank2026": 119,
+   "withHoukong": 70,
+   "withBrief2027": 28,
+   "withMajors": 32
+  },
+  "changes": [
+   "🆕 新增收錄：暨南大學（兩校聯招院校）",
+   "🆕 新增收錄：華僑大學（兩校聯招院校）"
+  ]
+ },
+ {
+  "date": "2026-10-28",
   "at": "2026-10-28T02:01:19.405Z",
   "counts": {
    "universities": 128,

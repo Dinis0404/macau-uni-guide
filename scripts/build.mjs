@@ -60,6 +60,7 @@ const unis = dsedj.map(u => {
     name: nameT,
     nameS: u.nameS,
     region: t(u.region),
+    scheme: '保送',
     quota2027: u.quota,
     exam: u.exam ? t(u.exam) : null,
     extra: u.extra ? t(u.extra) : null,
@@ -88,11 +89,35 @@ for (const y of YEARS) {
   for (const b of Object.keys(BOARD_CN)) if (boards[y][b]) rankings.years[y][b] = slim(boards[y][b]);
 }
 
+// ---- 額外大學（兩校聯招等，非 DSEDJ 保送名單）----
+const extras = (read('data/extra-unis.json', { unis: [] }).unis || []).map(x => {
+  const nameT = t(x.nameS);
+  const rk = {};
+  for (const y of YEARS) {
+    const hit = nameIndex[y][x.nameS] || null;
+    rk[y] = hit ? { board: hit.board, rank: hit.rank, overall: hit.overall } : null;
+  }
+  const searchParts = [nameT, x.nameS, t(x.region), x.region, (x.tags || []).join(' '), x.intro || '', t(x.intro || ''), '兩校聯招'];
+  for (const y of YEARS) if (rk[y]) searchParts.push(rk[y].nameEn || '');
+  return {
+    id: x.id, name: nameT, nameS: x.nameS, region: t(x.region),
+    scheme: x.scheme || '兩校聯招',
+    quota2027: null, exam: t(x.exam) || null, extra: t(x.extra) || null,
+    tags: x.tags || [], rank2025: rk[2025], rank2026: rk[2026],
+    houkong2025: null, intro: x.intro || null, website: x.website || null,
+    brief2026: null, brief2027: null, majors2027: [],
+    admissionsUrl: x.admissionsUrl || null, admissionsLabel: x.admissionsLabel || null,
+    search: [...new Set(searchParts.filter(Boolean))].join(' '),
+  };
+});
+unis.push(...extras);
+
 const meta = {
   generatedAt: new Date().toISOString(),
   cycle: '2027',
   counts: {
     universities: unis.length,
+    universitiesBS: dsedj.length,
     quotaTotal: unis.reduce((a, u) => a + (u.quota2027 || 0), 0),
     withIntro: unis.filter(u => u.intro).length,
     withRank2026: unis.filter(u => u.rank2026).length,
@@ -114,7 +139,7 @@ const oldByS = new Map(old.map(u => [u.nameS, u]));
 for (const u of unis) {
   const o = oldByS.get(u.nameS);
   const name = t(u.nameS);
-  if (!o) { changes.push(`🆕 ${name}：新加入保送名單`); continue; }
+  if (!o) { changes.push(`🆕 新增收錄：${name}`); continue; }
   if (!o.brief2027 && u.brief2027) changes.push(`📄 ${name}：公佈 2027 招生簡章`);
   const om = (o.majors2027 || []).length, nm = (u.majors2027 || []).length;
   if (!om && nm) changes.push(`📋 ${name}：公佈 2027 保送專業（${nm} 個）`);

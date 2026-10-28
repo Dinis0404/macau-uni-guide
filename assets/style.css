@@ -182,6 +182,8 @@ main { padding: 26px 20px 60px; min-height: 70vh; }
 .tag-211 { background: #fef3e6; color: var(--orange); }
 .tag-雙一流 { background: #f3eaf8; color: var(--purple); }
 .tag-brief { background: #e8f6ee; color: #1a7a4a; border: 1px solid #bfe5cf; }
+.tag-liangxiao { background: #e8f1fd; color: #1a5fb4; border: 1px solid #c3daf5; }
+html[data-theme="dark"] .tag-liangxiao { background: rgba(26, 95, 180, .2); color: #8ec2ff; border-color: #1c3a63; }
 .rank-badge {
   font-size: .78rem; background: var(--primary-light); color: var(--primary-dark);
   padding: 3px 10px; border-radius: 8px; font-weight: 600; white-space: nowrap;
