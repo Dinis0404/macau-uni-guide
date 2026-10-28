@@ -16,10 +16,16 @@ async function briefProxy(req, res, url) {
   const params = new URLSearchParams();
   for (const k of ['year', 'u_id', 'fileName']) if (q.get(k)) params.set(k, q.get(k));
   try {
-    const r = await fetch(`https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?${params}`, {
-      headers: { 'User-Agent': UA, Referer: 'https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/EnrollmentBrief.jsp' },
-      redirect: 'follow',
-    });
+    let r = null;
+    for (let i = 0; i < 3; i++) {
+      r = await fetch(`https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?${params}`, {
+        headers: { 'User-Agent': UA, Referer: 'https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/EnrollmentBrief.jsp' },
+        redirect: 'follow',
+      });
+      const t = r.headers.get('content-type') || '';
+      if (r.ok && !/html/i.test(t)) break;
+      if (i < 2) await new Promise(res => setTimeout(res, 800 * (i + 1)));
+    }
     const type = r.headers.get('content-type') || '';
     if (!r.ok || /html/i.test(type)) { res.writeHead(502, { 'Content-Type': 'text/plain; charset=utf-8' }).end('簡章暫時無法載入，請改用「直接下載」。'); return; }
     const buf = Buffer.from(await r.arrayBuffer());

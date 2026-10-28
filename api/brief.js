@@ -11,13 +11,19 @@ export default async function handler(req, res) {
   const upstream = `https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?${params}`;
 
   try {
-    const r = await fetch(upstream, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/126.0 Safari/537.36',
-        'Referer': 'https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/EnrollmentBrief.jsp',
-      },
-      redirect: 'follow',
-    });
+    let r = null;
+    for (let i = 0; i < 3; i++) {
+      r = await fetch(upstream, {
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/126.0 Safari/537.36',
+          'Referer': 'https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/EnrollmentBrief.jsp',
+        },
+        redirect: 'follow',
+      });
+      const t = r.headers.get('content-type') || '';
+      if (r.ok && !/html/i.test(t)) break;
+      if (i < 2) await new Promise(res => setTimeout(res, 800 * (i + 1)));
+    }
     const type = r.headers.get('content-type') || '';
     if (!r.ok || /html/i.test(type)) {
       res.status(502).send('簡章暫時無法載入（DSEDJ 未提供或連線失敗），請改用「直接下載」或稍後再試。');
