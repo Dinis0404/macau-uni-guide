@@ -34,7 +34,7 @@ function tagHTML(tags) {
 }
 function rankBadgeHTML(u) {
   const rk = u.rank2026 || u.rank2025;
-  if (!rk) return `<span class="rank-badge na" title="軟科中國大學排名未涵蓋該校（如藝術類、部分校區）">軟科未設榜</span>`;
+  if (!rk) return `<span class="rank-badge na" title="軟科中國大學排名未涵蓋該校（如藝術類、澳門高校）">${u.scheme !== "保送" ? esc(u.scheme) + "院校" : "軟科未設榜"}</span>`;
   const y = u.rank2026 ? 2026 : 2025;
   const suffix = rk.board !== "主榜" && rk.overall ? `（主榜線 ${rk.overall}）` : "";
   return `<span class="rank-badge" title="${esc(rankText(rk, y))}${suffix}">${esc(rankText(rk, y))}${suffix}</span>`;
@@ -47,10 +47,10 @@ function uniCardHTML(u, stagger = 0) {
       <h3 class="uni-name">${esc(u.name)}</h3>
       <span class="uni-region">${esc(u.region)}</span>
     </div>
-    <div class="tag-row">${u.scheme === "兩校聯招" ? `<span class="tag tag-liangxiao">兩校聯招</span>` : ""}${tagHTML(u.tags)}${u.scheme !== "兩校聯招" && u.brief2027 ? `<span class="tag tag-brief" title="已公佈 2027 招生簡章，點開可預覽">📄2027簡章</span>` : ""}${u.exam ? `<span class="exam-chip">📋 ${esc(u.exam)}</span>` : `<span class="exam-chip">📋 免筆試面試（以簡章為準）</span>`}</div>
+    <div class="tag-row">${u.scheme !== "保送" ? `<span class="tag tag-liangxiao">${u.scheme}</span>` : ""}${tagHTML(u.tags)}${u.scheme !== "兩校聯招" && u.brief2027 ? `<span class="tag tag-brief" title="已公佈 2027 招生簡章，點開可預覽">📄2027簡章</span>` : ""}${u.exam ? `<span class="exam-chip">📋 ${esc(u.exam)}</span>` : `<span class="exam-chip">📋 免筆試面試（以簡章為準）</span>`}</div>
     ${rankBadgeHTML(u)}
     <div class="uni-nums">
-      <div class="uni-num"><small>${u.scheme === "兩校聯招" ? "入讀途徑" : "2027 保送名額"}</small><b>${u.scheme === "兩校聯招" ? "兩校聯招" : (u.quota2027 ?? "—")}</b></div>
+      <div class="uni-num"><small>${u.scheme !== "保送" ? "入讀途徑" : "2027 保送名額"}</small><b>${u.scheme !== "保送" ? u.scheme : (u.quota2027 ?? "—")}</b></div>
       <div class="uni-num"><small>2025 濠江保送</small><b class="${hk >= 5 ? "hk-hot" : ""}">${hk != null ? hk + " 人" : "暫無資料"}</b></div>
     </div>
   </article>`;
@@ -59,11 +59,11 @@ function uniCardHTML(u, stagger = 0) {
 function showModal(u) {
   const hk = u.houkong2025;
   const links = [];
-  if (u.scheme === "兩校聯招") {
+  if (u.scheme !== "保送") {
     if (u.admissionsUrl) links.push(`<a class="btn btn-primary" href="${esc(u.admissionsUrl)}" target="_blank" rel="noopener">📄 ${esc(u.admissionsLabel || "招生資訊")}</a>`);
     links.push(`<a class="btn btn-outline" href="#/other">聯招·聯考詳情 →</a>`);
   }
-  if (!u.brief2027 && u.scheme !== "兩校聯招") links.push(`<span class="btn btn-outline btn-reserved" title="DSEDJ 尚未上載該校 2027 簡章；公佈後本站每日自動更新，屆時可直接預覽">📖 2027 招生簡章 <span class="reserved-tag">未公佈</span></span>`);
+  if (!u.brief2027 && u.scheme === "保送") links.push(`<span class="btn btn-outline btn-reserved" title="DSEDJ 尚未上載該校 2027 簡章；公佈後本站每日自動更新，屆時可直接預覽">📖 2027 招生簡章 <span class="reserved-tag">未公佈</span></span>`);
   if (u.brief2027) links.push(`<span class="btn-group"><a class="btn btn-primary" href="javascript:void(0)" id="pv27">📖 預覽 2027 招生簡章</a><a class="mini-dl" href="${esc(u.brief2027)}" target="_blank" rel="noopener" title="直接下載 2027 簡章">⬇</a></span>`);
   if (u.brief2026) links.push(`<span class="btn-group"><a class="btn btn-outline" href="javascript:void(0)" id="pv26">📖 預覽 2026 簡章</a><a class="mini-dl" href="${esc(u.brief2026)}" target="_blank" rel="noopener" title="直接下載 2026 簡章">⬇</a></span>`);
   if (!u.brief2027 && u.majors2027?.length) links.push(`<span class="brief-hint">該校已公佈 2027 專業（見下方），簡章 PDF 尚未上載至 DSEDJ</span>`);
@@ -82,7 +82,7 @@ function showModal(u) {
       <div class="sub">${esc(u.region)} · <span class="tag-row" style="display:inline-flex">${tagHTML(u.tags)}</span></div>
       ${u.intro ? `<div class="intro-box">${esc(u.intro)}<div style="font-size:.75rem;color:var(--muted);margin-top:6px">簡介由本項目撰寫，僅供參考，以官方為準。</div></div>` : ""}
       <div class="fact-grid">
-        <div class="fact"><small>${u.scheme === "兩校聯招" ? "入讀途徑" : "2027 保送名額"}</small><b>${u.scheme === "兩校聯招" ? "兩校聯招" : u.quota2027 + " 人"}</b></div>
+        <div class="fact"><small>${u.scheme !== "保送" ? "入讀途徑" : "2027 保送名額"}</small><b>${u.scheme !== "保送" ? u.scheme : u.quota2027 + " 人"}</b></div>
         <div class="fact"><small>考核方式</small><b>${u.exam ? esc(u.exam) : "見招生簡章"}</b></div>
         <div class="fact"><small>軟科 2026</small><b>${esc(rkFmt(rk26))}</b></div>
         <div class="fact"><small>軟科 2025</small><b>${esc(rkFmt(rk25))}</b></div>
@@ -164,7 +164,7 @@ const listState = { q: "", region: "", tag: "", sort: "rank" };
 function pageList() {
   const regions = [...new Set(state.unis.map(u => u.region))];
   $app.innerHTML = `
-  <h1 style="margin-top:6px">高校列表 <small style="color:var(--muted);font-size:.85rem">2027 年保送 · DSEDJ 名單</small></h1>
+  <h1 style="margin-top:6px">高校列表 <small style="color:var(--muted);font-size:.85rem">128 所保送（DSEDJ）＋聯招聯考院校</small></h1>
   <div class="filter-bar">
     <input type="search" id="f-q" placeholder="搜尋大學（繁簡均可）…" value="${esc(listState.q)}">
     <select id="f-region"><option value="">全部地區</option>${regions.map(r => `<option ${listState.region === r ? "selected" : ""}>${esc(r)}</option>`).join("")}</select>
@@ -230,7 +230,7 @@ function pageRankings() {
   if (!years.includes(rkState.year)) rkState.year = years[0];
   const boards = Object.keys(state.rankings.years[rkState.year] || {}).filter(b => state.rankings.years[rkState.year][b].length);
   if (!boards.includes(rkState.board)) rkState.board = boards[0];
-  const inList = new Set(state.unis.filter(u => u.scheme !== "兩校聯招").map(u => u.nameS));
+  const inList = new Set(state.unis.filter(u => u.scheme === "保送").map(u => u.nameS));
 
   $app.innerHTML = `
   <h1 style="margin-top:6px">軟科中國大學排名</h1>
@@ -338,7 +338,7 @@ function renderTable() {
       <td><b>${esc(u.name)}</b></td>
       <td>${esc(u.region)}</td>
       <td>${tagHTML(u.tags) || "—"}</td>
-      <td>${u.scheme === "兩校聯招" ? "聯招" : `<b>${u.quota2027 ?? "—"}</b>`}</td>
+      <td>${u.scheme !== "保送" ? "聯招" : `<b>${u.quota2027 ?? "—"}</b>`}</td>
       <td style="font-size:.85rem">${u.exam ? esc(u.exam) : "見招生簡章"}</td>
       <td>${u.houkong2025 != null ? `<b style="color:var(--primary)">${u.houkong2025}</b> 人` : `<span style="color:var(--muted)">暫無資料</span>`}</td>
       <td style="white-space:nowrap">${u.brief2027 ? `<a href="${esc(u.brief2027)}" target="_blank" rel="noopener" class="mini-link" onclick="event.stopPropagation()">2027</a>` : ""} ${u.brief2026 ? `<a href="${esc(u.brief2026)}" target="_blank" rel="noopener" class="mini-link" onclick="event.stopPropagation()">2026</a>` : ""}${!u.brief2027 && !u.brief2026 ? "—" : ""}</td>
@@ -389,7 +389,7 @@ function pageCompare() {
       <div style="color:var(--muted);font-size:.82rem">${esc(u.region)} · ${(u.tags || []).join("、") || "—"}</div>
       <div class="cmp-card-facts">
         <span>${u.rank2026 ? `軟科 <b>${u.rank2026.rank}</b>${u.rank2026.board !== "主榜" ? `<span style="font-size:.75rem">（${esc(u.rank2026.board)}）</span>` : ""}` : "軟科未設榜"}</span>
-        <span>${u.scheme === "兩校聯招" ? "兩校聯招" : `名額 <b>${u.quota2027 ?? "—"}</b>`}</span>
+        <span>${u.scheme !== "保送" ? u.scheme : `名額 <b>${u.quota2027 ?? "—"}</b>`}</span>
         <span>${u.exam ? esc(u.exam) : "免試／見簡章"}</span>
       </div>
     </div>`).join("")}</div>`;
@@ -411,7 +411,7 @@ function pageCompare() {
   const table = `<div class="table-wrap"><table class="data cmp-table"><thead><tr><th style="width:130px">項目</th>${unis.map(u => `<th>${esc(u.name)}</th>`).join("")}</tr></thead><tbody>
     ${row("軟科 2026（越前越好）", unis.map(u => rkCell(u.rank2026)).map(c => ({ ...c, best: "min" })))}
     ${row("軟科 2025", unis.map(u => rkCell(u.rank2025)))}
-    ${row("2027 保送名額（越多越好）", unis.map(u => ({ val: u.scheme === "兩校聯招" ? null : (u.quota2027 ?? null), html: u.scheme === "兩校聯招" ? "兩校聯招（不入保送）" : `<b>${u.quota2027 ?? "—"}</b>`, best: u.scheme === "兩校聯招" ? null : "max" })))}
+    ${row("2027 保送名額（越多越好）", unis.map(u => ({ val: u.scheme !== "保送" ? null : (u.quota2027 ?? null), html: u.scheme !== "保送" ? u.scheme + "（不入保送）" : `<b>${u.quota2027 ?? "—"}</b>`, best: u.scheme !== "保送" ? null : "max" })))}
     ${row("考核方式（越免試越輕鬆）", unis.map(u => ({ val: examFriend(u), html: u.exam ? esc(u.exam) : "免試／見簡章", best: "max" })))}
     ${row("另定要求", unis.map(u => ({ html: u.extra ? esc(u.extra) : "—" })))}
     ${row("2027 保送專業（已公佈）", unis.map(u => ({ val: u.majors2027?.length || null, html: u.majors2027?.length ? `<b>${u.majors2027.length}</b> 個 · <a href="javascript:void(0)" class="cmp-majors" data-id="${esc(u.id)}">查看</a>` : "暫未公佈", best: "max" })))}
@@ -499,7 +499,7 @@ function openUniPicker() {
       const full = ids.length >= COMPARE_MAX && !added;
       return `<div class="pk-row ${added ? "added" : ""}" data-id="${esc(u.id)}">
         <div><b>${esc(u.name)}</b> <span style="color:var(--muted);font-size:.8rem">${esc(u.region)}</span>
-          <div style="font-size:.8rem;color:var(--muted)">${u.rank2026 ? `軟科 ${u.rank2026.rank}${u.rank2026.board !== "主榜" ? `（${esc(u.rank2026.board)}）` : ""}` : "未設榜"} · ${u.scheme === "兩校聯招" ? "兩校聯招 · " : "名額 " + (u.quota2027 ?? "—") + " · "}${u.exam || "免試／見簡章"}${u.brief2027 ? ' · <span style="color:var(--primary)">📄2027簡章</span>' : ""}</div></div>
+          <div style="font-size:.8rem;color:var(--muted)">${u.rank2026 ? `軟科 ${u.rank2026.rank}${u.rank2026.board !== "主榜" ? `（${esc(u.rank2026.board)}）` : ""}` : "未設榜"} · ${u.scheme !== "保送" ? u.scheme + " · " : "名額 " + (u.quota2027 ?? "—") + " · "}${u.exam || "免試／見簡章"}${u.brief2027 ? ' · <span style="color:var(--primary)">📄2027簡章</span>' : ""}</div></div>
         <span class="pk-action">${added ? "✓ 已加入" : full ? "額滿" : "＋ 加入"}</span>
       </div>`;
     }).join("") || `<div class="empty-tip">找不到符合的大學</div>`;
@@ -677,7 +677,7 @@ function parseMajor(m) {
 }
 function pageMajors() {
   const withM = state.unis.filter(u => u.majors2027?.length).sort(byRank);
-  const without = state.unis.filter(u => !u.majors2027?.length);
+  const without = state.unis.filter(u => u.scheme === "保送" && !u.majors2027?.length);
   $app.innerHTML = `
   <h1 style="margin-top:6px">2027 保送專業 <small style="color:var(--muted);font-size:.85rem">${withM.length} / ${state.unis.length} 所已公佈 · 每日自動更新</small></h1>
   <div class="notice">資料來自 DSEDJ「查詢內地高校招生專業」系統（首階段）。各大學陸續錄入中——下面「尚未公佈」的學校，公佈後會自動出現。括號內為專業組包含的方向，[數字] 為學制年數。</div>

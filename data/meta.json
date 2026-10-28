@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-28T03:31:14.390Z",
+  "generatedAt": "2026-10-28T03:42:34.257Z",
   "cycle": "2027",
   "counts": {
-    "universities": 130,
+    "universities": 134,
     "universitiesBS": 128,
     "quotaTotal": 1481,
-    "withIntro": 130,
+    "withIntro": 134,
     "withRank2026": 121,
     "withHoukong": 70,
     "withBrief2027": 28,

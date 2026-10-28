@@ -27,6 +27,58 @@
       "intro": "中央統戰部領導的著名僑校，本部位於泉州、設廈門校區，港澳台僑學生規模龐大；土木工程、機械、化工、旅遊管理等學科有實力，澳門學生眾多、校友網絡成熟。",
       "admissionsUrl": "https://zsc.hqu.edu.cn/zsxx.htm",
       "admissionsLabel": "華僑大學招生處"
+    },
+    {
+      "id": "extra-um",
+      "nameS": "澳门大学",
+      "region": "澳門",
+      "scheme": "四校聯考",
+      "tags": [],
+      "exam": "四校聯考＋校內考核（或直接入學）",
+      "extra": "澳門本地高校，不適用 DSEDJ 內地保送。經澳門四校聯考（1 月報名、3 月底考試）報考，另設直接入學渠道；詳見「聯招·聯考」頁。",
+      "website": "https://www.um.edu.mo",
+      "intro": "澳門唯一公立綜合性研究型大學，主校園位於橫琴的澳大新校區；學科覆蓋科技、人文、社科、商學、教育、法學等，微電子、中醫藥、區域經濟研究全國知名。",
+      "admissionsUrl": "https://reg.um.edu.mo",
+      "admissionsLabel": "澳門大學招生"
+    },
+    {
+      "id": "extra-mpu",
+      "nameS": "澳门理工大学",
+      "region": "澳門",
+      "scheme": "四校聯考",
+      "tags": [],
+      "exam": "四校聯考＋校內考核（或直接入學）",
+      "extra": "澳門本地高校，不適用 DSEDJ 內地保送。經澳門四校聯考（1 月報名、3 月底考試）報考，另設直接入學渠道；詳見「聯招·聯考」頁。",
+      "website": "https://www.mpu.edu.mo",
+      "intro": "公立應用型大學（原澳門理工學院），電腦應用、中葡翻譯、藝術、體育、護理及公共行政等應用學科見長，小班教學、本地認可度高。",
+      "admissionsUrl": "https://www.mpu.edu.mo",
+      "admissionsLabel": "澳門理工大學"
+    },
+    {
+      "id": "extra-mtu",
+      "nameS": "澳门旅游大学",
+      "region": "澳門",
+      "scheme": "四校聯考",
+      "tags": [],
+      "exam": "四校聯考＋校內考核（或直接入學）",
+      "extra": "澳門本地高校，不適用 DSEDJ 內地保送。經澳門四校聯考（1 月報名、3 月底考試）報考，另設直接入學渠道；詳見「聯招·聯考」頁。",
+      "website": "https://www.mtu.edu.mo",
+      "intro": "公立旅遊高等教育院校（原澳門旅遊學院），旅遊管理、酒店管理、文化遺產、廚藝等專業在國際間享有聲譽，英文授課比例高、實習配套完善。",
+      "admissionsUrl": "https://www.mtu.edu.mo",
+      "admissionsLabel": "澳門旅遊大學"
+    },
+    {
+      "id": "extra-must",
+      "nameS": "澳门科技大学",
+      "region": "澳門",
+      "scheme": "四校聯考",
+      "tags": [],
+      "exam": "四校聯考＋校內考核（或直接入學）",
+      "extra": "澳門本地高校，不適用 DSEDJ 內地保送。經澳門四校聯考（1 月報名、3 月底考試）報考，另設直接入學渠道；詳見「聯招·聯考」頁。",
+      "website": "https://www.must.edu.mo",
+      "intro": "澳門規模最大的私立綜合大學（氹仔），發展迅速；中醫藥、傳媒、法學、醫學、太空與月球科學（國家重點實驗室）等課程多元，本地與內地學生混合就讀。",
+      "admissionsUrl": "https://www.must.edu.mo",
+      "admissionsLabel": "澳門科技大學"
     }
   ]
 }

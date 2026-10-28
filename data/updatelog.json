@@ -1,6 +1,26 @@
 [
  {
   "date": "2026-10-28",
+  "at": "2026-10-28T03:42:34.265Z",
+  "counts": {
+   "universities": 134,
+   "universitiesBS": 128,
+   "quotaTotal": 1481,
+   "withIntro": 134,
+   "withRank2026": 121,
+   "withHoukong": 70,
+   "withBrief2027": 28,
+   "withMajors": 32
+  },
+  "changes": [
+   "🆕 新增收錄：澳門大學",
+   "🆕 新增收錄：澳門理工大學",
+   "🆕 新增收錄：澳門旅遊大學",
+   "🆕 新增收錄：澳門科技大學"
+  ]
+ },
+ {
+  "date": "2026-10-28",
   "at": "2026-10-28T03:25:08.547Z",
   "counts": {
    "universities": 130,
