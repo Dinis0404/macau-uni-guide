@@ -656,8 +656,6 @@ function pageAbout() {
       <tr><td>濠江中學 2025 聯校保送人數（210 人）</td><td><a href="https://houkong.edu.mo/hkhs/event/752" target="_blank" rel="noopener">濠江中學官網公佈名單</a></td><td>人工統計（原始名單圖片存於 docs/）</td></tr>
       <tr><td>各大學簡介</td><td>本項目撰寫並按官網核實</td><td>歡迎 PR 修正</td></tr>
     </table>
-    <h2>更新日誌</h2>
-    <p>每次自動更新的變化記錄見 <a href="#/updatelog">更新日誌頁</a>（#updatelog）。</p>
     <h2>數據現況</h2>
     <p>高校 ${c.universities} 所 · 名額 ${c.quotaTotal} 個 · 簡介 ${c.withIntro} 所 · 有軟科排名 ${c.withRank2026} 所 · 有濠江數據 ${c.withHoukong} 所。資料版本：<b>${esc((state.meta?.generatedAt || "").slice(0, 10))}</b>。</p>
     <h2>想補充／修正資料？</h2>
