@@ -27,6 +27,7 @@
   "website": "https://www.pku.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110001&fileName=北京大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "北京大學 北京大学 北京市 985 211 雙一流 中國頂尖綜合性大學，人文、理科全國首屈一指，醫學部（原北京醫科大學）同樣頂級，位於北京海淀燕園。"
  },
  {
@@ -57,6 +58,7 @@
   "website": "https://www.ruc.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110007&fileName=中国人民大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "中國人民大學 中国人民大学 北京市 985 211 雙一流 以人文社會科學見長的頂尖大學，法學、經濟學、新聞傳播、社會學等學科均屬全國第一梯隊。"
  },
  {
@@ -87,6 +89,7 @@
   "website": "https://www.tsinghua.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110040&fileName=清华大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "清華大學 清华大学 北京市 985 211 雙一流 中國工科第一名校，理學、經濟管理亦屬頂尖，工程學科在全球排名領先，位於北京海淀清華園。"
  },
  {
@@ -117,6 +120,7 @@
   "website": "https://www.bnu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110025&fileName=北京师范大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "北京師範大學 北京师范大学 北京市 985 211 雙一流 全國師範類最高學府，教育學、心理學、中國語言文學、歷史等學科頂尖，珠海校區設有鳳凰書院等書院制學院。"
  },
  {
@@ -143,6 +147,7 @@
   "website": "https://www.blcu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110032&fileName=北京语言大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "北京語言大學 北京语言大学 北京市 以對外漢語教學與語言研究聞名，留學生比例極高而被稱為「小聯合國」，適合對語言教學、翻譯有興趣的學生。"
  },
  {
@@ -152,7 +157,7 @@
   "region": "北京市",
   "quota2027": 20,
   "exam": "面試",
-  "extra": "羣體面試",
+  "extra": "群體面試",
   "tags": [
    "211",
    "雙一流"
@@ -172,6 +177,17 @@
   "website": "https://www.uibe.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110042&fileName=对外经济贸易大学.pdf",
   "brief2027": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110042&fileName=对外经济贸易大学.pdf",
+  "majors2027": [
+   "經濟學類（國際經濟與貿易、財政學、稅收學） (文理兼收) [4]",
+   "國際經濟發展合作 (文理兼收) [4]",
+   "政治學類（國際政治、政治學與行政學、金融學+政治學與行政學雙學士學位項目、國際政治+英語雙學士學位項目） (文理兼收) [4]",
+   "工商管理類（會計學、財務管理、人力資源管理、市場營銷、工商管理、會計學-北郵計算機科學與技術聯合學士學位培養項目、會計學-北郵金融科技聯合學士學位培養項目） (文理兼收) [4]",
+   "金融學類（金融學、金融學（國際金融與市場）、經濟與金融、投資學、保險學） (文理兼收) [4]",
+   "法學類（法學、法學+數據科學與大數據技術雙學士學位項目） (文理兼收) [4]",
+   "外國語言文學類（商務英語、翻譯、英語、法學+英語類雙學士學位項目、金融學+英語類雙學士學位項目、英語類+會計學雙學士學位項目） (文理兼收) [4]",
+   "公共管理類（海關管理、行政管理、公共事業管理、文化產業管理） (文理兼收) [4]",
+   "保險學（保險學+數據科學與大數據技術雙學士） (文理兼收) [4]"
+  ],
   "search": "對外經濟貿易大學 对外经济贸易大学 北京市 211 雙一流 財經外語類名校，國際經濟與貿易、金融、國際經濟法等專業就業競爭力強，外語要求高、國際化氛圍濃。"
  },
  {
@@ -201,6 +217,7 @@
   "website": "https://www.cufe.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110005&fileName=中央财经大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "中央財經大學 中央财经大学 北京市 211 雙一流 財經頂尖學府，金融學、會計學、財政學全國領先，被譽為「中國財經管理專家的搖籃」。"
  },
  {
@@ -230,6 +247,23 @@
   "website": "https://www.cupl.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110010&fileName=中国政法大学.pdf",
   "brief2027": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110010&fileName=中国政法大学.pdf",
+  "majors2027": [
+   "哲學 (文史) [4]",
+   "法學 (文理兼收) [4]",
+   "國際政治 (文史) [4]",
+   "漢語言文學 (文史) [4]",
+   "新聞學 (文理兼收) [4]",
+   "應用心理學 (理工) [4]",
+   "經濟學 (理工) [4]",
+   "政治學與行政學 (文史) [4]",
+   "社會學 (文理兼收) [4]",
+   "英語 (文理兼收) [4]",
+   "網絡與新媒體 (文理兼收) [4]",
+   "工商管理 (文理兼收) [4]",
+   "公共事業管理 (文理兼收) [4]",
+   "國際商務 (文理兼收) [4]",
+   "行政管理 (文理兼收) [4]"
+  ],
   "search": "中國政法大學 中国政法大学 北京市 211 雙一流 法學界「五院四系」之首，法學全國頂尖，昌平與海澱兩校區，政法系統校友資源龐大。"
  },
  {
@@ -259,6 +293,7 @@
   "website": "https://www.bucm.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110018&fileName=北京中医药大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "北京中醫藥大學 北京中医药大学 北京市 211 雙一流 中醫藥最高學府之一，中醫學、中藥學、針灸推拿學為王牌專業，適合立志從事中醫醫療的學生。"
  },
  {
@@ -288,6 +323,7 @@
   "website": "https://www.bupt.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110029&fileName=北京邮电大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "北京郵電大學 北京邮电大学 北京市 211 雙一流 資訊科技名校，資訊與通信工程、電腦科學全國前列，電信與互聯網行業就業表現突出。"
  },
  {
@@ -318,6 +354,7 @@
   "website": "https://www.bit.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110027&fileName=北京理工大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "北京理工大學 北京理工大学 北京市 985 211 雙一流 「國防七子」之一，兵器科學與技術、車輛工程、宇航等工科強勢的中共建立的第一所理工科大學。"
  },
  {
@@ -339,6 +376,7 @@
   "website": "https://www.ccom.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110004&fileName=中央音乐学院.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "中央音樂學院 中央音乐学院 北京市 211 雙一流 中國音樂專業教育最高學府，作曲、聲歌、管弦、民樂等系全國頂尖。 中國音樂專業教育最高學府，作曲、聲歌、管絃、民樂等系全國頂尖。"
  },
  {
@@ -368,6 +406,7 @@
   "website": "https://www.bfsu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110020&fileName=北京外国语大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "北京外國語大學 北京外国语大学 北京市 211 雙一流 全國外語院校龍頭，開設語種最多，外交、翻譯、國際傳播人才的搖籃，報考須口試及面試。"
  },
  {
@@ -394,6 +433,7 @@
   "website": "https://www.bisu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110028&fileName=北京第二外国语学院.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "北京第二外國語學院 北京第二外国语学院 北京市 以外語和旅遊管理見長，日語、阿拉伯語等語種及酒店管理專業有特色，涉外就業渠道暢通。"
  },
  {
@@ -422,6 +462,28 @@
   "website": "https://www.cnu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110036&fileName=首都师范大学.pdf",
   "brief2027": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110036&fileName=首都师范大学.pdf",
+  "majors2027": [
+   "社會工作 (招收文科、理科) [4]",
+   "中國語言文學類 (招收文科、理科) [4]",
+   "考古學 (招收文科、理科) [4]",
+   "數學類（數理實驗班） (只招理科) [4]",
+   "地理信息科學 (只招理科) [4]",
+   "心理學 (只招理科) [4]",
+   "光電信息科學與工程 (只招理科) [4]",
+   "計算機科學與技術 (只招理科) [4]",
+   "遙感科學與技術 (只招理科) [4]",
+   "勞動與社會保障 (招收文科、理科) [4]",
+   "法學 (招收文科、理科) [4]",
+   "人工智能教育 (只招理科) [4]",
+   "歷史學（基地班） (招收文科、理科) [4]",
+   "文化遺産 (招收文科、理科) [4]",
+   "應用化學 (只招理科) [4]",
+   "生物科學類 (只招理科) [4]",
+   "電子信息工程 (只招理科) [4]",
+   "人工智能 (只招理科) [4]",
+   "軟件工程 (只招理科) [4]",
+   "公共事業管理（數智治理） (招收文科、理科) [4]"
+  ],
   "search": "首都師範大學 首都师范大学 北京市 雙一流 北京市屬師範重點高校，數學學科入選「雙一流」，教師培養體系完整，在北京基礎教育界影響力大。"
  },
  {
@@ -448,6 +510,22 @@
   "website": "https://www.cueb.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110037&fileName=首都经济贸易大学.pdf",
   "brief2027": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110037&fileName=首都经济贸易大学.pdf",
+  "majors2027": [
+   "經濟學 (文理兼收) [4]",
+   "財政學（實驗班） (文理兼收) [4]",
+   "金融學（國際金融英文班） (文理兼收) [4]",
+   "法學 (文理兼收) [4]",
+   "勞動經濟學 (文理兼收) [4]",
+   "稅收學（稅務師） (文理兼收) [4]",
+   "國際經濟與貿易 (文理兼收) [4]",
+   "新聞傳播學類（含傳播學、廣告學） (文理兼收) [4]",
+   "工商管理（國際會計） (文理兼收) [4]",
+   "會計學 (文理兼收) [4]",
+   "供應鏈管理 (文理兼收) [4]",
+   "信息管理與信息系統（數據治理） (文理兼收) [4]",
+   "工商管理 (文理兼收) [4]",
+   "資産評估（評估師） (文理兼收) [4]"
+  ],
   "search": "首都經濟貿易大學 首都经济贸易大学 北京市 北京市屬財經名校，應用經濟學、工商管理實力扎實，北京本地就業市場認可度高。"
  },
  {
@@ -466,6 +544,9 @@
   "website": "https://www.bfa.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110030&fileName=北京电影学院.pdf",
   "brief2027": null,
+  "majors2027": [
+   "電影學（製片與市場） (文理兼收) [4]"
+  ],
   "search": "北京電影學院 北京电影学院 北京市 中國電影專業教育最高學府，導演、表演、攝影等專業競爭極為激烈，影視行業校友雲集。"
  },
  {
@@ -484,6 +565,7 @@
   "website": "https://www.bift.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110022&fileName=北京服装学院.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "北京服裝學院 北京服装学院 北京市 中國服裝設計領域旗艦院校，服裝與服飾設計處於全國第一梯隊，時尚產業資源豐富。"
  },
  {
@@ -502,6 +584,7 @@
   "website": "https://www.bda.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110031&fileName=北京舞蹈学院.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "北京舞蹈學院 北京舞蹈学院 北京市 中國舞蹈專業教育最高學府，芭蕾舞、中國舞、編導等專業全國權威。"
  },
  {
@@ -530,6 +613,7 @@
   "website": "https://www.bsu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110034&fileName=北京体育大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "北京體育大學 北京体育大学 北京市 雙一流 體育類最高學府，體育教育、運動訓練、運動人體科學為王牌，體育學入選「雙一流」。"
  },
  {
@@ -559,6 +643,13 @@
   "website": "https://www.ustb.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110024&fileName=北京科技大学.pdf",
   "brief2027": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110024&fileName=北京科技大学.pdf",
+  "majors2027": [
+   "社會科學試驗班（入學後可分流至知識產權、行政管理、法學、社會工作（社會管理）） (文史) [4]",
+   "人工智能 (理工) [4]",
+   "工商管理類（入學後可分流至工商管理+人工智能雙學位、會計學、數字經濟） (文理兼收) [4]",
+   "外國語言文學類（入學後可分流至英語、日語、德語專業） (文史) [4]",
+   "大數據管理與應用（入學後可分流至金融工程、信息管理與信息係統、大數據管理與應用、數字經濟等專業。） (理工) [4]"
+  ],
   "search": "北京科技大學 北京科技大学 北京市 211 雙一流 冶金工程、材料科學與工程全國頂尖的工科強校，前身為北京鋼鐵學院，技術科學底蘊深厚。"
  },
  {
@@ -588,6 +679,7 @@
   "website": "https://www.bjtu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110021&fileName=北京交通大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "北京交通大學 北京交通大学 北京市 211 雙一流 百年工科名校，系統科學全國第一，交通運輸、通信工程等學科強勢。"
  },
  {
@@ -617,6 +709,7 @@
   "website": "https://www.cuc.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110013&fileName=中国传媒大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "中國傳媒大學 中国传媒大学 北京市 211 雙一流 中國傳媒教育最高學府，新聞傳播學、廣播電視編導、播音與主持藝術全國第一。"
  },
  {
@@ -626,7 +719,7 @@
   "region": "北京市",
   "quota2027": 10,
   "exam": "面試",
-  "extra": "考生報名時須通過初試考覈，通過中國民航局及澳門民航局飛行員標準身體檢查，並符合澳門航空股份有限公司具體要求",
+  "extra": "考生報名時須通過初試考核，通過中國民航局及澳門民航局飛行員標準身體檢查，並符合澳門航空股份有限公司具體要求",
   "tags": [
    "985",
    "211",
@@ -647,6 +740,7 @@
   "website": "https://www.buaa.edu.cn",
   "brief2026": null,
   "brief2027": null,
+  "majors2027": [],
   "search": "北京航空航天大學 北京航空航天大学 北京市 985 211 雙一流 航空航太第一名校，儀器科學、軟體工程、電腦等工科全國前列；澳門生報考飛行員方向另定體檢等要求。"
  },
  {
@@ -677,6 +771,7 @@
   "website": "https://www.tju.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110070&fileName=天津大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "天津大學 天津大学 天津市 985 211 雙一流 中國第一所現代大學（前身北洋大學），建築學、化學工程、精密儀器等工科頂尖。"
  },
  {
@@ -707,6 +802,20 @@
   "website": "https://www.nankai.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110083&fileName=南开大学.pdf",
   "brief2027": null,
+  "majors2027": [
+   "理科試驗班（物理與光電信息技術工程方向，大類招生，分流至物理學、應用物理學、光電信息科學與工程、電子信息科學與技術、微電子科學與工程、電子科學與技術、通信工程） (理科) [4]",
+   "哲學類（大類招生，分流至哲學、邏輯學） (文科) [4]",
+   "金融學類（大類招生，分流至金融學、金融工程、保險學、精算學、金融科技） (文理兼收) [4]",
+   "中國語言文學類（大類招生，分流至漢語言文學、漢語國際教育） (文科) [4]",
+   "理科試驗班（數學與大數據方向，大類招生，分流至數學與應用數學、信息與計算科學、統計學、數據科學） (理科) [4]",
+   "理科試驗班（物質科學方向，大類招生，分流至化學、應用化學、生物科學、材料物理、材料化學） (理科) [4]",
+   "經濟學類（大類招生，分流至經濟學、國際經濟與貿易、財政學、商務經濟學） (文理兼收) [4]",
+   "法學 (文理兼收) [4]",
+   "外國語言文學類（大類招生，分流至英語、日語、俄語、法語、西班牙語、意大利語、翻譯（英、德、葡、阿方向）） (文科) [4]",
+   "工商管理類（大類招生，分流至財務管理、工商管理、市場營銷、人力資源管理、會計學、大數據管理與應用、旅遊管理、會展經濟與管理、體育旅遊） (文理兼收) [4]",
+   "歷史學類（大類招生，分流至曆史學、世界史、文物與博物館學） (文科) [4]",
+   "公共管理類（大類招生，分流至政治學與行政學、國際政治、社會學、社會工作、行政管理、城市管理、數據資源與數據智能、圖書館學、新聞學、網絡與新媒體（出版與智能傳播方向）） (文理兼收) [4]"
+  ],
   "search": "南開大學 南开大学 天津市 985 211 雙一流 周恩來母校，數學、化學、經濟學、歷史學等基礎學科全國頂尖的百年綜合名校。"
  },
  {
@@ -733,6 +842,7 @@
   "website": "https://www.tjnu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110076&fileName=天津师范大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "天津師範大學 天津师范大学 天津市 天津市屬師範龍頭，政治學、心理學等學科有實力，教師教育體系完整。"
  },
  {
@@ -761,6 +871,7 @@
   "website": "https://www.tiangong.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110071&fileName=天津工业大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "天津工業大學 天津工业大学 天津市 雙一流 紡織科學與工程入選「雙一流」，紡織服裝、材料科學特色鮮明的工科院校。"
  },
  {
@@ -787,6 +898,7 @@
   "website": "https://www.cauc.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110069&fileName=中国民航大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "中國民航大學 中国民航大学 天津市 中國民航業人才搖籃，交通運輸（空管）、飛行器動力工程、航空服務等專業直通民航系統就業。"
  },
  {
@@ -796,7 +908,7 @@
   "region": "遼寧省",
   "quota2027": 5,
   "exam": "面試",
-  "extra": "大連理工大學澳門保送生的招生將依據教育部、澳門特別行政區教育及青年發展局等有關招生規定執行。符合條件的考生由澳門特別行政區教育及青年發展局統一組織報名，並由大連理工大學組織對報名考生進行面試考覈。",
+  "extra": "大連理工大學澳門保送生的招生將依據教育部、澳門特別行政區教育及青年發展局等有關招生規定執行。符合條件的考生由澳門特別行政區教育及青年發展局統一組織報名，並由大連理工大學組織對報名考生進行面試考核。",
   "tags": [
    "985",
    "211",
@@ -817,6 +929,7 @@
   "website": "https://www.dlut.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110106&fileName=大连理工大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "大連理工大學 大连理工大学 遼寧省 辽宁省 985 211 雙一流 東北工科名校，化學工程、力學、土木水利等學科強勢，濱海城市大連環境宜人。"
  },
  {
@@ -847,6 +960,7 @@
   "website": "https://www.neu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110101&fileName=东北大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "東北大學 东北大学 遼寧省 辽宁省 985 211 雙一流 老牌工科名校，控制科學與工程（自動化）、電腦科學、冶金工程為王牌，位於瀋陽。"
  },
  {
@@ -855,7 +969,7 @@
   "nameS": "辽宁中医药大学",
   "region": "遼寧省",
   "quota2027": 2,
-  "exam": "材料審覈+面試",
+  "exam": "材料審核+面試",
   "extra": "面試後請提交補充文件《遼寧中醫藥大學港澳臺新生入學申請表》。",
   "tags": [],
   "rank2025": {
@@ -873,6 +987,9 @@
   "website": "https://www.lnutcm.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110102&fileName=辽宁中医药大学.pdf",
   "brief2027": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110102&fileName=辽宁中医药大学.pdf",
+  "majors2027": [
+   "中醫學 (文理兼收) [5]"
+  ],
   "search": "遼寧中醫藥大學 辽宁中医药大学 遼寧省 辽宁省 遼寧中醫藥教育主力院校，中醫學、中藥學、針灸推拿學專業設置完整；錄取後須另行提交入學申請表。"
  },
  {
@@ -899,6 +1016,58 @@
   "website": "https://www.dufe.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110289&fileName=东北财经大学.pdf",
   "brief2027": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110289&fileName=东北财经大学.pdf",
+  "majors2027": [
+   "經濟學 (文理兼收) [4]",
+   "數字經濟 (理科) [4]",
+   "稅收學 (文理兼收) [4]",
+   "金融工程 (理科) [4]",
+   "投資學 (文理兼收) [4]",
+   "金融科技 (理科) [4]",
+   "國際經濟與貿易（與應用統計學雙學士學位） (理科) [4]",
+   "應用統計學 (理科) [4]",
+   "人工智能 (理科) [4]",
+   "數據科學與大數據技術 (理科) [4]",
+   "信息管理與信息系統 (理科) [4]",
+   "電子商務 (理科) [4]",
+   "房地産開發與管理 (理科) [4]",
+   "市場營銷（與經濟統計學雙學士學位） (理科) [4]",
+   "人力資源管理 (文理兼收) [4]",
+   "會計學（註冊會計師方向） (文理兼收) [4]",
+   "財務管理 (文理兼收) [4]",
+   "資産評估 (文理兼收) [4]",
+   "勞動與社會保障 (文理兼收) [4]",
+   "法學 (文理兼收) [4]",
+   "經濟統計學 (理科) [4]",
+   "財政學 (文理兼收) [4]",
+   "金融學 (文理兼收) [4]",
+   "保險學（與數據科學雙學士學位） (理科) [4]",
+   "金融數學 (理科) [4]",
+   "國際經濟與貿易（與財務管理雙學士學位） (文理兼收) [4]",
+   "統計學 (理科) [4]",
+   "數據科學 (理科) [4]",
+   "計算機科學與技術 (理科) [4]",
+   "管理科學 (理科) [4]",
+   "大數據管理與應用 (理科) [4]",
+   "工程管理 (理科) [4]",
+   "工程審計 (理科) [4]",
+   "工商管理 (文理兼收) [4]",
+   "物流管理 (文理兼收) [4]",
+   "會計學（國際會計方向） (文理兼收) [4]",
+   "審計學 (文理兼收) [4]",
+   "行政管理 (文理兼收) [4]",
+   "旅遊管理 (文理兼收) [4]",
+   "日語 (文理兼收) [4]",
+   "商務英語 (文理兼收) [4]",
+   "財務管理（中外合作辦學）（與英國薩裏大學合作辦學） (文理兼收) [4]",
+   "工商管理（中外合作辦學）（與英國薩裏大學合作辦學） (文理兼收) [4]",
+   "經濟學（中外合作辦學）（與加拿大西安大略大學國王大學學院合作辦學） (文理兼收) [4]",
+   "會計學（中外合作辦學）（與英國奧斯特大學合作辦學） (文理兼收) [4]",
+   "新聞學 (文理兼收) [4]",
+   "大數據管理與應用（中外合作辦學）（與英國薩裏大學合作辦學） (理科) [4]",
+   "旅遊管理（中外合作辦學）（與英國薩裏大學合作辦學） (文理兼收) [4]",
+   "金融學（中外合作辦學）（與英國奧斯特大學合作辦學） (文理兼收) [4]",
+   "會計學（中外合作辦學）（與澳大利亞科廷大學合作辦學） (文理兼收) [4]"
+  ],
   "search": "東北財經大學 东北财经大学 遼寧省 辽宁省 非211的財經實力名校，會計學、金融學、財政學全國前列，大連的就業環境加成明顯。"
  },
  {
@@ -929,6 +1098,7 @@
   "website": "https://www.jlu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110108&fileName=吉林大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "吉林大學 吉林大学 吉林省 985 211 雙一流 規模龐大的長春綜合名校，車輛工程、化學、法學、考古學等學科頂尖，六校合併學科門類極全。"
  },
  {
@@ -958,6 +1128,7 @@
   "website": "https://www.nenu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110109&fileName=东北师范大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "東北師範大學 东北师范大学 吉林省 211 雙一流 教育部直屬師範名校，馬克思主義理論、教育學、生態學為王牌，基礎教育界校友眾多。"
  },
  {
@@ -984,6 +1155,7 @@
   "website": "https://www.ccu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=960250&fileName=长春大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "長春大學 长春大学 吉林省 吉林省市屬綜合大學，特殊教育全國知名，設有殘疾人藝術學院，兼有音樂、機械等專業。"
  },
  {
@@ -1014,6 +1186,7 @@
   "website": "https://www.fudan.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110065&fileName=复旦大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "復旦大學 复旦大学 上海市 985 211 雙一流 華東頂尖綜合名校，新聞傳播、經濟學、數學、臨床醫學（上海醫學院）均屬全國頂級。 華東頂尖綜合名校，新聞傳播、經濟學、數學、臨牀醫學（上海醫學院）均屬全國頂級。"
  },
  {
@@ -1044,6 +1217,7 @@
   "website": "https://www.sjtu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110052&fileName=上海交通大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "上海交通大學 上海交通大学 上海市 985 211 雙一流 工科頂尖綜合名校，船舶與海洋工程全國第一，醫學院（原上海第二醫學院）實力雄厚；澳門生須筆試及面試。"
  },
  {
@@ -1074,6 +1248,7 @@
   "website": "https://www.tongji.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110063&fileName=同济大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "同濟大學 同济大学 上海市 985 211 雙一流 土木建築領域全國第一梯隊，建築學、城鄉規劃、交通運輸工程頂尖，與德國學術淵源深厚。"
  },
  {
@@ -1104,6 +1279,7 @@
   "website": "https://www.ecnu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110067&fileName=华东师范大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "華東師範大學 华东师范大学 上海市 985 211 雙一流 上海頂尖綜合性師範大學，教育學、心理學、統計學、軟體工程強勢，師範類僅次北師大。"
  },
  {
@@ -1133,6 +1309,20 @@
   "website": "https://www.sufe.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110055&fileName=上海财经大学.pdf",
   "brief2027": null,
+  "majors2027": [
+   "財務管理（智能化） (文理兼收) [4]",
+   "金融學（金融學、金融學（數字與智能金融）） (文理兼收) [4]",
+   "國際經濟與貿易 (文理兼收) [4]",
+   "財政學類（財政學、稅收學） (文理兼收) [4]",
+   "公共管理類（行政管理、勞動與社會保障、勞動與社會保障雙學位（勞動與社會保障+金融學）） (文理兼收) [4]",
+   "人工智能 (理科) [4]",
+   "會計學 (文理兼收) [4]",
+   "經濟學（經濟學、經濟學雙學位（經濟學+信息與計算科學）、經濟學（數量經濟）） (文理兼收) [4]",
+   "工商管理類（工商管理（商務分析實驗班）、工商管理（人力資源管理）、工商管理（戰略與創新創業）、市場營銷、工商管理雙學位（工商管理+統計學）） (文理兼收) [4]",
+   "投資學（投資學、投資學雙學位（投資學+信息與計算科學）、房地產開發與管理） (文理兼收) [4]",
+   "法學（涉外法治實驗班、財經法治卓越班） (文理兼收) [4]",
+   "商務英語 (文理兼收) [4]"
+  ],
   "search": "上海財經大學 上海财经大学 上海市 211 雙一流 財經頂尖學府，會計學、金融學、經濟學全國前列，長三角金融業校友網絡龐大；報考須筆試及面試。"
  },
  {
@@ -1162,6 +1352,7 @@
   "website": "https://www.ecust.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110068&fileName=华东理工大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "華東理工大學 华东理工大学 上海市 211 雙一流 化學工程與技術全國頂尖的理工名校，材料、製藥工程亦強，被稱為「化學工程師的搖籃」。"
  },
  {
@@ -1191,6 +1382,7 @@
   "website": "https://www.shisu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110050&fileName=上海外国语大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "上海外國語大學 上海外国语大学 上海市 211 雙一流 南方外語龍頭院校，英語、高級翻譯、國際關係等專業出色，涉外就業與深造渠道通暢。"
  },
  {
@@ -1217,6 +1409,37 @@
   "website": "https://www.shnu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110054&fileName=上海师范大学.pdf",
   "brief2027": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110054&fileName=上海师范大学.pdf",
+  "majors2027": [
+   "漢語言文學（師範） (文理兼收) [4]",
+   "哲學 (文理兼收) [4]",
+   "行政管理 (文理兼收) [4]",
+   "酒店管理 (文理兼收) [4]",
+   "廣告學 (文理兼收) [4]",
+   "歷史學（師範） (文理兼收) [4]",
+   "法學 (文理兼收) [4]",
+   "旅遊管理 (文理兼收) [4]",
+   "會展經濟與管理 (文理兼收) [4]",
+   "漢語國際教育 (文理兼收) [4]",
+   "日語 (文理兼收) [4]",
+   "英語 (文理兼收) [4]",
+   "財務管理 (文理兼收) [4]",
+   "學前教育 (文理兼收) [4]",
+   "地理科學（師範） (文理兼收) [4]",
+   "物理學（師範） (理科) [4]",
+   "人工智能 (理科) [4]",
+   "電子信息工程 (理科) [4]",
+   "機器人工程 (理科) [4]",
+   "生物科學（師範） (理科) [4]",
+   "經濟學 (文理兼收) [4]",
+   "小學教育 (文理兼收) [4]",
+   "應用心理學 (文理兼收) [4]",
+   "環境工程 (理科) [4]",
+   "數學與應用數學（師範） (理科) [4]",
+   "計算機科學與技術 (理科) [4]",
+   "通信工程 (理科) [4]",
+   "化學（師範） (理科) [4]",
+   "動畫（藝術類專業） (文理兼收) [4]"
+  ],
   "search": "上海師範大學 上海师范大学 上海市 上海市屬師範重點，文科與教師教育學科完整，在上海基礎教育界影響力大。"
  },
  {
@@ -1245,6 +1468,12 @@
   "website": "https://www.sus.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110059&fileName=上海体育大学.pdf",
   "brief2027": null,
+  "majors2027": [
+   "體育教育 (文理兼收) [4]",
+   "運動康復 (理科) [4]",
+   "體育經濟與管理 (文理兼收) [4]",
+   "新聞學 (文理兼收) [4]"
+  ],
   "search": "上海體育大學 上海体育大学 上海市 雙一流 中國體育名校（原上海體育學院），體育學入選「雙一流」，運動人體科學與康復方向實力強。"
  },
  {
@@ -1273,6 +1502,7 @@
   "website": "https://www.shutcm.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110049&fileName=上海中医药大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "上海中醫藥大學 上海中医药大学 上海市 雙一流 中醫藥頂尖學府，中醫學、中藥學、中西醫結合入選「雙一流」，附屬曙光、龍華等知名中醫院。"
  },
  {
@@ -1303,6 +1533,32 @@
   "website": "https://www.nju.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110121&fileName=南京大学.pdf",
   "brief2027": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110121&fileName=南京大学.pdf",
+  "majors2027": [
+   "哲學 (文理兼收) [4]",
+   "社會學類 (文理兼收) [4]",
+   "英語 (文理兼收) [4]",
+   "朝鮮語 (文理兼收) [4]",
+   "歷史學類 (文理兼收) [4]",
+   "地理科學類 (理科) [4]",
+   "地質學類 (理科) [4]",
+   "材料類 (理科) [4]",
+   "建築類 (理科) [4]",
+   "信息管理與信息系統 (文理兼收) [4]",
+   "公共管理類 (文理兼收) [4]",
+   "數字經濟 (理科) [4]",
+   "技術科學試驗班 (理科) [4]",
+   "法學 (文理兼收) [4]",
+   "漢語國際教育 (文理兼收) [4]",
+   "俄語 (文理兼收) [4]",
+   "新聞傳播學類 (文理兼收) [4]",
+   "化學 (理科) [4]",
+   "大氣科學 (理科) [4]",
+   "生物科學類 (理科) [4]",
+   "環境科學與工程類 (理科) [4]",
+   "口腔醫學 (理科) [5]",
+   "工商管理類 (文理兼收) [4]",
+   "天文學 (理科) [4]"
+  ],
   "search": "南京大學 南京大学 江蘇省 江苏省 985 211 雙一流 華東頂尖綜合名校，物理、天文學、地質學、圖書情報等基礎學科處於全國第一梯隊。"
  },
  {
@@ -1333,6 +1589,7 @@
   "website": "https://www.seu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110119&fileName=东南大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "東南大學 东南大学 江蘇省 江苏省 985 211 雙一流 工科名校，建築學、土木工程、交通運輸、電子資訊四大王牌，生物醫學工程全國第一。"
  },
  {
@@ -1362,6 +1619,7 @@
   "website": "https://www.njnu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110124&fileName=南京师范大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "南京師範大學 南京师范大学 江蘇省 江苏省 211 雙一流 百年師範名校（承金陵女子大學），教育學、心理學、地理學強勢，隨園校區被譽為「東方最美校園」。"
  },
  {
@@ -1390,6 +1648,13 @@
   "website": "https://www.njmu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110128&fileName=南京医科大学.pdf",
   "brief2027": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110128&fileName=南京医科大学.pdf",
+  "majors2027": [
+   "口腔醫學 (理科) [5]",
+   "藥學 (理科) [4]",
+   "臨牀醫學 (理科) [5]",
+   "預防醫學 (理科) [5]",
+   "護理學 (理科) [4]"
+  ],
   "search": "南京醫科大學 南京医科大学 江蘇省 江苏省 雙一流 醫學強校，公共衛生與預防醫學全國第一（入選「雙一流」），臨床醫學實力亦屬前列。 醫學強校，公共衛生與預防醫學全國第一（入選「雙一流」），臨牀醫學實力亦屬前列。"
  },
  {
@@ -1418,6 +1683,7 @@
   "website": "https://www.njucm.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110122&fileName=南京中医药大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "南京中醫藥大學 南京中医药大学 江蘇省 江苏省 雙一流 中醫藥名校，中藥學入選「雙一流」，是新中國中醫高等教育的開創院校之一。"
  },
  {
@@ -1447,6 +1713,7 @@
   "website": "https://www.nuaa.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110125&fileName=南京航空航天大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "南京航空航天大學 南京航空航天大学 江蘇省 江苏省 211 雙一流 「國防七子」之一，直升機技術、無人機、機電工程等航空航太學科頂尖。"
  },
  {
@@ -1475,6 +1742,7 @@
   "website": "https://www.nuist.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110295&fileName=南京信息工程大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "南京信息工程大學 南京信息工程大学 江蘇省 江苏省 雙一流 以大氣科學聞名（全國第一、入選「雙一流」），被稱為「中國氣象人才的搖籃」。"
  },
  {
@@ -1501,6 +1769,7 @@
   "website": "https://www.xjtlu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110133&fileName=西交利物浦大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "西交利物浦大學 西交利物浦大学 江蘇省 江苏省 西安交通大學與英國利物浦大學在蘇州合辦的中外合辦大學，全英文授課，畢業可獲利物浦大學學位。"
  },
  {
@@ -1530,6 +1799,7 @@
   "website": "https://www.cpu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110118&fileName=中国药科大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "中國藥科大學 中国药科大学 江蘇省 江苏省 211 雙一流 中國藥學最高學府，藥學、生物製藥全國第一，醫藥產業界校友雲集，位於南京。"
  },
  {
@@ -1560,6 +1830,7 @@
   "website": "https://www.zju.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110139&fileName=浙江大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "浙江大學 浙江大学 浙江省 985 211 雙一流 綜合實力全國前三的巨無霸名校，學科覆蓋極全，電腦、光學工程、農學、醫學均屬頂尖；報考須筆試及面試。"
  },
  {
@@ -1586,6 +1857,29 @@
   "website": "https://www.nottingham.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110145&fileName=宁波诺丁汉大学.pdf",
   "brief2027": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110145&fileName=宁波诺丁汉大学.pdf",
+  "majors2027": [
+   "經濟學（中外合作辦學） (文理兼收) [4]",
+   "國際事務與國際關係（中外合作辦學） (文理兼收) [4]",
+   "傳播學（中外合作辦學） (文理兼收) [4]",
+   "材料成型及控制工程（中外合作辦學）（含4年制及2+2制） (文理兼收) [4]",
+   "電氣工程及其自動化（中外合作辦學）（含4年制及2+2制） (文理兼收) [4]",
+   "土木工程（中外合作辦學）（含4年制及2+2制） (文理兼收) [4]",
+   "化學工程與工藝（中外合作辦學）（含4年制及2+2制） (文理兼收) [4]",
+   "環境工程（中外合作辦學）（含4年制及2+2制） (文理兼收) [4]",
+   "財務管理（中外合作辦學） (文理兼收) [4]",
+   "國際經濟與貿易（中外合作辦學） (文理兼收) [4]",
+   "英語（中外合作辦學）（含4年制及2+2制） (文理兼收) [4]",
+   "數學與應用數學（中外合作辦學）（含4年制及2+2制） (文理兼收) [4]",
+   "工業設計（中外合作辦學）（含4年制及2+2制） (文理兼收) [4]",
+   "電腦科學與技術（中外合作辦學）（含4年制及2+2制） (文理兼收) [4]",
+   "建築環境與能源應用工程（中外合作辦學）（含4年制及2+2制） (文理兼收) [4]",
+   "航空航太工程（中外合作辦學）（含4年制及2+2制） (文理兼收) [4]",
+   "建築學（中外合作辦學） (文理兼收) [4]",
+   "國際商務（中外合作辦學）（含國際商務管理、國際商務與國際傳播學、國際商務與法語/德語/西班牙語/日語/國際商務經濟學方向） (文理兼收) [4]",
+   "大數據管理與應用（中外合作辦學） (文理兼收) [4]",
+   "管理科學（中外合作辦學） (文理兼收) [4]",
+   "金融科技（中外合作辦學） (文理兼收) [4]"
+  ],
   "search": "寧波諾丁漢大學 宁波诺丁汉大学 浙江省 中國第一所中外合辦大學，全英文授課並採英國諾丁漢大學體系，畢業獲諾丁漢大學學位。"
  },
  {
@@ -1612,6 +1906,7 @@
   "website": "https://www.wku.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110297&fileName=温州肯恩大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "溫州肯恩大學 温州肯恩大学 浙江省 溫州大學與美國肯恩大學合辦的中美合辦大學，美式小班全英文教學，商科、教育、心理為主。"
  },
  {
@@ -1638,6 +1933,7 @@
   "website": "https://www.zjut.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110140&fileName=浙江工业大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "浙江工業大學 浙江工业大学 浙江省 浙江省屬工科龍頭，化學工程、機械工程、生物工程實力扎實。"
  },
  {
@@ -1664,6 +1960,7 @@
   "website": "https://www.zcmu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110141&fileName=浙江中医药大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "浙江中醫藥大學 浙江中医药大学 浙江省 浙江中醫藥教育主力，中醫學、聽力與言語康復學等專業有特色。"
  },
  {
@@ -1684,6 +1981,29 @@
   "website": "https://www.caa.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110136&fileName=中国美术学院.pdf",
   "brief2027": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110136&fileName=中国美术学院.pdf",
+  "majors2027": [
+   "戲劇影視美術設計 (文理兼收) [4]",
+   "影視攝影與製作 (文理兼收) [4]",
+   "繪畫 (文理兼收) [4]",
+   "攝影 (文理兼收) [4]",
+   "中國畫 (文理兼收) [4]",
+   "文物保護與修復 (文理兼收) [4]",
+   "視覺傳達設計 (文理兼收) [4]",
+   "産品設計 (文理兼收) [4]",
+   "公共藝術 (文理兼收) [4]",
+   "數字媒體藝術 (文理兼收) [4]",
+   "陶瓷藝術設計 (文理兼收) [4]",
+   "動畫 (文理兼收) [4]",
+   "美術學 (文理兼收) [4]",
+   "雕塑 (文理兼收) [5]",
+   "書法學 (文理兼收) [4]",
+   "跨媒體藝術 (文理兼收) [4]",
+   "纖維藝術 (文理兼收) [4]",
+   "環境設計 (文理兼收) [4]",
+   "服裝與服飾設計 (文理兼收) [4]",
+   "工藝美術 (文理兼收) [4]",
+   "藝術與科技 (文理兼收) [4]"
+  ],
   "search": "中國美術學院 中国美术学院 浙江省 雙一流 中國美術最高學府之一（原浙江美術學院），中國畫、書法、視覺傳達設計全國頂尖；保送須通過專業考試。"
  },
  {
@@ -1712,6 +2032,7 @@
   "website": "https://www.nbu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110144&fileName=宁波大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "寧波大學 宁波大学 浙江省 雙一流 由寧波幫人士捐建的综合大學，力學入選「雙一流」，水產、通信等學科亦有實力。 由寧波幫人士捐建的綜合大學，力學入選「雙一流」，水產、通信等學科亦有實力。"
  },
  {
@@ -1738,6 +2059,7 @@
   "website": "https://www.cuz.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110300&fileName=浙江传媒学院.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "浙江傳媒學院 浙江传媒学院 浙江省 傳媒類名校（業內地位僅次於中國傳媒大學），播音主持、廣播電視編導、網絡與新媒體實力強。"
  },
  {
@@ -1764,6 +2086,38 @@
   "website": "https://www.zstu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110142&fileName=浙江理工大学.pdf",
   "brief2027": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110142&fileName=浙江理工大学.pdf",
+  "majors2027": [
+   "應用物理學 (理工) [4]",
+   "應用心理學 (理工) [4]",
+   "紡織工程 (理工) [4]",
+   "輕化工程 (理工) [4]",
+   "服裝設計與工程 (理工) [4]",
+   "機械電子工程 (理工) [4]",
+   "智能製造工程 (理工) [4]",
+   "計算機科學與技術 (理工) [4]",
+   "軟件工程 (理工) [4]",
+   "通信工程 (理工) [4]",
+   "自動化 (理工) [4]",
+   "生物技術 (理工) [4]",
+   "國際經濟與貿易 (文理兼收) [4]",
+   "經濟學 (文理兼收) [4]",
+   "信息管理與信息系統 (理工) [4]",
+   "法學 (文理兼收) [4]",
+   "非織造材料與工程 (理工) [4]",
+   "絲綢設計與工程 (理工) [4]",
+   "機械設計製造及其自動化 (理工) [4]",
+   "機器人工程 (理工) [4]",
+   "能源與動力工程 (理工) [4]",
+   "智能科學與技術 (理工) [4]",
+   "電子信息工程 (理工) [4]",
+   "測控技術與儀器 (理工) [4]",
+   "生物製藥 (理工) [4]",
+   "應用化學 (理工) [4]",
+   "會計學 (文理兼收) [4]",
+   "人力資源管理 (文理兼收) [4]",
+   "傳播學 (文理兼收) [4]",
+   "英語 (文理兼收) [4]"
+  ],
   "search": "浙江理工大學 浙江理工大学 浙江省 紡織服裝特色的工科院校，絲綢設計傳統深厚，機械、材料亦有基礎。"
  },
  {
@@ -1790,6 +2144,39 @@
   "website": "https://www.zufe.edu.cn",
   "brief2026": null,
   "brief2027": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110299&fileName=浙江财经大学.pdf",
+  "majors2027": [
+   "財政學 (文理兼收) [4]",
+   "國際稅收 (文理兼收) [4]",
+   "工程管理（工程審計方向） (理工) [4]",
+   "會計學 (文理兼收) [4]",
+   "審計學 (文理兼收) [4]",
+   "金融工程 (理工) [4]",
+   "工商管理類（含工商管理、人力資源管理、市場營銷專業） (文理兼收) [4]",
+   "人工智能 (理工) [4]",
+   "計算機科學與技術 (理工) [4]",
+   "經濟學 (文理兼收) [4]",
+   "法學 (文理兼收) [4]",
+   "外國語言文學類（含英語、商務英語專業） (文理兼收) [4]",
+   "應用統計學 (理工) [4]",
+   "數據科學與大數據技術 (理工) [4]",
+   "新聞傳播學類（含廣告學、網絡與新媒體專業） (文理兼收) [4]",
+   "稅收學 (文理兼收) [4]",
+   "公共管理類（含行政管理、勞動與社會保障、土地資源管理專業） (文理兼收) [4]",
+   "城鄉規劃 (文理兼收) [4]",
+   "財務管理 (文理兼收) [4]",
+   "金融學 (文理兼收) [4]",
+   "投資學 (文理兼收) [4]",
+   "大數據管理與應用 (理工) [4]",
+   "軟件工程 (理工) [4]",
+   "數字經濟 (理工) [4]",
+   "國際經濟與貿易 (文理兼收) [4]",
+   "社會工作 (文理兼收) [4]",
+   "經濟統計學 (理工) [4]",
+   "金融數學 (理工) [4]",
+   "漢語言文學 (文理兼收) [4]",
+   "金融科技 (理工) [4]",
+   "金融工程（金融科創） (理工) [4]"
+  ],
   "search": "浙江財經大學 浙江财经大学 浙江省 浙江省屬財經院校，財政學、會計學在省內及長三角認可度較高。"
  },
  {
@@ -1820,6 +2207,7 @@
   "website": "https://www.ustc.edu.cn",
   "brief2026": null,
   "brief2027": null,
+  "majors2027": [],
   "search": "中國科學技術大學 中国科学技术大学 安徽省 985 211 雙一流 中國理科第一梯隊名校（合肥），物理、化學、量子資訊全球知名，少年班聞名遐邇；名額極少且須筆試面試。"
  },
  {
@@ -1850,6 +2238,7 @@
   "website": "https://www.xmu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110160&fileName=厦门大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "廈門大學 厦门大学 福建省 985 211 雙一流 陳嘉庚創辦的南方名校，會計學、金融學、化學、海洋科學頂尖，校園被譽為中國最美之一；免考試直接錄取，對澳門生名額充裕。"
  },
  {
@@ -1876,6 +2265,7 @@
   "website": "https://www.fjnu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110155&fileName=福建师范大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "福建師範大學 福建师范大学 福建省 福建省屬師範龍頭，中國語言文學、地理學有實力，百年辦學歷史。"
  },
  {
@@ -1885,7 +2275,7 @@
   "region": "福建省",
   "quota2027": 12,
   "exam": "面試",
-  "extra": "報考體育（藝術）類專業的考生，應具備相關專業的學習基礎和學科發展潛質，須同時參加我校組織的術科考覈。具體詳見招生簡章",
+  "extra": "報考體育（藝術）類專業的考生，應具備相關專業的學習基礎和學科發展潛質，須同時參加我校組織的術科考核。具體詳見招生簡章",
   "tags": [],
   "rank2025": {
    "board": "主榜",
@@ -1902,6 +2292,7 @@
   "website": "https://www.jmu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110159&fileName=集美大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "集美大學 集美大学 福建省 陳嘉庚創辦的綜合大學，航海技術、輪機工程等航運類專業全國知名，位於廈門集美學村。"
  },
  {
@@ -1928,6 +2319,25 @@
   "website": "https://www.fjtcm.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110154&fileName=福建中医药大学.pdf",
   "brief2027": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110154&fileName=福建中医药大学.pdf",
+  "majors2027": [
+   "食品科學與工程 (文理兼收) [4]",
+   "中醫學 (文理兼收) [5]",
+   "中醫骨傷科學 (文理兼收) [5]",
+   "藥學 (文理兼收) [4]",
+   "中藥學 (文理兼收) [4]",
+   "康復物理治療 (文理兼收) [4]",
+   "護理學 (文理兼收) [4]",
+   "公共事業管理 (文理兼收) [4]",
+   "臨牀醫學 (文理兼收) [5]",
+   "針灸推拿學 (文理兼收) [5]",
+   "中西醫臨牀醫學 (文理兼收) [5]",
+   "藥物製劑 (文理兼收) [4]",
+   "聽力與言語康復學 (文理兼收) [4]",
+   "康復作業治療 (文理兼收) [4]",
+   "信息管理與信息系統 (文理兼收) [4]",
+   "中醫康復學 (文理兼收) [5]",
+   "康復治療學 (文理兼收) [4]"
+  ],
   "search": "福建中醫藥大學 福建中医药大学 福建省 福建中醫藥教育主力，中醫學、康復治療學等專業有特色。"
  },
  {
@@ -1957,6 +2367,7 @@
   "website": "https://www.fzu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110153&fileName=福州大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "福州大學 福州大学 福建省 211 雙一流 福建省屬211工科名校，化學（物理化學）、電腦、土木工程有實力。"
  },
  {
@@ -1986,6 +2397,7 @@
   "website": "https://www.ncu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110165&fileName=南昌大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "南昌大學 南昌大学 江西省 211 雙一流 江西省唯一的211綜合大學，材料科學與工程（矽基LED技術）、食品科學為王牌。"
  },
  {
@@ -2012,6 +2424,7 @@
   "website": "https://www.jxufe.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110164&fileName=江西财经大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "江西財經大學 江西财经大学 江西省 財經實力強勁的省屬名校，應用經濟學、統計學全國前列，性價比高的財經選擇。"
  },
  {
@@ -2042,6 +2455,19 @@
   "website": "https://www.sdu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110172&fileName=山东大学.pdf",
   "brief2027": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110172&fileName=山东大学.pdf",
+  "majors2027": [
+   "哲學類（哲學，宗教學） (文史) [4]",
+   "法學類（法學） (文理兼收) [4]",
+   "新聞傳播學類（新聞學、國際新聞與傳播） (文理兼收) [4]",
+   "自動化類（自動化，機器人工程） (理工) [4]",
+   "預防醫學 (理工) [5]",
+   "經濟學類（經濟學，國際經濟與貿易，財政學，金融學） (文理兼收) [4]",
+   "中國語言文學類（漢語言文學） (文史) [4]",
+   "歷史學類（曆史學，檔案學） (文史) [4]",
+   "計算機科學與技術 (理工) [4]",
+   "藥學類（藥學，臨牀藥學(五年製)） (理工) [5]",
+   "工商管理類（工商管理、會計學） (文理兼收) [4]"
+  ],
   "search": "山東大學 山东大学 山東省 山东省 985 211 雙一流 百年綜合名校，數學、中國語言文學、醫學（齊魯醫學）強勢，一校三地（濟南、青島、威海）。"
  },
  {
@@ -2072,6 +2498,7 @@
   "website": "https://www.ouc.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110176&fileName=中国海洋大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "中國海洋大學 中国海洋大学 山東省 山东省 985 211 雙一流 海洋科學、水產學全國第一的985名校，位於青島，海洋漁業與海洋科研資源獨一無二。"
  },
  {
@@ -2098,6 +2525,22 @@
   "website": "https://www.sdutcm.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110173&fileName=山东中医药大学.pdf",
   "brief2027": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110173&fileName=山东中医药大学.pdf",
+  "majors2027": [
+   "計算機科學與技術 (文理兼收) [4]",
+   "臨牀醫學 (文理兼收) [5]",
+   "中醫學 (文理兼收) [5]",
+   "應用心理學 (文理兼收) [4]",
+   "生物醫學工程 (文理兼收) [4]",
+   "食品衛生與營養學 (文理兼收) [4]",
+   "針灸推拿學 (文理兼收) [5]",
+   "藥學 (文理兼收) [4]",
+   "康復治療學 (文理兼收) [4]",
+   "智能醫學工程 (文理兼收) [4]",
+   "中醫康復學 (文理兼收) [5]",
+   "中藥學 (文理兼收) [4]",
+   "康復作業治療 (文理兼收) [4]",
+   "護理學 (文理兼收) [4]"
+  ],
   "search": "山東中醫藥大學 山东中医药大学 山東省 山东省 山東中醫藥教育主力，中醫文獻學研究全國知名。"
  },
  {
@@ -2127,6 +2570,7 @@
   "website": "https://www.upc.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110178&fileName=中国石油大学(华东).pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "中國石油大學(華東) 中国石油大学(华东) 山東省 山东省 211 雙一流 石油石化領域頂尖學府，石油與天然氣工程、化學工程與工藝全國前列，主校區在青島。"
  },
  {
@@ -2156,6 +2600,7 @@
   "website": "https://www.zzu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110315&fileName=郑州大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "鄭州大學 郑州大学 河南省 211 雙一流 河南省唯一211，規模龐大的綜合大學，臨床醫學、材料科學、化學有實力。 河南省唯一211，規模龐大的綜合大學，臨牀醫學、材料科學、化學有實力。"
  },
  {
@@ -2164,7 +2609,7 @@
   "nameS": "武汉大学",
   "region": "湖北省",
   "quota2027": 65,
-  "exam": "材料評價+面試考覈",
+  "exam": "材料評價+面試考核",
   "extra": null,
   "tags": [
    "985",
@@ -2186,6 +2631,7 @@
   "website": "https://www.whu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110183&fileName=武汉大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "武漢大學 武汉大学 湖北省 985 211 雙一流 櫻花名校、中國最美大學之一，測繪科學與技術全國第一，法學、圖書情報、水利、口腔醫學頂尖，歷年吸納大量澳門學生。"
  },
  {
@@ -2216,6 +2662,7 @@
   "website": "https://www.hust.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110186&fileName=华中科技大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "華中科技大學 华中科技大学 湖北省 985 211 雙一流 工科醫科雙強的985，機械工程、光學工程、電氣工程、公共衛生全國頂尖，武漢光谷的核心高校。"
  },
  {
@@ -2245,6 +2692,7 @@
   "website": "https://www.ccnu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110187&fileName=华中师范大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "華中師範大學 华中师范大学 湖北省 211 雙一流 教育部直屬師範名校，教育學、心理學、漢語言文學強勢，教育數字化轉型特色鮮明。"
  },
  {
@@ -2271,6 +2719,7 @@
   "website": "https://www.hubu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110305&fileName=湖北大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "湖北大學 湖北大学 湖北省 湖北省屬綜合重點，材料科學、中國語言文學有基礎，武漢本地認可度好。"
  },
  {
@@ -2300,6 +2749,28 @@
   "website": "https://www.zuel.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110181&fileName=中南财经政法大学.pdf",
   "brief2027": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110181&fileName=中南财经政法大学.pdf",
+  "majors2027": [
+   "經濟學 (不限文理) [4]",
+   "數字經濟 (不限文理) [4]",
+   "金融學類（大類招生，金融學、投資學） (不限文理) [4]",
+   "保險學 (不限文理) [4]",
+   "精算學 (不限文理) [4]",
+   "法學類（大類招生，法學、法學（民商法方向）、法學（涉外法治方向）、法學（政府法治方向）、法學（刑事法方向）、法學（社會治理方向）、國際法、知識產權、國際經貿規則、海外利益安全） (不限文理) [4]",
+   "社會學 (不限文理) [4]",
+   "新聞傳播學類（大類招生，新聞學、網絡與新媒體） (不限文理) [4]",
+   "工商管理類（大類招生，工商管理、工商管理（商務分析方向）、工商管理（AI應用與管理方向）、工商管理（數智農商管理方向）、市場營銷（數智營銷方向）、人力資源管理、旅遊管理、供應鏈管理） (不限文理) [4]",
+   "國際商務 (不限文理) [4]",
+   "金融數學 (不限文理) [4]",
+   "哲學 (不限文理) [4]",
+   "經濟統計學 (不限文理) [4]",
+   "財政學類（大類招生，財政學、稅收學） (不限文理) [4]",
+   "金融工程 (不限文理) [4]",
+   "經濟與貿易類（大類招生，國際經濟與貿易、貿易經濟） (不限文理) [4]",
+   "國際政治 (不限文理) [4]",
+   "外國語言文學類（大類招生，英語、商務英語） (不限文理) [4]",
+   "統計學類（大類招生，統計學、應用統計學） (不限文理) [4]",
+   "會計學（會計學、會計學註冊會計師、財管） (不限文理) [4]"
+  ],
   "search": "中南財經政法大學 中南财经政法大学 湖北省 211 雙一流 財經與政法合一的211名校，會計學、金融學、法學全國前列，法律+財經複合背景受歡迎。"
  },
  {
@@ -2329,6 +2800,7 @@
   "website": "https://www.cug.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110182&fileName=中国地质大学（武汉）.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "中國地質大學（武漢） 中国地质大学（武汉） 湖北省 211 雙一流 地質學全國第一（「雙一流」學科），資源勘查工程、寶石及材料工藝學特色鮮明。"
  },
  {
@@ -2358,6 +2830,7 @@
   "website": "https://www.whut.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110184&fileName=武汉理工大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "武漢理工大學 武汉理工大学 湖北省 211 雙一流 材料、船舶、汽車「三大行業」特色的211工科強校，與湖北製造業深度綁定。"
  },
  {
@@ -2388,6 +2861,52 @@
   "website": "https://www.hnu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110196&fileName=湖南大学.pdf",
   "brief2027": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110196&fileName=湖南大学.pdf",
+  "majors2027": [
+   "哲學 (文科) [4]",
+   "金融學 (文科) [4]",
+   "統計學類 (理科) [4]",
+   "漢語言文學 (文科) [4]",
+   "日語 (文科) [4]",
+   "數學類 (理科) [4]",
+   "應用物理學 (理科) [4]",
+   "化學類 (理科) [4]",
+   "生物技術 (理科) [4]",
+   "智能車輛工程 (理科) [4]",
+   "電子信息材料 (理科) [4]",
+   "電子信息工程 (理科) [4]",
+   "歷史學 (文科) [4]",
+   "經濟學類 (文科) [4]",
+   "精算學 (理科) [4]",
+   "法學 (文科) [4]",
+   "英語 (文科) [4]",
+   "新聞傳播學類 (文科) [4]",
+   "電子科學與技術 (理科) [4]",
+   "量子信息科學 (理科) [4]",
+   "化學工程與工藝 (理科) [4]",
+   "智能製造工程 (理科) [4]",
+   "工程力學（力學實驗班） (理科) [4]",
+   "電氣工程及其自動化 (理科) [4]",
+   "計算機科學與技術 (理科) [4]",
+   "通信工程 (理科) [4]",
+   "建築學 (理科) [5]",
+   "智能建造 (理科) [4]",
+   "建築環境與能源應用工程（低碳建築實驗班） (理科) [4]",
+   "工商管理 (文科) [4]",
+   "會計學（智慧會計） (文科) [4]",
+   "工業設計 (理科) [4]",
+   "計算機科學與技術（人工智能班） (理科) [4]",
+   "網絡空間安全 (理科) [4]",
+   "城鄉規劃 (理科) [4]",
+   "給排水科學與工程 (理科) [4]",
+   "環境科學與工程類 (理科) [4]",
+   "大數據管理與應用 (理科) [4]",
+   "行政管理 (文科) [4]",
+   "人工智能 (理科) [4]",
+   "微電子科學與工程 (理科) [4]",
+   "藥學 (理科) [4]",
+   "自動化 (理科) [4]",
+   "集成電路設計與集成系統 (理科) [4]"
+  ],
   "search": "湖南大學 湖南大学 湖南省 985 211 雙一流 「千年學府」岳麓書院所在，土木工程、化學、設計學、應用經濟學並重，長沙市區校園開放美麗。 「千年學府」嶽麓書院所在，土木工程、化學、設計學、應用經濟學並重，長沙市區校園開放美麗。"
  },
  {
@@ -2418,6 +2937,7 @@
   "website": "https://www.csu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110195&fileName=中南大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "中南大學 中南大学 湖南省 985 211 雙一流 985綜合名校，冶金工程、材料科學、醫學（湘雅醫學院）、軌道交通頂尖。"
  },
  {
@@ -2447,6 +2967,7 @@
   "website": "https://www.hunnu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110198&fileName=湖南师范大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "湖南師範大學 湖南师范大学 湖南省 211 雙一流 湖南師範龍頭211，教育學、中國語言文學、心理學有實力，校園即著名景區。"
  },
  {
@@ -2473,6 +2994,7 @@
   "website": "https://www.hut.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110423&fileName=湖南工业大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "湖南工業大學 湖南工业大学 湖南省 位於株洲的省屬工科院校，包裝工程全國知名（與中國包裝聯合會共建）。"
  },
  {
@@ -2501,6 +3023,7 @@
   "website": "https://www.xtu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110199&fileName=湘潭大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "湘潭大學 湘潭大学 湖南省 雙一流 毛澤東同志倡辦的綜合大學，數學入選「雙一流」，法學（知識產權）、計算數學有傳統。"
  },
  {
@@ -2531,6 +3054,7 @@
   "website": "https://www.sysu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110201&fileName=中山大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "中山大學 中山大学 廣東省 广东省 985 211 雙一流 華南第一綜合名校，臨床醫學（中山醫）、哲學、工商管理、生態學頂尖，廣州珠海深圳多校區，歷來是澳門保送生的最大去向。 華南第一綜合名校，臨牀醫學（中山醫）、哲學、工商管理、生態學頂尖，廣州珠海深圳多校區，歷來是澳門保送生的最大去向。"
  },
  {
@@ -2561,6 +3085,7 @@
   "website": "https://www.scut.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110205&fileName=华南理工大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "華南理工大學 华南理工大学 廣東省 广东省 985 211 雙一流 華南工科最高學府，輕工技術與工程、建築學、材料、食品科學頂尖，粵港澳大灣區就業極具優勢。"
  },
  {
@@ -2590,6 +3115,7 @@
   "website": "https://www.scnu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110204&fileName=华南师范大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "華南師範大學 华南师范大学 廣東省 广东省 211 雙一流 華南師範龍頭211，教育學、心理學、體育學強勢，澳門教育界校友眾多。"
  },
  {
@@ -2616,6 +3142,7 @@
   "website": "https://www.smu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110202&fileName=南方医科大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "南方醫科大學 南方医科大学 廣東省 广东省 前身為解放軍第一軍醫大學，臨床醫學、基礎醫學實力強，附屬南方醫院全國知名。 前身為解放軍第一軍醫大學，臨牀醫學、基礎醫學實力強，附屬南方醫院全國知名。"
  },
  {
@@ -2644,6 +3171,7 @@
   "website": "https://www.gzhmu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110217&fileName=广州医科大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "廣州醫科大學 广州医科大学 廣東省 广东省 雙一流 鍾南山院士長期任職的醫學院校，臨床醫學入選「雙一流」，呼吸疾病研究全國領先。 鍾南山院士長期任職的醫學院校，臨牀醫學入選「雙一流」，呼吸疾病研究全國領先。"
  },
  {
@@ -2670,6 +3198,7 @@
   "website": "https://www.stu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110221&fileName=汕头大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "汕頭大學 汕头大学 廣東省 广东省 李嘉誠基金會長期支持的綜合大學，醫學、理工有小班精英培養傳統，圖書館資源著名。"
  },
  {
@@ -2696,6 +3225,83 @@
   "website": "https://www.gzhu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110208&fileName=广州大学.pdf",
   "brief2027": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110208&fileName=广州大学.pdf",
+  "majors2027": [
+   "經濟學 (文理兼收) [4]",
+   "金融學 (文理兼收) [4]",
+   "法學 (文理兼收) [4]",
+   "社會學 (文理兼收) [4]",
+   "學前教育（不招色盲色弱） (文理兼收) [4]",
+   "特殊教育（不招色盲色弱） (文理兼收) [4]",
+   "漢語言文學（師範） (文理兼收) [4]",
+   "英語 (文理兼收) [4]",
+   "廣播電視學 (文理兼收) [4]",
+   "歷史學（師範） (文理兼收) [4]",
+   "數學與應用數學（師範） (理科) [4]",
+   "物理學 (理科) [4]",
+   "數字經濟 (理科) [4]",
+   "國際經濟與貿易 (文理兼收) [4]",
+   "國際法 (文理兼收) [4]",
+   "思想政治教育 (文理兼收) [4]",
+   "小學教育 (文理兼收) [4]",
+   "漢語言文學 (文理兼收) [4]",
+   "英語（師範） (文理兼收) [4]",
+   "日語 (文理兼收) [4]",
+   "網絡與新媒體 (文理兼收) [4]",
+   "數學與應用數學 (理科) [4]",
+   "信息與計算科學 (理科) [4]",
+   "物理學（師範） (理科) [4]",
+   "化學（師範、不招色盲色弱） (理科) [4]",
+   "化學（不招色盲色弱） (理科) [4]",
+   "天文學（不招色盲） (理科) [4]",
+   "地理科學（師範、不招色盲） (文理兼收) [4]",
+   "地理信息科學（不招色盲） (文理兼收) [4]",
+   "生物科學（不招色盲色弱） (理科) [4]",
+   "應用心理學（師範、不招色盲色弱） (文理兼收) [4]",
+   "機械設計製造及其自動化 (理科) [4]",
+   "材料科學與工程 (理科) [4]",
+   "電子信息工程 (理科) [4]",
+   "光電信息科學與工程 (理科) [4]",
+   "人工智能 (理科) [4]",
+   "計算機科學與技術 (理科) [4]",
+   "網絡工程 (理科) [4]",
+   "物聯網工程 (理科) [4]",
+   "網絡空間安全 (理科) [4]",
+   "建築環境與能源應用工程 (理科) [4]",
+   "智能建造 (理科) [4]",
+   "化學工程與工藝（不招色盲色弱） (理科) [4]",
+   "環境科學 (理科) [4]",
+   "城鄉規劃（不招色盲） (文理兼收) [5]",
+   "地理科學（不招色盲） (文理兼收) [4]",
+   "人文地理與城鄉規劃（不招色盲） (文理兼收) [4]",
+   "生物科學（師範、不招色盲色弱） (理科) [4]",
+   "應用心理學（不招色盲色弱） (文理兼收) [4]",
+   "統計學 (理科) [4]",
+   "智能製造工程 (理科) [4]",
+   "電氣工程及其自動化 (理科) [4]",
+   "通信工程 (理科) [4]",
+   "集成電路設計與集成系統 (理科) [4]",
+   "機器人工程 (理科) [4]",
+   "軟件工程 (理科) [4]",
+   "信息安全 (理科) [4]",
+   "數據科學與大數據技術 (理科) [4]",
+   "土木工程 (理科) [4]",
+   "給排水科學與工程 (理科) [4]",
+   "遙感科學與技術（不招色盲） (理科) [4]",
+   "智慧交通 (理科) [4]",
+   "建築學（不招色盲） (文理兼收) [5]",
+   "生物製藥（不招色盲色弱） (理科) [4]",
+   "工商管理 (文理兼收) [4]",
+   "工程管理 (理科) [4]",
+   "會計學 (文理兼收) [4]",
+   "物流管理 (文理兼收) [4]",
+   "旅遊管理（中外合作辦學）（中外合作辦學，學費19800人民幣/年） (文理兼收) [4]",
+   "低空技術與工程（不招色盲色弱） (理科) [4]",
+   "行政管理 (文理兼收) [4]",
+   "電子商務 (文理兼收) [4]",
+   "廣播電視編導 (文理兼收) [4]",
+   "環境工程（不招色盲色弱） (理科) [4]",
+   "新能源材料與器件（不招色盲色弱） (理科) [4]"
+  ],
   "search": "廣州大學 广州大学 廣東省 广东省 廣州市屬綜合大學，土木工程（工程抗震）、天文學、教育學有實力，灣區就業方便。"
  },
  {
@@ -2722,6 +3328,7 @@
   "website": "https://www.gdufe.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110214&fileName=广东财经大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "廣東財經大學 广东财经大学 廣東省 广东省 華南「財經+法科」特色院校，法學、稅收學、金融學在大灣區認可度高。"
  },
  {
@@ -2748,6 +3355,7 @@
   "website": "https://www.gdufs.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110213&fileName=广东外语外贸大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "廣東外語外貿大學 广东外语外贸大学 廣東省 广东省 華南外語外貿龍頭，英語、國際經濟與貿易、國際關係出色，涉外就業優勢明顯。"
  },
  {
@@ -2776,6 +3384,7 @@
   "website": "https://www.gzucm.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110209&fileName=广州中医药大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "廣州中醫藥大學 广州中医药大学 廣東省 广东省 雙一流 中醫藥頂尖學府，中醫學入選「雙一流」，附屬廣東省中醫院為全國門診量最大的中醫院。"
  },
  {
@@ -2802,6 +3411,7 @@
   "website": "https://www.szu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110218&fileName=深圳大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "深圳大學 深圳大学 廣東省 广东省 「特區大學」，電腦、建築、電子通信實力強，馬化騰等創業家母校，深圳產學資源豐富。"
  },
  {
@@ -2820,6 +3430,7 @@
   "website": "https://www.xhcom.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110203&fileName=星海音乐学院.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "星海音樂學院 星海音乐学院 廣東省 广东省 華南唯一獨立設置的音樂高等學府，聲樂、鋼琴、流行音樂演唱等專業有影響力。"
  },
  {
@@ -2838,6 +3449,30 @@
   "website": "https://www.gzarts.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110210&fileName=广州美术学院.pdf",
   "brief2027": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110210&fileName=广州美术学院.pdf",
+  "majors2027": [
+   "戲劇影視美術設計 (文理兼收) [4]",
+   "影視攝影與製作 (文理兼收) [4]",
+   "繪畫 (文理兼收) [4]",
+   "攝影 (文理兼收) [4]",
+   "實驗藝術 (文理兼收) [4]",
+   "纖維藝術 (文理兼收) [4]",
+   "美術教育 (文理兼收) [4]",
+   "環境設計 (文理兼收) [4]",
+   "服裝與服飾設計 (文理兼收) [4]",
+   "工藝美術 (文理兼收) [4]",
+   "藝術與科技 (文理兼收) [4]",
+   "動畫 (文理兼收) [4]",
+   "美術學（美術史） (文理兼收) [4]",
+   "雕塑 (文理兼收) [5]",
+   "中國畫 (文理兼收) [4]",
+   "文物保護與修復 (文理兼收) [4]",
+   "科技藝術 (文理兼收) [4]",
+   "視覺傳達設計 (文理兼收) [4]",
+   "産品設計 (文理兼收) [4]",
+   "公共藝術 (文理兼收) [4]",
+   "數字媒體藝術 (文理兼收) [4]",
+   "陶瓷藝術設計 (文理兼收) [4]"
+  ],
   "search": "廣州美術學院 广州美术学院 廣東省 广东省 華南美術最高學府，工業設計、視覺傳達設計、建築藝術設計見長；保送須通過專業考試。"
  },
  {
@@ -2864,6 +3499,81 @@
   "website": "https://www.gdut.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110212&fileName=广东工业大学.pdf",
   "brief2027": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110212&fileName=广东工业大学.pdf",
+  "majors2027": [
+   "機械設計製造及其自動化 (理科) [4]",
+   "工業工程 (理科) [4]",
+   "智能製造工程 (理科) [4]",
+   "電氣工程及其自動化 (理科) [4]",
+   "數據科學與大數據技術 (理科) [4]",
+   "能源化學工程 (理科) [4]",
+   "應用化學 (理科) [4]",
+   "電子信息工程 (理科) [4]",
+   "信息工程 (理科) [4]",
+   "建築環境與能源應用工程 (理科) [4]",
+   "工程管理 (理科) [4]",
+   "測繪工程 (理科) [4]",
+   "計算機科學與技術 (理科) [4]",
+   "人工智能 (理科) [4]",
+   "高分子材料與工程 (理科) [4]",
+   "新能源材料與器件 (理科) [4]",
+   "能源與動力工程 (理科) [4]",
+   "儲能科學與工程 (理科) [4]",
+   "環境科學 (理科) [4]",
+   "機械電子工程 (理科) [4]",
+   "智能感知工程 (理科) [4]",
+   "新能源汽車工程 (理科) [4]",
+   "自動化 (理科) [4]",
+   "物聯網工程 (理科) [4]",
+   "化學工程與工藝 (理科) [4]",
+   "食品科學與工程 (理科) [4]",
+   "化學 (理科) [4]",
+   "通信工程 (理科) [4]",
+   "土木工程 (理科) [4]",
+   "給排水科學與工程 (理科) [4]",
+   "智慧交通 (理科) [4]",
+   "智能建造 (理科) [4]",
+   "軟件工程 (理科) [4]",
+   "網絡空間安全 (理科) [4]",
+   "金屬材料工程 (理科) [4]",
+   "材料成型及控制工程 (理科) [4]",
+   "新能源科學與工程 (理科) [4]",
+   "環境工程 (理科) [4]",
+   "安全工程 (理科) [4]",
+   "英語 (文科) [4]",
+   "電子科學與技術 (理科) [4]",
+   "應用物理學 (理科) [4]",
+   "生物工程 (理科) [4]",
+   "生物醫學工程 (理科) [4]",
+   "集成電路設計與集成系統 (理科) [4]",
+   "工商管理 (文理兼收) [4]",
+   "市場營銷 (文理兼收) [4]",
+   "信息管理與信息系統 (理科) [4]",
+   "電子商務 (文理兼收) [4]",
+   "數學與應用數學 (理科) [4]",
+   "應用統計學 (理科) [4]",
+   "社會工作 (文科) [4]",
+   "經濟學 (文理兼收) [4]",
+   "數字經濟 (理科) [4]",
+   "建築學 (理科) [5]",
+   "工業設計 (理科) [4]",
+   "日語 (文科) [4]",
+   "光電信息科學與工程 (理科) [4]",
+   "量子信息科學 (理科) [4]",
+   "製藥工程 (理科) [4]",
+   "環境生態工程 (理科) [4]",
+   "微電子科學與工程 (理科) [4]",
+   "人力資源管理 (文理兼收) [4]",
+   "會計學 (文理兼收) [4]",
+   "大數據管理與應用 (理科) [4]",
+   "土地資源管理 (文理兼收) [4]",
+   "信息與計算科學 (理科) [4]",
+   "法學 (文理兼收) [4]",
+   "國際經濟與貿易 (文理兼收) [4]",
+   "金融工程 (理科) [4]",
+   "城鄉規劃 (理科) [5]",
+   "風景園林 (理科) [4]",
+   "數字媒體技術 (理科) [4]"
+  ],
   "search": "廣東工業大學 广东工业大学 廣東省 广东省 廣東工科強校，控制科學與工程、機械、材料實力扎實，粵港澳製造業就業渠道通暢。"
  },
  {
@@ -2890,6 +3600,31 @@
   "website": "https://www.gdpu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110215&fileName=广东药科大学.pdf",
   "brief2027": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110215&fileName=广东药科大学.pdf",
+  "majors2027": [
+   "經濟學 (文理兼招) [4]",
+   "電子信息工程 (理工) [4]",
+   "生物醫學工程 (理工) [4]",
+   "食品質量與安全 (理工) [4]",
+   "生物製藥 (理工) [4]",
+   "藥學 (理工) [4]",
+   "化妝品科學與技術 (理工) [4]",
+   "康復治療學 (理工) [4]",
+   "護理學 (理工) [4]",
+   "人力資源管理 (文理兼招) [4]",
+   "國際經濟與貿易 (文理兼招) [4]",
+   "計算機科學與技術 (理工) [4]",
+   "食品科學與工程 (理工) [4]",
+   "食品營養與健康 (理工) [4]",
+   "中醫學 (文理兼招) [5]",
+   "藥事管理 (理工) [4]",
+   "中藥學 (理工) [4]",
+   "智能醫學工程 (理工) [4]",
+   "物流管理 (文理兼招) [4]",
+   "海洋藥學 (理工) [4]",
+   "電子商務 (文理兼招) [4]",
+   "應用化學 (理工) [4]",
+   "藥物經濟與管理 (理工) [4]"
+  ],
   "search": "廣東藥科大學 广东药科大学 廣東省 广东省 華南藥學特色院校，藥學、預防醫學有基礎，醫藥健康行業就業對口。"
  },
  {
@@ -2916,6 +3651,7 @@
   "website": "https://www.gdou.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110282&fileName=广东海洋大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "廣東海洋大學 广东海洋大学 廣東省 广东省 位於湛江的海洋特色大學，水產養殖、海洋科學、食品科學為傳統強項。"
  },
  {
@@ -2938,6 +3674,7 @@
   "website": "https://www.hitsz.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110426&fileName=哈尔滨工业大学（深圳）.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "哈爾濱工業大學（深圳） 哈尔滨工业大学（深圳） 廣東省 广东省 985 211 雙一流 哈工大深圳校區，畢業證書與本部一致，電腦、電子在深圳的產業環境下實習就業極為方便。"
  },
  {
@@ -2956,6 +3693,16 @@
   "website": "https://www.hkust-gz.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110428&fileName=香港科技大学（广州）.pdf",
   "brief2027": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110428&fileName=香港科技大学（广州）.pdf",
+  "majors2027": [
+   "金融科技（中外合作辦學）（入學前兩年不分專業，大二結束時再選擇專業） (理工) [4]",
+   "智能製造工程(中外合作辦學)（入學前兩年不分專業，大二結束時再選擇專業） (理工) [4]",
+   "微電子科學與工程（中外合作辦學）（入學前兩年不分專業，大二結束時再選擇專業） (理工) [4]",
+   "機器人工程（中外合作辦學）（入學前兩年不分專業，大二結束時再選擇專業） (理工) [4]",
+   "材料科學與工程（中外合作辦學）（入學前兩年不分專業，大二結束時再選擇專業） (理工) [4]",
+   "人工智能(中外合作辦學)（入學前兩年不分專業，大二結束時再選擇專業） (理工) [4]",
+   "數據科學與大數據技術(中外合作辦學)（入學前兩年不分專業，大二結束時再選擇專業） (理工) [4]",
+   "新能源科學與工程（中外合作辦學）（入學前兩年不分專業，大二結束時再選擇專業） (理工) [4]"
+  ],
   "search": "香港科技大學（廣州） 香港科技大学（广州） 廣東省 广东省 港科大（廣州）位於廣州南沙，採跨學科「樞紐-學域」架構的研究型大學，全英文授課，本科招生規模較小。"
  },
  {
@@ -2982,6 +3729,7 @@
   "website": "https://www.cuhksz.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=960082&fileName=香港中文大学（深圳）.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "香港中文大學（深圳） 香港中文大学（深圳） 廣東省 广东省 香港中文大學與深圳大學合辦的研究型大學，經管、理工、數據科學見長，全英文書院制教學，畢業獲香港中文大學學位。"
  },
  {
@@ -3008,6 +3756,23 @@
   "website": "https://www.uic.edu.hk",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110274&fileName=北师香港浸会大学.pdf",
   "brief2027": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110274&fileName=北师香港浸会大学.pdf",
+  "majors2027": [
+   "經濟學（中外合作辦學）（培養應用經濟學、商業分析方向。原則上在第一學年第二學期開始前完成專業確認。英文教學） (文理兼招) [4]",
+   "社會學（中外合作辦學）（培養全球化與發展、數字社會科學方向。原則上在第一學年第二學期開始前完成專業確認。英文教學） (文理兼招) [4]",
+   "新聞傳播學類（中外合作辦學）（大類招生，含廣告學、傳播學專業。廣告學專業培養公共關係與廣告學方向；傳播學專業培養媒體與傳播學、媒體藝術與設計、影視學、動畫與互動媒體、中華文化與國際傳播、遊戲設計、數字跨文化研究、數字人文跨學科研究方向。原則上在第一學年第二學期開始前完成專業確認。英文教學） (文理兼招) [4]",
+   "應用心理學（中外合作辦學）（英文教學） (文理兼招) [4]",
+   "人工智能（中外合作辦學）（英文教學） (只招理科生) [4]",
+   "環境科學（中外合作辦學）（英文教學） (只招理科生) [4]",
+   "會計學（中外合作辦學）（英文教學） (文理兼招) [4]",
+   "音樂表演（中外合作辦學）（2027年音樂表演專業招收器樂種類：鋼琴、小提琴 、大提琴、大管、單簧管、雙簧管、西洋打擊樂、小號、圓號、長笛、吉他、薩克斯管（薩克斯）、電貝斯（電貝司）、琵琶、二胡、古箏。2027年音樂表演專業招收聲樂種類：美聲、通俗（流行）。英文教學） (文理兼招) [4]",
+   "金融數學（中外合作辦學）（英文教學） (只招理科生) [4]",
+   "英語（中外合作辦學）（英文教學） (文理兼招) [4]",
+   "數學與應用數學（中外合作辦學）（英文教學） (只招理科生) [4]",
+   "統計學（中外合作辦學）（英文教學） (只招理科生) [4]",
+   "計算機類（中外合作辦學）（按大類招生，包含計算機科學與技術、數據科學與大數據技術專業。原則上在第一學年第二學期開始前完成專業確認。） (只招理科生) [4]",
+   "食品科學與工程（中外合作辦學）（英文教學） (只招理科生) [4]",
+   "工商管理類（中外合作辦學）（大類招生，含財務管理、人力資源管理、市場營銷、工商管理、文化產業管理專業。工商管理專業培養創業與創新管理、電子商務與資訊係統管理、數字媒體管理方向；文化產業管理專業培養文化創意與管理方向。原則上在第一學年第二學期開始前完成專業確認。英文教學） (文理兼招) [4]"
+  ],
   "search": "北師香港浸會大學 北师香港浸会大学 廣東省 广东省 原「北京師範大學-香港浸會大學聯合國際學院」（UIC），珠海的博雅型合辦大學，全英文教學，畢業獲香港浸會大學學位。"
  },
  {
@@ -3037,6 +3802,60 @@
   "website": "https://www.hainanu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110242&fileName=海南大学.pdf",
   "brief2027": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110242&fileName=海南大学.pdf",
+  "majors2027": [
+   "國際經濟與貿易（觀瀾湖校區（海口市龍華區羊山大道52號）就讀） (文理兼收) [4]",
+   "國際法（海甸校區就讀） (文理兼收) [4]",
+   "英語（海甸校區就讀） (文史) [4]",
+   "日語（海甸校區就讀） (文史) [4]",
+   "國際新聞與傳播（海甸校區就讀） (文史) [4]",
+   "生物技術（海甸校區就讀） (理工) [4]",
+   "電子信息工程（海甸校區就讀） (理工) [4]",
+   "人工智能（海甸校區就讀） (理工) [4]",
+   "軟件工程（NIIT,公共類和專業基礎類課程是中文授課，專業核心類課程是英文授課，海甸校區就讀） (理工) [4]",
+   "數據科學與大數據技術（海甸校區就讀） (理工) [4]",
+   "環境科學（海甸校區就讀） (理工) [4]",
+   "金融學（觀瀾湖校區（海口市龍華區羊山大道52號）就讀） (文理兼收) [4]",
+   "法學（海甸校區就讀） (文理兼收) [4]",
+   "漢語言文學（海甸校區就讀） (文史) [4]",
+   "俄語（海甸校區就讀） (文史) [4]",
+   "傳播學（海甸校區就讀） (文史) [4]",
+   "生物科學（海甸校區就讀） (理工) [4]",
+   "生態學（海甸校區就讀） (理工) [4]",
+   "通信工程（海甸校區就讀） (理工) [4]",
+   "計算機科學與技術（海甸校區就讀） (理工) [4]",
+   "信息安全（海甸校區就讀） (理工) [4]",
+   "密碼科學與技術（海甸校區就讀） (理工) [4]",
+   "建築學（海甸校區就讀） (理工) [5]",
+   "大數據管理與應用（觀瀾湖校區（海口市龍華區羊山大道52號）就讀） (理工) [4]",
+   "會計學（觀瀾湖校區（海口市龍華區羊山大道52號）就讀） (文理兼收) [4]",
+   "土地資源管理（觀瀾湖校區（海口市龍華區羊山大道52號）就讀） (文理兼招) [4]",
+   "旅遊管理（觀瀾湖校區（海口市龍華區羊山大道52號）就讀） (文理兼收) [4]",
+   "會展經濟與管理（觀瀾湖校區（海口市龍華區羊山大道52號）就讀） (文理兼收) [4]",
+   "化學（海甸校區就讀） (理工) [4]",
+   "海洋科學（海甸校區就讀） (理工) [4]",
+   "高分子材料與工程（海甸校區就讀） (理工) [4]",
+   "藥學（海甸校區就讀） (理工) [4]",
+   "工商管理（觀瀾湖校區（海口市龍華區羊山大道52號）就讀） (文理兼收) [4]",
+   "行政管理（觀瀾湖校區（海口市龍華區羊山大道52號）就讀） (文理兼收) [4]",
+   "物流管理（觀瀾湖校區（海口市龍華區羊山大道52號）就讀） (理工) [4]",
+   "酒店管理（觀瀾湖校區（海口市龍華區羊山大道52號）就讀） (文理兼收) [4]",
+   "戲劇影視文學（海甸校區就讀） (文史) [4]",
+   "化學工程與工藝（海甸校區就讀） (理工) [4]",
+   "材料科學與工程（海甸校區就讀） (理工) [4]",
+   "電子科學與技術（海甸校區就讀） (理工) [4]",
+   "土木工程（海甸校區就讀） (理工) [4]",
+   "生物醫學工程（海甸校區2年+崖州校區2年） (理工) [4]",
+   "海洋漁業科學與技術（海甸校區就讀） (理工) [4]",
+   "生物育種科學（儋州校區1年+崖州校區3年） (理工) [4]",
+   "動物醫學（儋州校區1年+崖州校區4年） (理工) [5]",
+   "智能科學與技術（海甸校區2年+觀瀾湖校區（海口市龍華區羊山大道52號）2年） (理工) [4]",
+   "海洋工程與技術（海甸校區2年+崖州校區2年） (理工) [4]",
+   "水産養殖學（海甸校區就讀） (理工) [4]",
+   "種子科學與工程（儋州校區1年+崖州校區3年） (理工) [4]",
+   "動物科學（儋州校區1年+崖州校區3年） (理工) [4]",
+   "農業資源與環境（儋州校區） (理工) [4]",
+   "鄉村治理（儋州校區） (文理兼收) [4]"
+  ],
   "search": "海南大學 海南大学 海南省 211 雙一流 海南自由貿易港的211龍頭，熱帶農業（作物學）、旅遊管理、法學（自貿港方向）特色鮮明。"
  },
  {
@@ -3067,6 +3886,7 @@
   "website": "https://www.scu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110244&fileName=四川大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "四川大學 四川大学 四川省 985 211 雙一流 西南綜合龍頭985，口腔醫學全國第一，華西醫學、高分子材料、文科底蘊深厚。"
  },
  {
@@ -3096,6 +3916,7 @@
   "website": "https://www.swufe.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110308&fileName=西南财经大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "西南財經大學 西南财经大学 四川省 211 雙一流 金融學頂尖211，金融學、會計學全國前列，被稱為中國金融業的「黃埔軍校」之一。"
  },
  {
@@ -3126,6 +3947,7 @@
   "website": "https://www.uestc.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110250&fileName=电子科技大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "電子科技大學 电子科技大学 四川省 985 211 雙一流 電子資訊頂尖985，電子科學與技術、資訊與通信工程全國前二，互聯網與晶片行業就業極強。"
  },
  {
@@ -3155,6 +3977,7 @@
   "website": "https://www.swjtu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110249&fileName=西南交通大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "西南交通大學 西南交通大学 四川省 211 雙一流 軌道交通第一名校，交通運輸工程全國第一，中國高鐵技術人才的搖籃。"
  },
  {
@@ -3183,6 +4006,7 @@
   "website": "https://www.cdut.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=960251&fileName=成都理工大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "成都理工大學 成都理工大学 四川省 雙一流 地質災害防治與地質資源為「雙一流」學科，核技術、石油工程有實力。"
  },
  {
@@ -3212,6 +4036,7 @@
   "website": "https://www.swu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110085&fileName=西南大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "西南大學 西南大学 重慶市 重庆市 211 雙一流 重慶北碚的211綜合大學（由師範與農業院校合併），教育學、心理學、農學、蠶學特色突出。"
  },
  {
@@ -3238,6 +4063,7 @@
   "website": "https://www.swupl.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110086&fileName=西南政法大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "西南政法大學 西南政法大学 重慶市 重庆市 法學界「五院四系」老牌名校，非211但法學實力全國前列，法律界「西政幫」校友網龐大。"
  },
  {
@@ -3268,6 +4094,7 @@
   "website": "https://www.cqu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110087&fileName=重庆大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "重慶大學 重庆大学 重慶市 重庆市 985 211 雙一流 西南工科985，電氣工程、建築學（建築老八校之一）、機械工程有深厚傳統。"
  },
  {
@@ -3297,6 +4124,7 @@
   "website": "https://www.snnu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110266&fileName=陕西师范大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "陝西師範大學 陕西师范大学 陝西省 陕西省 211 雙一流 教育部直屬師範211，中國語言文學、歷史學、教育學強勢，被譽為「西部紅燭」。"
  },
  {
@@ -3326,6 +4154,7 @@
   "website": "https://www.nwu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110258&fileName=西北大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "西北大學 西北大学 陝西省 陕西省 211 雙一流 陝西省屬綜合211，考古學全國第一，地質學、經濟學有百年傳統。"
  },
  {
@@ -3356,6 +4185,78 @@
   "website": "https://www.xjtu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110262&fileName=西安交通大学.pdf",
   "brief2027": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110262&fileName=西安交通大学.pdf",
+  "majors2027": [
+   "經濟學（招生學院：金禾經濟研究中心；專業方向：數量經濟與金融） (理科) [4]",
+   "經濟統計學 (理科) [4]",
+   "金融學 (理科) [4]",
+   "哲學 (文科) [4]",
+   "經濟學（招生學院：經濟與金融學院） (理科) [4]",
+   "財政學 (理科) [4]",
+   "金融工程 (理科) [4]",
+   "貿易經濟 (理科) [4]",
+   "國際經貿規則 (文科) [4]",
+   "漢語言文學 (文科) [4]",
+   "法語 (文科) [4]",
+   "網絡與新媒體 (文科) [4]",
+   "信息與計算科學 (理科) [4]",
+   "應用化學 (理科) [4]",
+   "統計學 (理科) [4]",
+   "機械工程 (理科) [4]",
+   "車輛工程 (理科) [4]",
+   "測控技術與儀器 (理科) [4]",
+   "材料物理 (理科) [4]",
+   "電氣工程及其自動化 (理科) [4]",
+   "微電子科學與工程 (理科) [4]",
+   "信息工程 (理科) [4]",
+   "計算機科學與技術 (理科) [4]",
+   "國際經濟與貿易 (理科) [4]",
+   "法學 (文科) [4]",
+   "社會學 (文科) [4]",
+   "英語 (文科) [4]",
+   "日語 (文科) [4]",
+   "數學與應用數學 (理科) [4]",
+   "應用物理學 (理科) [4]",
+   "生物技術 (理科) [4]",
+   "工程力學 (理科) [4]",
+   "過程裝備與控制工程 (理科) [4]",
+   "智能製造工程 (理科) [4]",
+   "材料科學與工程 (理科) [4]",
+   "能源與動力工程 (理科) [4]",
+   "電子科學與技術 (理科) [4]",
+   "光電信息科學與工程 (理科) [4]",
+   "自動化 (理科) [4]",
+   "軟件工程 (理科) [4]",
+   "網絡空間安全 (理科) [4]",
+   "製藥工程 (理科) [4]",
+   "飛行器動力工程 (理科) [4]",
+   "物聯網工程 (理科) [4]",
+   "化學工程與工藝 (理科) [4]",
+   "飛行器設計與工程 (理科) [4]",
+   "核工程與核技術 (理科) [4]",
+   "生物醫學工程 (理科) [4]",
+   "基礎醫學 (理科) [5]",
+   "口腔醫學 (理科) [5]",
+   "藥學 (理科) [4]",
+   "法醫學 (理科) [5]",
+   "大數據管理與應用 (理科) [4]",
+   "會計學（ACCA） (理科) [4]",
+   "勞動與社會保障 (文科) [4]",
+   "電子商務 (理科) [4]",
+   "環境設計 (文理兼收) [4]",
+   "數據科學 (理科) [4]",
+   "環境工程 (理科) [4]",
+   "人居環境科學與技術 (理科) [4]",
+   "臨牀醫學 (理科) [5]",
+   "預防醫學 (理科) [5]",
+   "臨牀藥學 (理科) [5]",
+   "護理學 (理科) [4]",
+   "工商管理 (理科) [4]",
+   "行政管理 (文科) [4]",
+   "工業工程 (理科) [4]",
+   "書法學 (文理兼收) [4]",
+   "新能源科學與工程 (理科) [4]",
+   "具身智能 (理科) [4]"
+  ],
   "search": "西安交通大學 西安交通大学 陝西省 陕西省 985 211 雙一流 C9聯盟名校，電氣工程、能源動力、管理科學、機械頂尖，醫學部實力亦強；報考須筆試及面試。"
  },
  {
@@ -3385,6 +4286,7 @@
   "website": "https://www.chd.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110265&fileName=长安大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "長安大學 长安大学 陝西省 陕西省 211 雙一流 公路交通領域第一梯隊的211，道路橋樑與渡河工程、車輛工程、地質工程強勢。"
  },
  {
@@ -3411,6 +4313,7 @@
   "website": "https://www.xpu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110313&fileName=西安工程大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "西安工程大學 西安工程大学 陝西省 陕西省 紡織服裝特色的工科院校（原西北紡織工學院），服裝設計與工程有傳統。"
  },
  {
@@ -3440,6 +4343,31 @@
   "website": "https://www.xidian.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110259&fileName=西安电子科技大学.pdf",
   "brief2027": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110259&fileName=西安电子科技大学.pdf",
+  "majors2027": [
+   "漢語言文學 (文史) [4]",
+   "翻譯 (文史) [4]",
+   "機械設計製造及其自動化 (理工) [4]",
+   "材料科學與工程 (理工) [4]",
+   "電子科學與技術 (理工) [4]",
+   "微電子科學與工程 (理工) [4]",
+   "電子信息科學與技術 (理工) [4]",
+   "自動化 (理工) [4]",
+   "軟件工程 (理工) [4]",
+   "智能科學與技術 (理工) [4]",
+   "智能醫學工程 (理工) [4]",
+   "工商管理類 (文史) [4]",
+   "英語 (文史) [4]",
+   "數學與應用數學 (理工) [4]",
+   "測控技術與儀器 (理工) [4]",
+   "電子信息工程 (理工) [4]",
+   "通信工程 (理工) [4]",
+   "集成電路設計與集成系統 (理工) [4]",
+   "人工智能 (理工) [4]",
+   "計算機科學與技術 (理工) [4]",
+   "信息安全 (理工) [4]",
+   "生物醫學工程 (理工) [4]",
+   "管理科學與工程類 (理工) [4]"
+  ],
   "search": "西安電子科技大學 西安电子科技大学 陝西省 陕西省 211 雙一流 電子資訊與網絡安全頂尖211，雷達技術、密碼學全國第一梯隊，華為中興最大生源院校之一；報考須筆試及面試。"
  },
  {
@@ -3470,6 +4398,7 @@
   "website": "https://www.nwpu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110424&fileName=西北工业大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "西北工業大學 西北工业大学 陝西省 陕西省 985 211 雙一流 「國防七子」之一，航空、航太、航海「三航」頂尖985，材料科學與機械工程強勢。"
  },
  {
@@ -3500,6 +4429,7 @@
   "website": "https://www.lzu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110271&fileName=兰州大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "蘭州大學 兰州大学 甘肅省 甘肃省 985 211 雙一流 西北綜合985，化學、大氣科學、草業科學頂尖，學術口碑好而錄取要求相對親民。"
  },
  {
@@ -3526,6 +4456,7 @@
   "website": "https://www.ynnu.edu.cn",
   "brief2026": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?year=2026&u_id=110256&fileName=云南师范大学.pdf",
   "brief2027": null,
+  "majors2027": [],
   "search": "雲南師範大學 云南师范大学 雲南省 云南省 西南聯大在昆明的傳承院校，師範教育為主，教育學、高原地理有特色，校內設西南聯大博物館。"
  }
 ]

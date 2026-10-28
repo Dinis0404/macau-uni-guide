@@ -1,0 +1,785 @@
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>保送生推薦系統-查詢內地高校招生專業</title>
+
+<link rel="stylesheet" type="text/css" href="https://portal.dsedj.gov.mo/eudc/dsejeudc.css" />
+<link rel="stylesheet" type="text/css" href="/ChinaUEnrollment/css/basic.css">
+<link rel="stylesheet" type="text/css" href="/ChinaUEnrollment/css/jquery-ui.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/ChinaUEnrollment/css/chosen.css">
+<link rel="stylesheet" type="text/css" href="/ChinaUEnrollment/css/bootstrap.min.css">
+
+<link rel="stylesheet" type="text/css" href="/ChinaUEnrollment/css/skin/jedate.css">
+<link rel="stylesheet" type="text/css" href="/ChinaUEnrollment/css/dataTables.bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/ChinaUEnrollment/css/responsive.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="/ChinaUEnrollment/css/Site.css?version=6">
+<link rel="stylesheet" type="text/css" href="/ChinaUEnrollment/css/Enquiry.css">
+<link rel="stylesheet" type="text/css" href="/ChinaUEnrollment/css/Table.css">
+<link rel="stylesheet" type="text/css" href="/ChinaUEnrollment/css/IndexPage.css?time=1793148858002">
+<link rel="stylesheet" type="text/css" href="/ChinaUEnrollment/css/select2.min.css">
+<link rel="stylesheet" type="text/css" href="/ChinaUEnrollment/css/select2-bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/ChinaUEnrollment/css/bootstrap-dialog.css">
+<link rel="stylesheet" type="text/css" href="/ChinaUEnrollment/css/bootstrap-datepicker.css">
+
+
+ <script src="/ChinaUEnrollment/js/modernizr-2.6.2.js" type="text/javascript"></script>
+<script src="/ChinaUEnrollment/js/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="/ChinaUEnrollment/js/bootstrap.min.js" type="text/javascript"></script>
+ <script src="/ChinaUEnrollment/js/jquery-ui.min.js" type="text/javascript"></script>
+<script src="/ChinaUEnrollment/js/jquery.stickytableheaders.js" type="text/javascript"></script>
+
+<script src="/ChinaUEnrollment/js/validate.js" type="text/javascript"></script>
+<script src="/ChinaUEnrollment/js/chosen.jquery.js" type="text/javascript"></script>
+<script src="/ChinaUEnrollment/js/jquery.simplePagination.js" type="text/javascript"></script>
+<script src="/ChinaUEnrollment/js/main.js" type="text/javascript"></script>
+<script src="/ChinaUEnrollment/js/jquery.validate.js" type="text/javascript"></script>
+<script src="/ChinaUEnrollment/js/additional-methods.js" type="text/javascript"></script>
+
+<script src="/ChinaUEnrollment/js/jquery.inputmask.bundle.js" type="text/javascript"></script>
+<script src="/ChinaUEnrollment/js/jquery.dataTables.min.js" type="text/javascript"></script>
+<script src="/ChinaUEnrollment/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
+<script src="/ChinaUEnrollment/js/filterDropDown.min.js" type="text/javascript"></script>
+<script src="/ChinaUEnrollment/js/dataTables.responsive.min.js" type="text/javascript"></script>
+<script src="/ChinaUEnrollment/js/bootstrap-datepicker.js" type="text/javascript"></script>
+<script src="/ChinaUEnrollment/js/jquery.s2t.js?timestamp=1793148858002" type="text/javascript"></script>
+<script src="/ChinaUEnrollment/js/select2.min.js" type="text/javascript"></script>
+<script src="/ChinaUEnrollment/js/bootstrap-dialog.js" type="text/javascript"></script>
+<script src="/ChinaUEnrollment/js/customize.js?version=2" type="text/javascript"></script> 
+
+
+<link href="/ChinaUEnrollment/css/Enquiry.css" rel="stylesheet">
+
+<script type="text/javascript" src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script>
+    $(document).ready(function () {
+		const multiFieldMatcher = function (fields) {
+			return function(params, data) {
+				if ($.trim(params.term) === '') return data;
+				
+				var term = params.term.toLowerCase();
+				
+				// Check specified fields
+				for (var i = 0; i < fields.length; i++) {
+					var value = data[fields[i]];
+					if (value && String(value).toLowerCase().indexOf(term) > -1) {
+						return data;
+					}
+				}
+				
+				// Check data attributes on the DOM element
+				if (data.element) {
+					var attrs = $(data.element).data();
+					for (var key in attrs) {
+						// Skip Select2 internals
+						if (key === 'select2Id' || key === 'select2Tag' || key.indexOf('select2') === 0) {
+							continue;
+						}
+						if (String(attrs[key]).toLowerCase().indexOf(term) > -1) {
+							return data;
+						}
+					}
+				}
+				
+				return null;
+			};
+		}
+		
+		const uniNameMatcher = multiFieldMatcher(['text']);
+		
+		const resetUniPicker = function () {
+			if ($('#UniversityName').hasClass('select2-hidden-accessible') || $('#UniversityName').data('select2')) {
+				$('#UniversityName').select2('destroy');
+			}
+			$('#UniversityName').select2({
+				placeholder: '------請選擇院校------',
+				matcher: uniNameMatcher,
+				allowClear: true
+			});
+		};
+		
+		resetUniPicker();
+		
+        $('#submitform').on('click', function () {
+            $("#loadingDiv").show();
+            $.ajax({
+                url: 'ShowSearchMajor.jsp',
+                type: "POST",
+                data: {
+                    type: $("input[name='SearchField']:checked").val(),
+                    UniversityName: $('#UniversityName').val(),
+                    InputMajor: $('#InputMajor').val(),
+                    EnrollmentSection: $('#EnrollmentSection').val(),
+                    IsEngTeach: $('#SearchEngTeach').is(':checked') ? '1' : ''
+                },
+                dataType: "text",
+                success: function (result) {
+                    /*
+                    $('#formDetail').html(result);
+                    $('#formDetail').show();
+                    */
+                    
+                    // Because this handler fires repeatedly, we cannot call attachShadow()
+                    // on the same element twice. Solution: keep #formDetail as a stable
+                    // wrapper and recreate its inner #formDetailShadow child on every
+                    // successful response, so a fresh shadow root can be attached each time.
+
+                    var hostWrapper = $('#formDetail');
+
+                    // 1. Remove any previous shadow host from the last call, then create
+                    //    and insert a brand-new empty <div id="formDetailShadow">.
+                    //    Recreating the element is what allows attachShadow() to be
+                    //    called again (an element can only host one shadow root ever).
+                    hostWrapper.find('#formDetailShadow').remove();
+                    var host = document.createElement('div');
+                    host.id = 'formDetailShadow';
+                    hostWrapper.append(host);
+
+                    // 2. Attach an open shadow root. 'open' means we can still reach it
+                    //    later via document.getElementById('formDetailShadow').shadowRoot.
+                    var shadow = host.attachShadow({ mode: 'open' });
+
+                    // 3. Parse the returned HTML string into a detached Document so we
+                    //    can cleanly separate <head> resources from <body> content.
+                    var doc = new DOMParser().parseFromString(result, 'text/html');
+
+                    // 4. Clone <style> and <link rel="stylesheet"> nodes from the parsed
+                    //    document's <head> into the shadow root. These now style only the
+                    //    shadow tree — nothing leaks into the host document.
+                    doc.querySelectorAll('head style, head link[rel="stylesheet"]').forEach(function (node) {
+                        shadow.appendChild(node.cloneNode(true));
+                    });
+
+                    // 5. Move the <body> markup into a wrapper div and append it to the
+                    //    shadow root. body.innerHTML preserves all nested markup.
+                    var wrapper = document.createElement('div');
+                    wrapper.innerHTML = doc.body.innerHTML;
+                    shadow.appendChild(wrapper);
+
+                    // 6. Show the wrapper and hide the loading indicator (unchanged).
+                    //    Operate on #formDetail (the host page element), not the shadow
+                    //    contents — jQuery cannot select inside a shadow root.
+                    hostWrapper.show();
+                    
+                    $('#loadingDiv').hide();
+                }
+            });
+        });
+
+        $('#UniversityName').on('change', function () {
+            $("#SearchByUniversity").prop('checked', 'checked');
+        });
+
+        $('#InputMajor').on('change textInput input', function () {
+            $("#SearchByMajor").prop('checked', 'checked');
+        });
+
+         $('#EnrollmentSection').on('change', function () {
+            $('#UniversityName').empty();
+
+            $.ajax({
+                type: 'get',
+                contentType: "application/json;charset=utf-8",
+                url: 'GetSectionUniversityList.jsp',
+                dataType: 'json',
+                data: {
+                    EnrollmentSection: $('#EnrollmentSection').val()
+                },
+                success: function (data) {
+                	$('#UniversityName').empty();
+                    $('#UniversityName').append('<option value=""></option>');
+                    for(i = 0; i < data.length; i++){
+                    	 $('#UniversityName').append("<option value='" + data[i].UName + "'>" +  data[i].NAME_C  + "</option>");
+                	}
+                },
+                error: function (ex) {
+                    alert('Failed to retrieve states.' + ex);
+                },
+                complete: function (xhr, textStatus) {
+                	resetUniPicker();
+                }
+            });
+            return false;
+        }); 
+    });
+</script>
+<style>
+	.select2-container--default {
+		margin-left: 5px;
+	}
+	/* Match the native input's resting look */
+	.select2-container--default .select2-selection--single {
+		height: 34px;
+		padding: 5px 8px;
+		border: 1px solid #BED6F8;
+		border-radius: 3px;
+		background-color: #fff;
+		box-sizing: border-box;
+	}
+
+	/* Vertically center the visible text */
+	.select2-container--default .select2-selection--single .select2-selection__rendered {
+		line-height: 22px;
+		padding-left: 0;
+		padding-right: 20px;
+		color: #333;
+	}
+
+	/* Placeholder-ish grey text (if using placeholder) */
+	.select2-container--default .select2-selection--single .select2-selection__placeholder {
+		color: #999;
+	}
+
+	/* Arrow: match native caret size/position better */
+	.select2-container--default .select2-selection--single .select2-selection__arrow {
+		height: 28px;
+		right: 4px;
+	}
+
+	/* Focus state: light blue border + soft glow */
+	.select2-container--default.select2-container--focus .select2-selection--single,
+	.select2-container--default.select2-container--open .select2-selection--single {
+		border-color: #66afe9;
+		box-shadow: 0 0 0 2px rgba(122, 184, 245, 0.3);
+		outline: 0;
+	}
+	
+	.select2-container--default.select2-container--open .select2-dropdown--below {
+		left: -5px;
+	}
+	
+	.select2-container--default .select2-selection--single .select2-selection__arrow {
+		height: 34px;
+	}
+</style>
+</head>
+<body>
+ 
+ 
+ 
+ 
+ <script type="text/javascript">
+
+	$(document).ready(function(){
+
+
+		var lang = "c";
+
+	   // alert(lang);
+		if((lang === undefined || lang == null || lang.length<=0)){
+
+		}else{
+			if(lang=="s"){
+				$("body").t2s();
+				$("title").t2s();
+			}
+		}
+
+
+
+
+
+	});
+
+
+
+</script>
+<div class="LayoutHeaderBar">
+        <img src="/ChinaUEnrollment/Images/Home.png" class="HomeIcon" onclick="javascript:location.href='/ChinaUEnrollment/index.jsp'" />
+        <span style="position:absolute;line-height:40px">
+            <a href='/ChinaUEnrollment/index.jsp'>首頁</a>
+       			
+             <a href='#'  onclick="if ( !(window.location.href.indexOf('index.jsp') > -1) ) {window.history.go(-1); return false;} " >　返回上頁</a>
+			
+
+            <!--  -->
+             
+
+                        
+
+            <!--  -->
+        </span>
+        <div class="LayoutHeading">
+            <div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div style="float:right;padding-right:20px;">
+        	 
+           <script type="text/javascript">
+           function replaceUrlParam(url, paramName, paramValue){
+        	    var pattern = new RegExp('(\\?|\\&)('+paramName+'=).*?(&|$)');
+        	    var newUrl=url;
+        	    if(url.search(pattern)>=0){
+        	        newUrl = url.replace(pattern,'$1$2' + paramValue + '$3');
+        	    }
+        	    else{
+        	        newUrl = newUrl + (newUrl.indexOf('?')>0 ? '&' : '?') + paramName + '=' + paramValue;
+        	    }
+        	    return newUrl;
+        	}
+           </script>
+        	<a href='javascript:void(0)' onclick='location.href=replaceUrlParam(location.href, "lang", "c")' id="langZH" >繁</a>
+        	|
+        	<a href='javascript:void(0)' onclick='location.href=replaceUrlParam(location.href, "lang", "s")' id="langGB" >简</a>
+        </div>
+
+ <div class="container body-content">
+
+	<div class="row">
+	    <div class="col-md-8">
+	        <div class="form-horizontal">
+	           <span id="ErrorSummary"   class = "text-danger" ></span>
+	            
+	            <h4>查詢內地高校招生專業</h4>
+	            <hr />
+	            <div>
+	                <label for="EnrollmentSection" style="padding-left:116px;">階段</label>
+	                <select name="EnrollmentSection" class="form-control InlineDisplay Input100px" id="EnrollmentSection" data-val-required="必须填写" data-val="true">
+	                    <option value="First">首階段</option>
+	                   
+	                    
+	                </select>
+	            </div>
+	            <br />
+	            <div>
+	                <input type="radio" id="SearchByUniversity" name="SearchField" value="SearchByUniversity" checked="checked">
+	                <label for="SearchByUniversity">按院校</label>
+	                <select name="UniversityName" class="form-control InlineDisplay Input200px" id="UniversityName" data-val-required="必须填写" data-val="true" autocomplete="off">
+	                    <option value=""></option>
+	                    
+	                    		<option value="北京大学" data-name-alt="北京大学">
+	                    		    北京大學</option>
+	                    
+	                    		<option value="中国人民大学" data-name-alt="中国人民大学">
+	                    		    中國人民大學</option>
+	                    
+	                    		<option value="清华大学" data-name-alt="清华大学">
+	                    		    清華大學</option>
+	                    
+	                    		<option value="北京师范大学" data-name-alt="北京师范大学">
+	                    		    北京師範大學</option>
+	                    
+	                    		<option value="北京语言大学" data-name-alt="北京语言大学">
+	                    		    北京語言大學</option>
+	                    
+	                    		<option value="对外经济贸易大学" data-name-alt="对外经济贸易大学">
+	                    		    對外經濟貿易大學</option>
+	                    
+	                    		<option value="中央财经大学" data-name-alt="中央财经大学">
+	                    		    中央財經大學</option>
+	                    
+	                    		<option value="中国政法大学" data-name-alt="中国政法大学">
+	                    		    中國政法大學</option>
+	                    
+	                    		<option value="北京中医药大学" data-name-alt="北京中医药大学">
+	                    		    北京中醫藥大學</option>
+	                    
+	                    		<option value="北京邮电大学" data-name-alt="北京邮电大学">
+	                    		    北京郵電大學</option>
+	                    
+	                    		<option value="北京理工大学" data-name-alt="北京理工大学">
+	                    		    北京理工大學</option>
+	                    
+	                    		<option value="中央音乐学院" data-name-alt="中央音乐学院">
+	                    		    中央音樂學院</option>
+	                    
+	                    		<option value="北京外国语大学" data-name-alt="北京外国语大学">
+	                    		    北京外國語大學</option>
+	                    
+	                    		<option value="北京第二外国语学院" data-name-alt="北京第二外国语学院">
+	                    		    北京第二外國語學院</option>
+	                    
+	                    		<option value="首都师范大学" data-name-alt="首都师范大学">
+	                    		    首都師範大學</option>
+	                    
+	                    		<option value="首都经济贸易大学" data-name-alt="首都经济贸易大学">
+	                    		    首都經濟貿易大學</option>
+	                    
+	                    		<option value="北京电影学院" data-name-alt="北京电影学院">
+	                    		    北京電影學院</option>
+	                    
+	                    		<option value="北京服装学院" data-name-alt="北京服装学院">
+	                    		    北京服裝學院</option>
+	                    
+	                    		<option value="北京舞蹈学院" data-name-alt="北京舞蹈学院">
+	                    		    北京舞蹈學院</option>
+	                    
+	                    		<option value="北京体育大学" data-name-alt="北京体育大学">
+	                    		    北京體育大學</option>
+	                    
+	                    		<option value="北京科技大学" data-name-alt="北京科技大学">
+	                    		    北京科技大學</option>
+	                    
+	                    		<option value="北京交通大学" data-name-alt="北京交通大学">
+	                    		    北京交通大學</option>
+	                    
+	                    		<option value="中国传媒大学" data-name-alt="中国传媒大学">
+	                    		    中國傳媒大學</option>
+	                    
+	                    		<option value="北京航空航天大学" data-name-alt="北京航空航天大学">
+	                    		    北京航空航天大學</option>
+	                    
+	                    		<option value="天津大学" data-name-alt="天津大学">
+	                    		    天津大學</option>
+	                    
+	                    		<option value="南开大学" data-name-alt="南开大学">
+	                    		    南開大學</option>
+	                    
+	                    		<option value="天津师范大学" data-name-alt="天津师范大学">
+	                    		    天津師範大學</option>
+	                    
+	                    		<option value="天津工业大学" data-name-alt="天津工业大学">
+	                    		    天津工業大學</option>
+	                    
+	                    		<option value="中国民航大学" data-name-alt="中国民航大学">
+	                    		    中國民航大學</option>
+	                    
+	                    		<option value="大连理工大学" data-name-alt="大连理工大学">
+	                    		    大連理工大學</option>
+	                    
+	                    		<option value="东北大学" data-name-alt="东北大学">
+	                    		    東北大學</option>
+	                    
+	                    		<option value="辽宁中医药大学" data-name-alt="辽宁中医药大学">
+	                    		    遼寧中醫藥大學</option>
+	                    
+	                    		<option value="东北财经大学" data-name-alt="东北财经大学">
+	                    		    東北財經大學</option>
+	                    
+	                    		<option value="吉林大学" data-name-alt="吉林大学">
+	                    		    吉林大學</option>
+	                    
+	                    		<option value="东北师范大学" data-name-alt="东北师范大学">
+	                    		    東北師範大學</option>
+	                    
+	                    		<option value="长春大学" data-name-alt="长春大学">
+	                    		    長春大學</option>
+	                    
+	                    		<option value="复旦大学" data-name-alt="复旦大学">
+	                    		    復旦大學</option>
+	                    
+	                    		<option value="上海交通大学" data-name-alt="上海交通大学">
+	                    		    上海交通大學</option>
+	                    
+	                    		<option value="同济大学" data-name-alt="同济大学">
+	                    		    同濟大學</option>
+	                    
+	                    		<option value="华东师范大学" data-name-alt="华东师范大学">
+	                    		    華東師範大學</option>
+	                    
+	                    		<option value="上海财经大学" data-name-alt="上海财经大学">
+	                    		    上海財經大學</option>
+	                    
+	                    		<option value="华东理工大学" data-name-alt="华东理工大学">
+	                    		    華東理工大學</option>
+	                    
+	                    		<option value="上海外国语大学" data-name-alt="上海外国语大学">
+	                    		    上海外國語大學</option>
+	                    
+	                    		<option value="上海师范大学" data-name-alt="上海师范大学">
+	                    		    上海師範大學</option>
+	                    
+	                    		<option value="上海体育大学" data-name-alt="上海体育大学">
+	                    		    上海體育大學</option>
+	                    
+	                    		<option value="上海中医药大学" data-name-alt="上海中医药大学">
+	                    		    上海中醫藥大學</option>
+	                    
+	                    		<option value="南京大学" data-name-alt="南京大学">
+	                    		    南京大學</option>
+	                    
+	                    		<option value="东南大学" data-name-alt="东南大学">
+	                    		    東南大學</option>
+	                    
+	                    		<option value="南京师范大学" data-name-alt="南京师范大学">
+	                    		    南京師範大學</option>
+	                    
+	                    		<option value="南京医科大学" data-name-alt="南京医科大学">
+	                    		    南京醫科大學</option>
+	                    
+	                    		<option value="南京中医药大学" data-name-alt="南京中医药大学">
+	                    		    南京中醫藥大學</option>
+	                    
+	                    		<option value="南京航空航天大学" data-name-alt="南京航空航天大学">
+	                    		    南京航空航天大學</option>
+	                    
+	                    		<option value="南京信息工程大学" data-name-alt="南京信息工程大学">
+	                    		    南京信息工程大學</option>
+	                    
+	                    		<option value="西交利物浦大学" data-name-alt="西交利物浦大学">
+	                    		    西交利物浦大學</option>
+	                    
+	                    		<option value="中国药科大学" data-name-alt="中国药科大学">
+	                    		    中國藥科大學</option>
+	                    
+	                    		<option value="浙江大学" data-name-alt="浙江大学">
+	                    		    浙江大學</option>
+	                    
+	                    		<option value="宁波诺丁汉大学" data-name-alt="宁波诺丁汉大学">
+	                    		    寧波諾丁漢大學</option>
+	                    
+	                    		<option value="温州肯恩大学" data-name-alt="温州肯恩大学">
+	                    		    溫州肯恩大學</option>
+	                    
+	                    		<option value="浙江工业大学" data-name-alt="浙江工业大学">
+	                    		    浙江工業大學</option>
+	                    
+	                    		<option value="浙江中医药大学" data-name-alt="浙江中医药大学">
+	                    		    浙江中醫藥大學</option>
+	                    
+	                    		<option value="中国美术学院" data-name-alt="中国美术学院">
+	                    		    中國美術學院</option>
+	                    
+	                    		<option value="宁波大学" data-name-alt="宁波大学">
+	                    		    寧波大學</option>
+	                    
+	                    		<option value="浙江传媒学院" data-name-alt="浙江传媒学院">
+	                    		    浙江傳媒學院</option>
+	                    
+	                    		<option value="浙江理工大学" data-name-alt="浙江理工大学">
+	                    		    浙江理工大學</option>
+	                    
+	                    		<option value="浙江财经大学" data-name-alt="浙江财经大学">
+	                    		    浙江財經大學</option>
+	                    
+	                    		<option value="中国科学技术大学" data-name-alt="中国科学技术大学">
+	                    		    中國科學技術大學</option>
+	                    
+	                    		<option value="厦门大学" data-name-alt="厦门大学">
+	                    		    廈門大學</option>
+	                    
+	                    		<option value="福建师范大学" data-name-alt="福建师范大学">
+	                    		    福建師範大學</option>
+	                    
+	                    		<option value="集美大学" data-name-alt="集美大学">
+	                    		    集美大學</option>
+	                    
+	                    		<option value="福建中医药大学" data-name-alt="福建中医药大学">
+	                    		    福建中醫藥大學</option>
+	                    
+	                    		<option value="福州大学" data-name-alt="福州大学">
+	                    		    福州大學</option>
+	                    
+	                    		<option value="南昌大学" data-name-alt="南昌大学">
+	                    		    南昌大學</option>
+	                    
+	                    		<option value="江西财经大学" data-name-alt="江西财经大学">
+	                    		    江西財經大學</option>
+	                    
+	                    		<option value="山东大学" data-name-alt="山东大学">
+	                    		    山東大學</option>
+	                    
+	                    		<option value="中国海洋大学" data-name-alt="中国海洋大学">
+	                    		    中國海洋大學</option>
+	                    
+	                    		<option value="山东中医药大学" data-name-alt="山东中医药大学">
+	                    		    山東中醫藥大學</option>
+	                    
+	                    		<option value="中国石油大学(华东)" data-name-alt="中国石油大学(华东)">
+	                    		    中國石油大學（華東）</option>
+	                    
+	                    		<option value="郑州大学" data-name-alt="郑州大学">
+	                    		    鄭州大學</option>
+	                    
+	                    		<option value="武汉大学" data-name-alt="武汉大学">
+	                    		    武漢大學</option>
+	                    
+	                    		<option value="华中科技大学" data-name-alt="华中科技大学">
+	                    		    華中科技大學</option>
+	                    
+	                    		<option value="华中师范大学" data-name-alt="华中师范大学">
+	                    		    華中師範大學</option>
+	                    
+	                    		<option value="湖北大学" data-name-alt="湖北大学">
+	                    		    湖北大學</option>
+	                    
+	                    		<option value="中南财经政法大学" data-name-alt="中南财经政法大学">
+	                    		    中南財經政法大學</option>
+	                    
+	                    		<option value="中国地质大学（武汉）" data-name-alt="中国地质大学（武汉）">
+	                    		    中國地質大學（武漢）</option>
+	                    
+	                    		<option value="武汉理工大学" data-name-alt="武汉理工大学">
+	                    		    武漢理工大學</option>
+	                    
+	                    		<option value="湖南大学" data-name-alt="湖南大学">
+	                    		    湖南大學</option>
+	                    
+	                    		<option value="中南大学" data-name-alt="中南大学">
+	                    		    中南大學</option>
+	                    
+	                    		<option value="湖南师范大学" data-name-alt="湖南师范大学">
+	                    		    湖南師範大學</option>
+	                    
+	                    		<option value="湖南工业大学" data-name-alt="湖南工业大学">
+	                    		    湖南工業大學</option>
+	                    
+	                    		<option value="湘潭大学" data-name-alt="湘潭大学">
+	                    		    湘潭大學</option>
+	                    
+	                    		<option value="中山大学" data-name-alt="中山大学">
+	                    		    中山大學</option>
+	                    
+	                    		<option value="华南理工大学" data-name-alt="华南理工大学">
+	                    		    華南理工大學</option>
+	                    
+	                    		<option value="华南师范大学" data-name-alt="华南师范大学">
+	                    		    華南師範大學</option>
+	                    
+	                    		<option value="南方医科大学" data-name-alt="南方医科大学">
+	                    		    南方醫科大學</option>
+	                    
+	                    		<option value="广州医科大学" data-name-alt="广州医科大学">
+	                    		    廣州醫科大學</option>
+	                    
+	                    		<option value="汕头大学" data-name-alt="汕头大学">
+	                    		    汕頭大學</option>
+	                    
+	                    		<option value="广州大学" data-name-alt="广州大学">
+	                    		    廣州大學</option>
+	                    
+	                    		<option value="广东财经大学" data-name-alt="广东财经大学">
+	                    		    廣東財經大學</option>
+	                    
+	                    		<option value="广东外语外贸大学" data-name-alt="广东外语外贸大学">
+	                    		    廣東外語外貿大學</option>
+	                    
+	                    		<option value="广州中医药大学" data-name-alt="广州中医药大学">
+	                    		    廣州中醫藥大學</option>
+	                    
+	                    		<option value="深圳大学" data-name-alt="深圳大学">
+	                    		    深圳大學</option>
+	                    
+	                    		<option value="星海音乐学院" data-name-alt="星海音乐学院">
+	                    		    星海音樂學院</option>
+	                    
+	                    		<option value="广州美术学院" data-name-alt="广州美术学院">
+	                    		    廣州美術學院</option>
+	                    
+	                    		<option value="广东工业大学" data-name-alt="广东工业大学">
+	                    		    廣東工業大學</option>
+	                    
+	                    		<option value="广东药科大学" data-name-alt="广东药科大学">
+	                    		    廣東藥科大學</option>
+	                    
+	                    		<option value="广东海洋大学" data-name-alt="广东海洋大学">
+	                    		    廣東海洋大學</option>
+	                    
+	                    		<option value="哈尔滨工业大学（深圳）" data-name-alt="哈尔滨工业大学（深圳）">
+	                    		    哈爾濱工業大學（深圳）</option>
+	                    
+	                    		<option value="香港科技大学（广州）" data-name-alt="香港科技大学（广州）">
+	                    		    香港科技大學（廣州）</option>
+	                    
+	                    		<option value="香港中文大学（深圳）" data-name-alt="香港中文大学（深圳）">
+	                    		    香港中文大學（深圳）</option>
+	                    
+	                    		<option value="北师香港浸会大学" data-name-alt="北师香港浸会大学">
+	                    		    北師香港浸會大學</option>
+	                    
+	                    		<option value="海南大学" data-name-alt="海南大学">
+	                    		    海南大學</option>
+	                    
+	                    		<option value="四川大学" data-name-alt="四川大学">
+	                    		    四川大學</option>
+	                    
+	                    		<option value="西南财经大学" data-name-alt="西南财经大学">
+	                    		    西南財經大學</option>
+	                    
+	                    		<option value="电子科技大学" data-name-alt="电子科技大学">
+	                    		    電子科技大學</option>
+	                    
+	                    		<option value="西南交通大学" data-name-alt="西南交通大学">
+	                    		    西南交通大學</option>
+	                    
+	                    		<option value="成都理工大学" data-name-alt="成都理工大学">
+	                    		    成都理工大學</option>
+	                    
+	                    		<option value="西南大学" data-name-alt="西南大学">
+	                    		    西南大學</option>
+	                    
+	                    		<option value="西南政法大学" data-name-alt="西南政法大学">
+	                    		    西南政法大學</option>
+	                    
+	                    		<option value="重庆大学" data-name-alt="重庆大学">
+	                    		    重慶大學</option>
+	                    
+	                    		<option value="陕西师范大学" data-name-alt="陕西师范大学">
+	                    		    陝西師範大學</option>
+	                    
+	                    		<option value="西北大学" data-name-alt="西北大学">
+	                    		    西北大學</option>
+	                    
+	                    		<option value="西安交通大学" data-name-alt="西安交通大学">
+	                    		    西安交通大學</option>
+	                    
+	                    		<option value="长安大学" data-name-alt="长安大学">
+	                    		    長安大學</option>
+	                    
+	                    		<option value="西安工程大学" data-name-alt="西安工程大学">
+	                    		    西安工程大學</option>
+	                    
+	                    		<option value="西安电子科技大学" data-name-alt="西安电子科技大学">
+	                    		    西安電子科技大學</option>
+	                    
+	                    		<option value="西北工业大学" data-name-alt="西北工业大学">
+	                    		    西北工業大學</option>
+	                    
+	                    		<option value="兰州大学" data-name-alt="兰州大学">
+	                    		    蘭州大學</option>
+	                    
+	                    		<option value="云南师范大学" data-name-alt="云南师范大学">
+	                    		    雲南師範大學</option>
+	                    
+	                </select>
+	            </div>
+	            <br />
+	            <div>
+	                <input type="radio" id="SearchByMajor" name="SearchField" value="SearchByMajor">
+	                <label for="SearchByMajor">按專業</label>
+	                <input type="text" class="form-control InlineDisplay Input200px" id="InputMajor" name="InputMajor" autocomplete="off" />
+	            </div>
+	            <br />
+	            <div>
+	            	<div style="margin-left: 155px">
+	            		<input type="checkbox" id="SearchEngTeach" name="SearchEngTeach" value="1" autocomplete="off" style="width: auto;">
+	            		<label for="SearchEngTeach" style="margin-left: 5px;">搜尋 "主要以外語教學" 的專業</label>
+	            	</div>
+	            </div>
+	            <br />
+	            <input id="submitform" type="submit" value="查詢" class="SubmitButton Input150px SmallMargin" />
+	        </div>
+	    </div>
+	</div>
+	
+	<div id="loadingDiv" style="display: none;">
+	    <img id="loading" alt="Updating ..." src="/ChinaUEnrollment/Images/loading.gif" />
+	</div>
+	<div id="formDetail" class="LargerListTable" style="display:none; max-width: 100%;">
+	</div>
+</div>
+</body>
+</html>

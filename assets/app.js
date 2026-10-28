@@ -39,15 +39,15 @@ function rankBadgeHTML(u) {
   const suffix = rk.board !== "主榜" && rk.overall ? `（主榜線 ${rk.overall}）` : "";
   return `<span class="rank-badge" title="${esc(rankText(rk, y))}${suffix}">${esc(rankText(rk, y))}${suffix}</span>`;
 }
-function uniCardHTML(u) {
+function uniCardHTML(u, stagger = 0) {
   const hk = u.houkong2025;
   return `
-  <article class="uni-card" data-id="${esc(u.id)}">
+  <article class="uni-card" data-id="${esc(u.id)}" style="--i:${stagger}">
     <div class="uni-card-top">
       <h3 class="uni-name">${esc(u.name)}</h3>
       <span class="uni-region">${esc(u.region)}</span>
     </div>
-    <div class="tag-row">${tagHTML(u.tags)}${u.exam ? `<span class="exam-chip">📋 ${esc(u.exam)}</span>` : `<span class="exam-chip">📋 免筆試面試（以簡章為準）</span>`}</div>
+    <div class="tag-row">${tagHTML(u.tags)}${u.brief2027 ? `<span class="tag tag-brief" title="已公佈 2027 招生簡章，點開可預覽">📄2027簡章</span>` : ""}${u.exam ? `<span class="exam-chip">📋 ${esc(u.exam)}</span>` : `<span class="exam-chip">📋 免筆試面試（以簡章為準）</span>`}</div>
     ${rankBadgeHTML(u)}
     <div class="uni-nums">
       <div class="uni-num"><small>2027 保送名額</small><b>${u.quota2027 ?? "—"}</b></div>
@@ -59,8 +59,9 @@ function uniCardHTML(u) {
 function showModal(u) {
   const hk = u.houkong2025;
   const links = [];
-  if (u.brief2027) links.push(`<a class="btn btn-primary" href="${esc(u.brief2027)}" target="_blank" rel="noopener">📄 2027 招生簡章（PDF）</a>`);
-  if (u.brief2026) links.push(`<a class="btn btn-outline" href="${esc(u.brief2026)}" target="_blank" rel="noopener">📄 2026 簡章（參考）</a>`);
+  if (u.brief2027) links.push(`<span class="btn-group"><a class="btn btn-primary" href="javascript:void(0)" id="pv27">📖 預覽 2027 招生簡章</a><a class="mini-dl" href="${esc(u.brief2027)}" target="_blank" rel="noopener" title="直接下載 2027 簡章">⬇</a></span>`);
+  if (u.brief2026) links.push(`<span class="btn-group"><a class="btn btn-outline" href="javascript:void(0)" id="pv26">📖 預覽 2026 簡章</a><a class="mini-dl" href="${esc(u.brief2026)}" target="_blank" rel="noopener" title="直接下載 2026 簡章">⬇</a></span>`);
+  if (!u.brief2027 && u.majors2027?.length) links.push(`<span class="brief-hint">該校已公佈 2027 專業（見下方），簡章 PDF 尚未上載至 DSEDJ</span>`);
   if (u.website) links.push(`<a class="btn btn-outline" href="${esc(u.website)}" target="_blank" rel="noopener">🔗 大學官網</a>`);
   links.push(`<a class="btn btn-outline" id="add-compare" href="javascript:void(0)">⚖️ ${compareIds().includes(u.id) ? "已在對比 · 前往對比 →" : "加入對比"}</a>`);
   links.push(`<a class="btn btn-outline" href="https://www.shanghairanking.cn/rankings/bcur" target="_blank" rel="noopener">📊 軟科官網</a>`);
@@ -83,6 +84,7 @@ function showModal(u) {
         <div class="fact"><small>2025 濠江中學保送</small><b>${hk != null ? hk + " 人" : "暫無資料"}</b></div>
       </div>
       ${u.extra ? `<div class="extra-box"><b>另定要求：</b>${esc(u.extra)}</div>` : ""}
+      ${u.majors2027?.length ? `<div class="majors-box"><div class="majors-head" id="majors-head">📋 2027 保送專業（${u.majors2027.length} 個）<span id="majors-toggle">展開 ▾</span></div><ul class="majors-list collapsed" id="majors-list">${u.majors2027.map(m => `<li>${esc(m)}</li>`).join("")}</ul></div>` : ""}
       <div class="link-row">${links.join("")}</div>
       <p class="disclaim">名額與考核要求摘自 DSEDJ「2027 年保送高校名單」，可能隨官方更新而變動，報名前務必細閱招生簡章原文。</p>
     </div>
@@ -97,6 +99,17 @@ function showModal(u) {
     if (ids.length >= COMPARE_MAX) { cmpBtn.textContent = "⚠️ 對比最多 4 所，請先移除"; return; }
     setCompareIds([...ids, u.id]);
     cmpBtn.textContent = "✓ 已加入 · 前往對比 →";
+  };
+  const pv27 = document.getElementById("pv27");
+  if (pv27) pv27.onclick = () => showBrief(u, "2027");
+  const pv26 = document.getElementById("pv26");
+  if (pv26) pv26.onclick = () => showBrief(u, "2026");
+  const mHead = document.getElementById("majors-head");
+  if (mHead) mHead.onclick = () => {
+    const list = document.getElementById("majors-list");
+    const tog = document.getElementById("majors-toggle");
+    list.classList.toggle("collapsed");
+    tog.textContent = list.classList.contains("collapsed") ? "展開 ▾" : "收起 ▴";
   };
   const onKey = (e) => { if (e.key === "Escape") { close(); document.removeEventListener("keydown", onKey); } };
   document.addEventListener("keydown", onKey);
@@ -191,7 +204,7 @@ function renderList() {
   if (listState.sort === "name") list.sort((a, b) => a.nameS.localeCompare(b.nameS, "zh-Hans"));
   document.getElementById("f-count").textContent = `共 ${list.length} 所`;
   document.getElementById("uni-grid").innerHTML = list.length
-    ? list.map(uniCardHTML).join("")
+    ? list.map((u, i) => uniCardHTML(u, Math.min(i, 14))).join("")
     : `<div class="empty-tip" style="grid-column:1/-1">找不到符合條件的大學，試試其他關鍵字？</div>`;
   bindCards();
 }
@@ -334,80 +347,115 @@ function renderTable() {
 }
 
 /* ---------- 頁面：大學對比 ---------- */
-const COLORS = ["#0e7a5f", "#d35400", "#7d3c98", "#2e86c1"];
+const COLORS = ["#0e7a5f", "#e07b28", "#8e44ad", "#2471a3"];
 const EXAM_FRIEND = { "面試": 70, "材料審核+面試": 60, "材料評價+面試考核": 60, "口試及面試": 60, "筆試及面試": 40, "專業考試": 30 };
 function radarVals(u) {
   const r = rankNum(u) === 9999 ? null : rankNum(u);
   return {
-    prestige: r ? Math.max(0, Math.round(100 * (1 - (r - 1) / 500))) : 0,
+    prestige: r ? Math.max(4, Math.round(100 * (1 - (r - 1) / 500))) : 0,
     quota: u.quota2027 ? Math.round(100 * u.quota2027 / 130) : 0,
     hk: u.houkong2025 != null ? Math.round(100 * u.houkong2025 / 16) : 0,
     exam: u.exam ? (EXAM_FRIEND[u.exam] ?? 50) : 100,
     naPrestige: !r, naHk: u.houkong2025 == null,
   };
 }
-function drawRadarSVG(unis) {
+function radarSVG(unis) {
   const AXES = ["軟科聲望", "保送名額", "濠江人氣", "考核友好"];
-  const C = [230, 218], R = 150;
+  const C = [230, 224], R = 152;
   const pt = (i, v) => { const a = (-90 + i * 90) * Math.PI / 180; return [C[0] + (v / 100) * R * Math.cos(a), C[1] + (v / 100) * R * Math.sin(a)]; };
-  const ring = (g) => [0, 1, 2, 3].map(i => pt(i, g).map(n => n.toFixed(1)).join(",")).join(" ");
-  const axisLines = [0, 1, 2, 3].map(i => { const [x, y] = pt(i, 100); return `<line x1="${C[0]}" y1="${C[1]}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="var(--border)"/>`; }).join("");
-  const ringLabels = [25, 50, 75, 100].map(g => `<text x="${C[0] + 5}" y="${(C[1] - (g / 100) * R - 4).toFixed(1)}" font-size="10" fill="#9ab0aa">${g}</text>`).join("");
-  const axisLabels = [
-    `<text x="${C[0]}" y="${C[1] - R - 26}" text-anchor="middle" font-size="13" font-weight="600" fill="var(--text)">${AXES[0]}</text>`,
-    `<text x="${C[0] + R + 12}" y="${C[1] + 4}" text-anchor="start" font-size="13" font-weight="600" fill="var(--text)">${AXES[1]}</text>`,
-    `<text x="${C[0]}" y="${C[1] + R + 34}" text-anchor="middle" font-size="13" font-weight="600" fill="var(--text)">${AXES[2]}</text>`,
-    `<text x="${C[0] - R - 12}" y="${C[1] + 4}" text-anchor="end" font-size="13" font-weight="600" fill="var(--text)">${AXES[3]}</text>`,
-  ].join("");
-  const polys = unis.map((u, idx) => {
+  const f = (n) => n.toFixed(1);
+  // 平滑閉合曲線：經過各頂點的貝茲（以相鄰中點為控制）
+  const smooth = (vals) => {
+    const p = vals.map((v, i) => pt(i, v));
+    const mid = (a, b) => [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2];
+    let d = `M ${f(mid(p[3], p[0])[0])} ${f(mid(p[3], p[0])[1])}`;
+    for (let i = 0; i < 4; i++) {
+      const nxt = (i + 1) % 4;
+      d += ` Q ${f(p[i][0])} ${f(p[i][1])} ${f(mid(p[i], p[nxt])[0])} ${f(mid(p[i], p[nxt])[1])}`;
+    }
+    return d + " Z";
+  };
+  const rings = [25, 50, 75, 100].map(g =>
+    `<path d="${smooth([g, g, g, g])}" fill="none" stroke="var(--border)" stroke-width="1"/>` +
+    `<text x="${C[0] + 6}" y="${C[1] - g / 100 * R - 5}" font-size="9.5" fill="#9ab0aa">${g}</text>`).join("");
+  const axes = [0, 1, 2, 3].map(i => { const [x, y] = pt(i, 100); return `<line x1="${C[0]}" y1="${C[1]}" x2="${f(x)}" y2="${f(y)}" stroke="var(--border)"/>`; }).join("");
+  const labels = [
+    [C[0], C[1] - R - 26, "middle", AXES[0]], [C[0] + R + 14, C[1] + 5, "start", AXES[1]],
+    [C[0], C[1] + R + 36, "middle", AXES[2]], [C[0] - R - 14, C[1] + 5, "end", AXES[3]],
+  ].map(([x, y, a, t]) => `<text x="${x}" y="${y}" text-anchor="${a}" font-size="13.5" font-weight="650" fill="var(--text)">${t}</text>`).join("");
+  const defs = unis.map((_, i) => `
+    <linearGradient id="rg${i}" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="${COLORS[i]}" stop-opacity=".32"/>
+      <stop offset="100%" stop-color="${COLORS[i]}" stop-opacity=".07"/>
+    </linearGradient>`).join("");
+  const series = unis.map((u, i) => {
     const v = radarVals(u);
-    const pts = [v.prestige, v.quota, v.hk, v.exam].map((val, i) => pt(i, val).map(n => n.toFixed(1)).join(",")).join(" ");
-    const dots = [v.prestige, v.quota, v.hk, v.exam].map((val, i) => { const [x, y] = pt(i, val); return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="3.5" fill="${COLORS[idx]}"/>`; }).join("");
-    return `<polygon points="${pts}" fill="${COLORS[idx]}" fill-opacity=".16" stroke="${COLORS[idx]}" stroke-width="2.5" stroke-linejoin="round"/>${dots}`;
+    const d = smooth([v.prestige, v.quota, v.hk, v.exam]);
+    const dots = [v.prestige, v.quota, v.hk, v.exam].map((val, j) => { const [x, y] = pt(j, val); return `<circle cx="${f(x)}" cy="${f(y)}" r="4" class="rd-dot" data-s="${i}" fill="${COLORS[i]}"/>`; }).join("");
+    return `<path d="${d}" fill="url(#rg${i})" stroke="${COLORS[i]}" stroke-width="2.5" stroke-linejoin="round" class="rd-series" data-s="${i}" pathLength="1"/>${dots}`;
   }).join("");
-  return `<svg viewBox="0 0 460 470" style="width:100%;max-width:470px;display:block;margin:0 auto" role="img" aria-label="大學雷達對比圖">
-    ${[25, 50, 75, 100].map(g => `<polygon points="${ring(g)}" fill="none" stroke="var(--border)" stroke-width="1"/>`).join("")}
-    ${axisLines}${ringLabels}${polys}${axisLabels}
-  </svg>`;
+  return `<svg viewBox="0 0 460 480" style="width:100%;max-width:480px;display:block;margin:0 auto" role="img" aria-label="大學雷達對比圖">
+    <defs>${defs}</defs>${rings}${axes}${series}${labels}</svg>`;
 }
+const briefParams = (url) => { const qs = new URL(url, location.href).searchParams; return { year: qs.get("year") || "", u_id: qs.get("u_id"), fileName: qs.get("fileName") || "" }; };
+const briefProxyUrl = (u, y) => {
+  const src = y === "2027" ? u.brief2027 : u.brief2026;
+  const p = briefParams(src); const sp = new URLSearchParams();
+  if (p.year) sp.set("year", p.year); sp.set("u_id", p.u_id); if (p.fileName) sp.set("fileName", p.fileName);
+  return "/api/brief?" + sp.toString();
+};
 function pageCompare() {
   const unis = compareIds().map(id => state.unis.find(u => u.id === id)).filter(Boolean);
-  const slots = [0, 1, 2, 3].map(i => unis[i] ? unis[i].id : "");
   const sorted = [...state.unis].sort(byRank);
   $app.innerHTML = `
-  <h1 style="margin-top:6px">大學對比 <small style="color:var(--muted);font-size:.85rem">最多 4 所 · 雷達圖並排比較</small></h1>
-  <div class="filter-bar" style="position:static">
-    ${slots.map((id, i) => `<select data-slot="${i}" style="min-width:180px">
-      <option value="">選擇第 ${i + 1} 所…</option>
-      ${sorted.map(u => `<option value="${esc(u.id)}" ${id === u.id ? "selected" : ""}>${esc(u.name)}（${esc(u.region)}）</option>`).join("")}
-    </select>`).join("")}
+  <h1 style="margin-top:6px">大學對比 <small style="color:var(--muted);font-size:.85rem">最多 4 所 · 搜尋加入 · 雷達圖並排比較</small></h1>
+  <div class="filter-bar" style="position:static;align-items:flex-start">
+    <div class="ac-wrap">
+      <input type="search" id="cmp-search" placeholder="🔍 搜尋大學加入對比（繁簡均可）…" autocomplete="off">
+      <div class="ac-menu" id="ac-menu" hidden></div>
+    </div>
     <button class="btn btn-outline" id="cmp-clear" style="padding:8px 14px">清空</button>
   </div>
+  <div class="chip-row" id="chip-row"></div>
   <div id="cmp-body"></div>`;
-  document.querySelectorAll("select[data-slot]").forEach(sel =>
-    sel.addEventListener("change", () => {
-      const ids = compareIds();
-      const cur = ids[Number(sel.dataset.slot)];
-      if (cur) setCompareIds(ids.map(x => x === cur ? sel.value : x).filter(Boolean));
-      else if (sel.value) setCompareIds([...ids, sel.value]);
-      pageCompare();
+  const input = document.getElementById("cmp-search");
+  const menu = document.getElementById("ac-menu");
+  const renderMenu = () => {
+    const q = input.value.trim().toLowerCase();
+    if (!q) { menu.hidden = true; return; }
+    const hits = sorted.filter(u => u.search.toLowerCase().includes(q) && !compareIds().includes(u.id)).slice(0, 8);
+    menu.innerHTML = hits.length ? hits.map(u => `
+      <div class="ac-item" data-id="${esc(u.id)}"><b>${esc(u.name)}</b>
+        <span style="color:var(--muted);font-size:.82rem">${esc(u.region)} · ${u.rank2026 ? `軟科 ${u.rank2026.rank}` : "未設榜"} · 名額 ${u.quota2027 ?? "—"}</span></div>`).join("")
+      : `<div class="ac-item" style="color:var(--muted)">找不到，試其他關鍵字？</div>`;
+    menu.hidden = false;
+    menu.querySelectorAll(".ac-item[data-id]").forEach(el => el.addEventListener("mousedown", () => {
+      addCompare(el.dataset.id); input.value = ""; menu.hidden = true; pageCompare();
     }));
+  };
+  input.addEventListener("input", renderMenu);
+  input.addEventListener("blur", () => setTimeout(() => { menu.hidden = true; }, 150));
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") { const first = menu.querySelector(".ac-item[data-id]"); if (first) { addCompare(first.dataset.id); input.value = ""; menu.hidden = true; pageCompare(); } }
+  });
   document.getElementById("cmp-clear").onclick = () => { setCompareIds([]); pageCompare(); };
+  renderChips();
   const body = document.getElementById("cmp-body");
   if (unis.length < 2) {
-    body.innerHTML = `<div class="empty-tip">至少選擇 2 所大學開始對比。<br>也可以在「高校列表」點開任何大學，按「⚖️ 加入對比」。<br><a class="btn btn-primary" style="margin-top:14px" href="#/list">去高校列表 →</a></div>`;
+    body.innerHTML = `<div class="empty-tip">在上方搜尋並加入至少 2 所大學開始對比（上限 4 所）。<br>也可以在「高校列表」點開任何大學，按「⚖️ 加入對比」。</div>`;
     return;
   }
   body.innerHTML = `
   <div class="compare-grid">
-    <div class="prose" style="padding:18px">${drawRadarSVG(unis)}
-      <p style="font-size:.76rem;color:var(--muted);margin:10px 0 0">各軸 0–100 標準化：聲望＝主榜名次（第1名＝100，第500名≈0）；名額以 130 為滿；濠江人氣以 16 人為滿；考核友好＝免試 100／面試 70／材料審核+面試 60／筆試及面試 40／專業考試 30。未設榜或暫無資料以 0 繪製，僅供粗略比較。</p>
+    <div class="prose radar-card" style="padding:18px">${radarSVG(unis)}
+      <p style="font-size:.76rem;color:var(--muted);margin:10px 0 0">各軸 0–100 標準化：聲望＝主榜名次（第1名＝100，第500名≈4）；名額以 130 為滿；濠江人氣以 16 人為滿；考核友好＝免試 100／面試 70／材料審核+面試 60／筆試及面試 40／專業考試 30。未設榜或暫無資料以極小值繪製，僅供粗略比較——請以下方數據為準。</p>
     </div>
-    <div class="legend-col">${unis.map((u, i) => `
-      <div class="legend-chip"><span class="dot" style="background:${COLORS[i]}"></span>
-        <b>${esc(u.name)}</b><span style="color:var(--muted);font-size:.82rem">${esc(u.region)}</span>
+    <div class="legend-col">
+      ${unis.map((u, i) => `
+      <div class="legend-chip" data-s="${i}"><span class="dot" style="background:${COLORS[i]}"></span>
+        <div><b>${esc(u.name)}</b><div style="color:var(--muted);font-size:.8rem">${esc(u.region)} · 軟科 ${u.rank2026 ? u.rank2026.rank : "未設榜"}</div></div>
         <button data-rm="${esc(u.id)}" title="移除">✕</button></div>`).join("")}
-      <div class="notice" style="margin-top:10px">雷達圖只是概覽——選校前請看下方逐項數據與招生簡章。</div>
+      <div class="notice" style="margin-top:6px">滑過左側色卡可高亮對應多邊形。雷達圖只是概覽，選校前請看下方逐項數據與招生簡章。</div>
     </div>
   </div>
   <div class="table-wrap"><table class="data cmp-table"><thead><tr><th>項目</th>${unis.map(u => `<th>${esc(u.name)}</th>`).join("")}</tr></thead>
@@ -418,16 +466,84 @@ function pageCompare() {
     <tr><td>考核方式</td>${unis.map(u => `<td>${u.exam ? esc(u.exam) : "見招生簡章"}</td>`).join("")}</tr>
     <tr><td>另定要求</td>${unis.map(u => `<td style="font-size:.84rem">${u.extra ? esc(u.extra) : "—"}</td>`).join("")}</tr>
     <tr><td>2025 濠江中學保送</td>${unis.map(u => `<td>${u.houkong2025 != null ? `<b style="color:var(--primary)">${u.houkong2025}</b> 人` : "暫無資料"}</td>`).join("")}</tr>
+    <tr><td>2027 保送專業</td>${unis.map(u => `<td>${u.majors2027?.length ? `<b>${u.majors2027.length}</b> 個` : "暫未公佈"}</td>`).join("")}</tr>
     <tr><td>地區</td>${unis.map(u => `<td>${esc(u.region)}</td>`).join("")}</tr>
     <tr><td>標籤</td>${unis.map(u => `<td>${tagHTML(u.tags) || "—"}</td>`).join("")}</tr>
-    <tr><td>簡章</td>${unis.map(u => `<td>${[u.brief2027 && `<a href="${esc(u.brief2027)}" target="_blank" rel="noopener">2027</a>`, u.brief2026 && `<a href="${esc(u.brief2026)}" target="_blank" rel="noopener">2026</a>`].filter(Boolean).join(" · ") || "—"}</td>`).join("")}</tr>
+    <tr><td>招生簡章</td>${unis.map(u => `<td>${[u.brief2027 && `<a href="javascript:void(0)" class="cmp-brief" data-id="${esc(u.id)}" data-y="2027">預覽 2027</a>`, u.brief2026 && `<a href="javascript:void(0)" class="cmp-brief" data-id="${esc(u.id)}" data-y="2026">2026</a>`].filter(Boolean).join(" · ") || "—"}</td>`).join("")}</tr>
     <tr><td>官網</td>${unis.map(u => `<td>${u.website ? `<a href="${esc(u.website)}" target="_blank" rel="noopener">連結</a>` : "—"}</td>`).join("")}</tr>
     <tr><td>簡介</td>${unis.map(u => `<td style="font-size:.84rem">${esc(u.intro || "—")}</td>`).join("")}</tr>
   </tbody></table></div>`;
   body.querySelectorAll("[data-rm]").forEach(btn => btn.onclick = () => {
     setCompareIds(compareIds().filter(x => x !== btn.dataset.rm)); pageCompare();
   });
+  body.querySelectorAll(".cmp-brief").forEach(a => a.onclick = () => {
+    const u = state.unis.find(x => x.id === a.dataset.id); if (u) showBrief(u, a.dataset.y);
+  });
+  bindLegendHover();
 }
+function addCompare(id) {
+  const ids = compareIds();
+  if (ids.includes(id) || ids.length >= COMPARE_MAX) return;
+  setCompareIds([...ids, id]);
+}
+function renderChips() {
+  const row = document.getElementById("chip-row");
+  const unis = compareIds().map(id => state.unis.find(u => u.id === id)).filter(Boolean);
+  row.innerHTML = unis.length ? unis.map((u, i) => `
+    <span class="cmp-chip"><span class="dot" style="background:${COLORS[i]}"></span>${esc(u.name)}
+      <button data-rm="${esc(u.id)}">✕</button></span>`).join("") : `<span style="color:var(--muted);font-size:.88rem">尚未選擇大學</span>`;
+  row.querySelectorAll("[data-rm]").forEach(b => b.onclick = () => { setCompareIds(compareIds().filter(x => x !== b.dataset.rm)); pageCompare(); });
+}
+function bindLegendHover() {
+  document.querySelectorAll(".legend-chip").forEach(chip => {
+    chip.addEventListener("mouseenter", () => {
+      document.querySelectorAll(".rd-series").forEach(s => s.style.opacity = s.dataset.s === chip.dataset.s ? "1" : ".18");
+      document.querySelectorAll(".rd-dot").forEach(d => d.style.opacity = d.dataset.s === chip.dataset.s ? "1" : ".18");
+    });
+    chip.addEventListener("mouseleave", () => {
+      document.querySelectorAll(".rd-series,.rd-dot").forEach(s => s.style.opacity = "1");
+    });
+  });
+}
+/* ---------- 簡章預覽（站內 iframe + 雙欄對比） ---------- */
+function showBrief(u, year, dualWith = null) {
+  const src = year === "2027" ? u.brief2027 : u.brief2026;
+  if (!src) return;
+  const otherYear = year === "2027" ? "2026" : "2027";
+  const withBrief = state.unis.filter(x => (year === "2027" ? x.brief2027 : x.brief2026) && x.id !== u.id).sort(byRank);
+  $modalRoot.innerHTML = `
+  <div class="modal-backdrop brief-backdrop" id="brief-backdrop">
+    <div class="brief-panel">
+      <div class="brief-bar">
+        <b>📖 ${esc(u.name)} · ${year} 招生簡章</b>
+        ${u["brief" + otherYear] ? `<button class="chip-btn" id="brief-year">切換到 ${otherYear} 版</button>` : ""}
+        <button class="chip-btn" id="brief-dual">${dualWith ? "退出對比" : "📚 雙欄對比"}</button>
+        <a class="chip-btn" href="${esc(src)}" target="_blank" rel="noopener">⬇ 直接下載</a>
+        <button class="chip-btn close" id="brief-close">✕</button>
+      </div>
+      <div class="brief-body ${dualWith ? "dual" : ""}" id="brief-body">
+        <iframe src="${esc(briefProxyUrl(u, year))}" title="${esc(u.name)} ${year} 簡章"></iframe>
+        ${dualWith ? `<div class="brief-second"><div class="brief-bar sub">
+            <select id="brief-pick">${withBrief.map(x => `<option value="${esc(x.id)}" ${x.id === dualWith.id ? "selected" : ""}>${esc(x.name)}</option>`).join("")}</select>
+            <button class="chip-btn" id="brief-second-close">✕</button></div>
+          <iframe src="${esc(briefProxyUrl(dualWith, year))}" title="對比簡章"></iframe></div>` : ""}
+      </div>
+    </div>
+  </div>`;
+  const close = () => { $modalRoot.innerHTML = ""; };
+  document.getElementById("brief-close").onclick = close;
+  document.getElementById("brief-backdrop").onclick = (e) => { if (e.target.id === "brief-backdrop") close(); };
+  const yBtn = document.getElementById("brief-year");
+  if (yBtn) yBtn.onclick = () => showBrief(u, otherYear, dualWith && dualWith["brief" + otherYear] ? dualWith : null);
+  document.getElementById("brief-dual").onclick = () => showBrief(u, year, dualWith ? null : withBrief[0] || null);
+  const sc = document.getElementById("brief-second-close");
+  if (sc) sc.onclick = () => showBrief(u, year, null);
+  const pick = document.getElementById("brief-pick");
+  if (pick) pick.onchange = () => showBrief(u, year, state.unis.find(x => x.id === pick.value));
+  const onKey = (e) => { if (e.key === "Escape") { close(); document.removeEventListener("keydown", onKey); } };
+  document.addEventListener("keydown", onKey);
+}
+
 
 /* ---------- 頁面：保送流程 ---------- */
 function pageFaq() {
@@ -483,6 +599,9 @@ function router() {
   document.querySelectorAll("#nav a").forEach(a =>
     a.classList.toggle("active", a.dataset.route === "/" + route || (a.dataset.route === "/" && route === "")));
   $modalRoot.innerHTML = "";
+  $app.classList.remove("page-anim");
+  void $app.offsetWidth;
+  $app.classList.add("page-anim");
   if (hash.startsWith("#/uni/")) { (state.lastListRoute === "#/table" ? pageTable() : pageList()); const u = state.unis.find(x => x.id === hash.slice(6)); if (u) showModal(u); return; }
   if (hash.startsWith("#/list")) { state.lastListRoute = hash; return pageList(); }
   if (hash.startsWith("#/table")) { state.lastListRoute = hash; return pageTable(); }

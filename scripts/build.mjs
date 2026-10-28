@@ -6,13 +6,14 @@ import OpenCC from 'opencc-js';
 const read = (p, fallback = null) =>
   fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, 'utf-8')) : fallback;
 const cc = OpenCC.Converter({ from: 'cn', to: 't' });
-const t = (s) => (s ? cc(s) : s);
+const t = (s) => (s ? cc(s).replace(/覈/g, '核').replace(/羣/g, '群') : s);
 
 const dsedj = read('data/raw/dsedj-2027.json');
 if (!dsedj) { console.error('缺 data/raw/dsedj-2027.json，先跑 node scripts/fetch-dsedj.mjs'); process.exit(1); }
 const intros = read('data/intros.json', {});
 const aliases = read('data/aliases.json', {}); // DSEDJ名 -> 軟科名
 const houkong = read('data/houkong-2025.json', {});
+const majors = read('data/raw/majors-2027.json', {});
 
 // ---- 載入軟科各榜 ----
 const YEARS = [2025, 2026];
@@ -70,6 +71,7 @@ const unis = dsedj.map(u => {
     website: meta?.website || null,
     brief2026: u.brief2026?.url || null,
     brief2027: u.brief2027?.url || null,
+    majors2027: (majors[u.nameS] || []).map(t),
     search: [...new Set(searchParts.filter(Boolean))].join(' '),
   };
 });
@@ -95,6 +97,8 @@ const meta = {
     withIntro: unis.filter(u => u.intro).length,
     withRank2026: unis.filter(u => u.rank2026).length,
     withHoukong: unis.filter(u => u.houkong2025 != null).length,
+    withBrief2027: unis.filter(u => u.brief2027).length,
+    withMajors: unis.filter(u => u.majors2027?.length).length,
   },
   sources: {
     dsedj: 'https://appl2.dsedj.gov.mo/ChinaUEnrollment/index.jsp',
