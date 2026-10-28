@@ -7,7 +7,10 @@
       "nameS": "暨南大学",
       "region": "廣東省",
       "scheme": "兩校聯招",
-      "tags": ["211", "雙一流"],
+      "tags": [
+        "211",
+        "雙一流"
+      ],
       "exam": "兩校聯招（3＋X）或免試錄取",
       "extra": "不參加 DSEDJ 保送計劃。經「兩校聯招」報考：每年 3 月報名、5 月底考試（澳門設考點），另有免試錄取渠道；詳見「聯招·聯考」頁。",
       "website": "https://www.jnu.edu.cn",
@@ -79,6 +82,19 @@
       "intro": "澳門規模最大的私立綜合大學（氹仔），發展迅速；中醫藥、傳媒、法學、醫學、太空與月球科學（國家重點實驗室）等課程多元，本地與內地學生混合就讀。",
       "admissionsUrl": "https://www.must.edu.mo",
       "admissionsLabel": "澳門科技大學"
+    },
+    {
+      "id": "extra-kwnc",
+      "nameS": "镜湖护理学院",
+      "region": "澳門",
+      "scheme": "本地院校",
+      "tags": [],
+      "exam": "自行報名及面試",
+      "extra": "澳門本地護理高等教育院校，不適用 DSEDJ 內地保送，直接向學院申請入讀。",
+      "website": "https://www.kwnc.edu.mo",
+      "intro": "澳門鏡湖護理學院，隸屬鏡湖醫院慈善會的私立護理高等教育院校，開辦護理學學士等課程，與鏡湖醫院深度合作，是澳門本地護理人才培養的重鎮。",
+      "admissionsUrl": "https://www.kwnc.edu.mo",
+      "admissionsLabel": "鏡湖護理學院"
     }
   ]
 }

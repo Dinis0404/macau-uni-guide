@@ -1,6 +1,46 @@
 [
  {
   "date": "2026-10-28",
+  "at": "2026-10-28T06:51:38.503Z",
+  "counts": {
+   "universities": 135,
+   "universitiesBS": 128,
+   "quotaTotal": 1481,
+   "withIntro": 135,
+   "withRank2026": 121,
+   "withHoukong": 77,
+   "withBrief2027": 28,
+   "withMajors": 32
+  },
+  "changes": [
+   "🎓 暨南大學：濠江 2025 保送人數更新為 21 人",
+   "🎓 華僑大學：濠江 2025 保送人數更新為 9 人",
+   "🎓 澳門大學：濠江 2025 保送人數更新為 36 人",
+   "🎓 澳門理工大學：濠江 2025 保送人數更新為 9 人",
+   "🎓 澳門旅遊大學：濠江 2025 保送人數更新為 14 人",
+   "🎓 澳門科技大學：濠江 2025 保送人數更新為 4 人",
+   "🎓 鏡湖護理學院：濠江 2025 保送人數更新為 5 人"
+  ]
+ },
+ {
+  "date": "2026-10-28",
+  "at": "2026-10-28T06:51:16.265Z",
+  "counts": {
+   "universities": 135,
+   "universitiesBS": 128,
+   "quotaTotal": 1481,
+   "withIntro": 135,
+   "withRank2026": 121,
+   "withHoukong": 70,
+   "withBrief2027": 28,
+   "withMajors": 32
+  },
+  "changes": [
+   "🆕 新增收錄：鏡湖護理學院"
+  ]
+ },
+ {
+  "date": "2026-10-28",
   "at": "2026-10-28T03:42:34.265Z",
   "counts": {
    "universities": 134,

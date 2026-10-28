@@ -51,7 +51,8 @@ const unis = dsedj.map(u => {
     const hit = nameIndex[y][aliases[u.nameS] || u.nameS] || null;
     rk[y] = hit ? { board: hit.board, rank: hit.rank, overall: hit.overall } : null;
   }
-  const hk = (houkong.perUniversity || {})[u.nameS] ?? (houkong.perUniversity || {})[t(u.nameS)] ?? null;
+  const hkAll = { ...houkong.perUniversity, ...houkong.perUniversityTwo, ...houkong.perUniversityLocal };
+  const hk = hkAll[u.nameS] ?? hkAll[t(u.nameS)] ?? null;
   const nameT = t(u.nameS);
   const searchParts = [nameT, u.nameS, t(u.region), u.region, (meta?.tags || []).join(' '), meta?.intro || '', t(meta?.intro || '')];
   for (const y of YEARS) if (rk[y]) searchParts.push(rk[y].nameEn || '');
@@ -110,6 +111,8 @@ const extras = (read('data/extra-unis.json', { unis: [] }).unis || []).map(x => 
     search: [...new Set(searchParts.filter(Boolean))].join(' '),
   };
 });
+const hkAll = { ...houkong.perUniversity, ...houkong.perUniversityTwo, ...houkong.perUniversityLocal };
+for (const e of extras) e.houkong2025 = hkAll[e.nameS] ?? hkAll[e.name] ?? null;
 unis.push(...extras);
 
 const meta = {
