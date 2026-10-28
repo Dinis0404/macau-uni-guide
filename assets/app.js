@@ -34,7 +34,10 @@ function tagHTML(tags) {
 }
 function rankBadgeHTML(u) {
   const rk = u.rank2026 || u.rank2025;
-  if (!rk) return `<span class="rank-badge na" title="軟科中國大學排名未涵蓋該校（如藝術類、澳門高校）">${u.scheme !== "保送" ? esc(u.scheme) + "院校" : "軟科未設榜"}</span>`;
+  if (!rk) {
+    if (u.rankWorld2025) return `<span class="rank-badge" title="軟科世界大學學術排名 2025（全球研究型大學）">🌍 世界 ${u.rankWorld2025}</span>`;
+    return `<span class="rank-badge na" title="軟科中國大學排名未涵蓋該校（如藝術類、澳門高校）">${u.scheme !== "保送" ? esc(u.scheme) + "院校" : "軟科未設榜"}</span>`;
+  }
   const y = u.rank2026 ? 2026 : 2025;
   const suffix = rk.board !== "主榜" && rk.overall ? `（主榜線 ${rk.overall}）` : "";
   return `<span class="rank-badge" title="${esc(rankText(rk, y))}${suffix}">${esc(rankText(rk, y))}${suffix}</span>`;
@@ -84,8 +87,7 @@ function showModal(u) {
       <div class="fact-grid">
         <div class="fact"><small>${u.scheme !== "保送" ? "入讀途徑" : "2027 保送名額"}</small><b>${u.scheme !== "保送" ? u.scheme : u.quota2027 + " 人"}</b></div>
         <div class="fact"><small>考核方式</small><b>${u.exam ? esc(u.exam) : "見招生簡章"}</b></div>
-        <div class="fact"><small>軟科 2026</small><b>${esc(rkFmt(rk26))}</b></div>
-        <div class="fact"><small>軟科 2025</small><b>${esc(rkFmt(rk25))}</b></div>
+        ${u.rankWorld2025 ? `<div class="fact"><small>軟科世界學術 2025（全球）</small><b>${esc(u.rankWorld2025)}</b></div>` : `<div class="fact"><small>軟科 2026</small><b>${esc(rkFmt(rk26))}</b></div><div class="fact"><small>軟科 2025</small><b>${esc(rkFmt(rk25))}</b></div>`}
         <div class="fact"><small>2025 濠江中學保送</small><b>${hk != null ? hk + " 人" : "暫無資料"}</b></div>
       </div>
       ${u.extra ? `<div class="extra-box"><b>另定要求：</b>${esc(u.extra)}</div>` : ""}
@@ -329,7 +331,7 @@ function renderTable() {
   });
   const rkTxt = (u) => {
     const rk = u.rank2026 || u.rank2025;
-    if (!rk) return `<span style="color:var(--muted)">未設榜</span>`;
+    if (!rk) return u.rankWorld2025 ? `<span title="軟科世界大學學術排名 2025">🌍 世界 ${u.rankWorld2025}</span>` : `<span style="color:var(--muted)">未設榜</span>`;
     return rk.board === "主榜" ? `<b>${rk.rank}</b>` : `${rk.overall ?? "—"}<span style="color:var(--muted);font-size:.78rem">（${esc(rk.board)}${rk.rank}）</span>`;
   };
   document.getElementById("t-body").innerHTML = list.map(u => `
@@ -407,9 +409,9 @@ function pageCompare() {
       return `<td class="${isBest ? "best" : ""}">${isBest ? "★ " : ""}${c.html}</td>`;
     }).join("")}</tr>`;
   };
-  const rkCell = (rk) => rk ? { val: rk.overall ?? rk.rank, html: `<b>${rk.rank}</b>${rk.board !== "主榜" ? ` <span style="color:var(--muted);font-size:.8rem">${esc(rk.board)}${rk.overall ? ` · 主榜線 ${rk.overall}` : ""}</span>` : ""}` } : { html: "未設榜" };
+  const rkCell = (rk) => rk ? { val: rk.overall ?? rk.rank, html: `<b>${rk.rank}</b>${rk.board !== "主榜" ? ` <span style="color:var(--muted);font-size:.8rem">${esc(rk.board)}${rk.overall ? ` · 主榜線 ${rk.overall}` : ""}</span>` : ""}` } : (u.rankWorld2025 ? { html: `<span title="軟科世界大學學術排名 2025">🌍 世界 ${u.rankWorld2025}</span>` } : { html: "未設榜" });
   const table = `<div class="table-wrap"><table class="data cmp-table"><thead><tr><th style="width:130px">項目</th>${unis.map(u => `<th>${esc(u.name)}</th>`).join("")}</tr></thead><tbody>
-    ${row("軟科 2026（越前越好）", unis.map(u => rkCell(u.rank2026)).map(c => ({ ...c, best: "min" })))}
+    ${row("軟科 2026（越前越好）", unis.map(u => { const c = rkCell(u.rank2026); if (!u.rank2026 && !u.rank2025 && u.rankWorld2025) c.html = `<span title="軟科世界大學學術排名 2025">🌍 世界 ${u.rankWorld2025}</span>`; return { ...c, best: (u.rank2026 || u.rank2025) ? "min" : null }; }))}
     ${row("軟科 2025", unis.map(u => rkCell(u.rank2025)))}
     ${row("2027 保送名額（越多越好）", unis.map(u => ({ val: u.scheme !== "保送" ? null : (u.quota2027 ?? null), html: u.scheme !== "保送" ? u.scheme + "（不入保送）" : `<b>${u.quota2027 ?? "—"}</b>`, best: u.scheme !== "保送" ? null : "max" })))}
     ${row("考核方式（越免試越輕鬆）", unis.map(u => ({ val: examFriend(u), html: u.exam ? esc(u.exam) : "免試／見簡章", best: "max" })))}

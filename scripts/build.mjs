@@ -104,7 +104,7 @@ const extras = (read('data/extra-unis.json', { unis: [] }).unis || []).map(x => 
     id: x.id, name: nameT, nameS: x.nameS, region: t(x.region),
     scheme: x.scheme || '兩校聯招',
     quota2027: null, exam: t(x.exam) || null, extra: t(x.extra) || null,
-    tags: x.tags || [], rank2025: rk[2025], rank2026: rk[2026],
+    tags: x.tags || [], rank2025: rk[2025], rank2026: rk[2026], rankWorld2025: x.rankWorld2025 || null,
     houkong2025: null, intro: x.intro || null, website: x.website || null,
     brief2026: null, brief2027: null, majors2027: [],
     admissionsUrl: x.admissionsUrl || null, admissionsLabel: x.admissionsLabel || null,

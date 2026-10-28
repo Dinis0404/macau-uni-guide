@@ -42,7 +42,8 @@
       "website": "https://www.um.edu.mo",
       "intro": "澳門唯一公立綜合性研究型大學，主校園位於橫琴的澳大新校區；學科覆蓋科技、人文、社科、商學、教育、法學等，微電子、中醫藥、區域經濟研究全國知名。",
       "admissionsUrl": "https://reg.um.edu.mo",
-      "admissionsLabel": "澳門大學招生"
+      "admissionsLabel": "澳門大學招生",
+      "rankWorld2025": "301-400"
     },
     {
       "id": "extra-mpu",
@@ -81,7 +82,8 @@
       "website": "https://www.must.edu.mo",
       "intro": "澳門規模最大的私立綜合大學（氹仔），發展迅速；中醫藥、傳媒、法學、醫學、太空與月球科學（國家重點實驗室）等課程多元，本地與內地學生混合就讀。",
       "admissionsUrl": "https://www.must.edu.mo",
-      "admissionsLabel": "澳門科技大學"
+      "admissionsLabel": "澳門科技大學",
+      "rankWorld2025": "401-500"
     },
     {
       "id": "extra-kwnc",
