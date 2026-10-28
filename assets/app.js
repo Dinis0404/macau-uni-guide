@@ -731,6 +731,65 @@ async function pageUpdatelog() {
     </div>`).join("") : `<div class="empty-tip">暫無記錄</div>`;
 }
 
+/* ---------- 頁面：聯招·聯考（其他升學途徑） ---------- */
+const OTHER_ADMIT = [
+  "南開大學", "復旦大學", "浙江大學", "廈門大學", "華僑大學", "福州大學",
+  "武漢大學", "華中科技大學", "華中師範大學", "湖北大學", "中南大學",
+  "中山大學", "暨南大學", "華南師範大學", "廣州大學", "華南理工大學",
+  "華南農業大學", "西安交通大學", "中國地質大學（武漢）", "香港中文大學（深圳）",
+  "武漢理工大學", "中南財經政法大學",
+];
+function pageOther() {
+  const bsNames = new Set(state.unis.map(u => u.name));
+  $app.innerHTML = `
+  <h1 style="margin-top:6px">聯招·聯考 <small style="color:var(--muted);font-size:.85rem">保送以外，澳門生往內地及本地升學的主要途徑</small></h1>
+  <div class="notice">本頁整理 <b>兩校聯招</b>（暨南大學、華僑大學）與 <b>澳門四校聯考</b> 的要點，並附四條升學途徑對比。各項日期以官方最新公佈為準。</div>
+
+  <h2 class="section-title">🏛 兩校聯招（暨南大學＋華僑大學）</h2>
+  <div class="prose">
+    <p><b>暨南大學</b>（廣州，僑校第一名）與 <b>華僑大學</b>（泉州／廈門）每年聯合舉辦「招收港澳台僑學生入學考試」，俗稱<b>兩校聯招</b>，是澳門生保送以外最熱門的內地升學途徑之一——名額多、門檻較全國聯招友好，且兩校均設有針對澳門生的<b>免試錄取</b>渠道（依中學成績等審核，詳情見兩校招生簡章）。</p>
+    <h3>考試形式（3＋X）</h3>
+    <p>必考三科：<b>中國語文、英語、數學</b>；另選一科 X——文科選歷史／地理，理科選物理／化學／生物（報醫學類須加選化學＋生物或物理＋生物）。</p>
+    <h3>參考時間表（以 2026 屆為例，2027 屆另行公佈）</h3>
+    <div class="timeline">
+      <div class="tl-item"><h3>網上報名</h3><div class="when">3 月上中旬（2026 年為 3 月 1–15 日）</div><p>登入兩校聯招系統 <a href="https://lxlz.jnu.edu.cn" target="_blank" rel="noopener">lxlz.jnu.edu.cn</a> 報名；考場設澳門、香港、廣州、廈門等地。</p></div>
+      <div class="tl-item"><h3>考試</h3><div class="when">5 月底（2026 年為 5 月 30–31 日）</div><p>澳門設考點，本地應考。</p></div>
+      <div class="tl-item"><h3>放榜及錄取</h3><div class="when">7 月上中旬</div><p>分數線與錄取結果於兩校招生網公佈。</p></div>
+    </div>
+    <p style="font-size:.88rem">官方資訊：<a href="https://lxlz.jnu.edu.cn" target="_blank" rel="noopener">兩校聯招報名系統</a> · <a href="https://zsc.hqu.edu.cn/zsxx.htm" target="_blank" rel="noopener">華僑大學招生處</a> · <a href="https://www.jnu.edu.cn" target="_blank" rel="noopener">暨南大學</a></p>
+  </div>
+
+  <h2 class="section-title">🏫 澳門四校聯考（本地四校）</h2>
+  <div class="prose">
+    <p>全名「<b>澳門四高校聯合入學考試（語言科及數學科）</b>」，由 <b>澳門大學、澳門理工大學、澳門旅遊大學、澳門科技大學</b> 四所本地高校聯合舉辦，考<b>語文、數學、外語（英語）</b>三科——按報考課程選考，不必全科報考。聯考成績是四校共同的「參考工具」，各校再按自設考核（面試／術科／學科考試）擇優錄取。</p>
+    <h3>參考時間表（2026/2027 學年，據澳大公佈）</h3>
+    <div class="timeline">
+      <div class="tl-item"><h3>四校聯考報名</h3><div class="when">2026 年 1 月 2 日 – 1 月 16 日</div><p>須<b>獨立網上報名</b>，並分別向擬報讀的高校遞交入學申請。</p></div>
+      <div class="tl-item"><h3>直接入學報名</h3><div class="when">2026 年 2 月 3 日 – 4 月 9 日</div><p>不走聯考成績、以其他成就（競賽、面試等）直接申請的渠道。</p></div>
+      <div class="tl-item"><h3>聯考考試</h3><div class="when">約 3 月底 – 4 月初（歷年為 3 月 30 日前後）</div><p>准考證於考前於網上系統下載。</p></div>
+    </div>
+    <p style="font-size:.88rem">各校招生官方網頁：<a href="https://reg.um.edu.mo" target="_blank" rel="noopener">澳門大學</a> · <a href="https://www.mpu.edu.mo" target="_blank" rel="noopener">澳門理工大學</a> · <a href="https://www.mtu.edu.mo" target="_blank" rel="noopener">澳門旅遊大學</a> · <a href="https://www.must.edu.mo" target="_blank" rel="noopener">澳門科技大學</a></p>
+  </div>
+
+  <h2 class="section-title">🎯 憑四校聯考成績報考內地 22 所高校（2026/2027 學年）</h2>
+  <div class="prose">
+    <p>經國家教育部批准，<b>2026/2027 學年共 22 所內地高校</b>採認澳門四校聯考成績招生（本學年新增武漢理工大學、中南財經政法大學）。持有效澳門居民身份證及<b>港澳居民來往內地通行證（回鄉證）</b>的應屆聯考考生，可在 <b>5–6 月</b>各校招生期內向目標高校提交聯考成績及文件申請，各校可再安排科目考試或面試，<b>7 月中下旬</b>放榜。</p>
+    <div class="tag-row" style="margin:10px 0">${OTHER_ADMIT.map(n => `<span class="tag" style="background:var(--primary-light);color:var(--primary-dark);font-size:.82rem;padding:4px 12px">${n}${bsNames.has(n) ? ' <span title="該校同時參與保送計劃" style="opacity:.75">⭐可保送</span>' : ''}</span>`).join("")}</div>
+    <p style="font-size:.82rem;color:var(--muted)">⭐ = 該校同時參與保送計劃（可多途徑報考）。名單來源：教青局及媒體公佈（2026/2027 學年 22 所）。</p>
+  </div>
+
+  <h2 class="section-title">🧭 四條途徑怎麼選？</h2>
+  <div class="table-wrap"><table class="data"><thead><tr><th>途徑</th><th>報名</th><th>考試／評核</th><th>放榜</th><th>去向</th></tr></thead><tbody>
+    <tr><td><b>內地保送</b>（本站主題）</td><td>2026 年 11 月（經學校推薦）</td><td>2027 年 1 月；多校免試或僅面試</td><td>2027 年 1 月 19 日</td><td>128 所內地高校</td></tr>
+    <tr><td><b>兩校聯招</b></td><td>2027 年 3 月</td><td>2027 年 5 月底 · 中文／英數＋X</td><td>2027 年 7 月</td><td>暨南大學、華僑大學</td></tr>
+    <tr><td><b>四校聯考 → 內地 22 所</b></td><td>2026 年 1 月（聯考）</td><td>2026 年 3 月底 – 4 月初</td><td>各校 7 月中下旬</td><td>22 所內地高校（見上）</td></tr>
+    <tr><td><b>四校聯考 → 本地四校</b></td><td>2026 年 1 月（聯考）＋各校申請</td><td>3 月底 – 4 月初＋校內考核</td><td>各校自定</td><td>澳大、理工、旅遊、科大</td></tr>
+    <tr><td>全國聯招（港澳台聯招）</td><td>約 3 月</td><td>約 5 月 · 五科</td><td>6 月</td><td>內地大部分高校</td></tr>
+  </tbody></table></div>
+  <div class="notice" style="margin-top:14px"><b>提示：</b>保送放榜最早（1 月）、且多數高校免試，是「穩陣之選」；兩校聯招與四校聯考可以作為保送以外的後備或補充——多條途徑同時準備在澳門完全正常。所有日期以各官方機構最新公佈為準。</div>
+  <p style="color:var(--muted);font-size:.8rem">資料來源：兩校聯招系統、華僑大學招生處、澳門大學招生資訊、教青局及本地媒體公佈（整理於 2026-10-28）。</p>`;
+}
+
 /* ---------- 路由 ---------- */
 function router() {
   const hash = location.hash || "#/";
@@ -747,6 +806,7 @@ function router() {
   if (hash.startsWith("#/compare")) return pageCompare();
   if (hash.startsWith("#/majors")) return pageMajors();
   if (hash.startsWith("#/updatelog")) return pageUpdatelog();
+  if (hash.startsWith("#/other")) return pageOther();
   if (hash.startsWith("#/rankings")) return pageRankings();
   if (hash.startsWith("#/faq")) return pageFaq();
   if (hash.startsWith("#/about")) return pageAbout();
