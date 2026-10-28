@@ -349,6 +349,13 @@ const EXAM_FRIEND = { "面試": 70, "材料審核+面試": 60, "材料評價+面
 const examFriend = (u) => u.exam ? (EXAM_FRIEND[u.exam] ?? 50) : 100;
 const rankNum = (u) => { const rk = u.rank2026 || u.rank2025 || {}; return rk.overall ?? rk.rank ?? 9999; };
 const byRank = (a, b) => rankNum(a) - rankNum(b);
+const briefParams = (url) => { const qs = new URL(url, location.href).searchParams; return { year: qs.get('year') || '', u_id: qs.get('u_id'), fileName: qs.get('fileName') || '' }; };
+const briefProxyUrl = (u, y) => {
+  const src = y === '2027' ? u.brief2027 : u.brief2026;
+  const p = briefParams(src); const sp = new URLSearchParams();
+  if (p.year) sp.set('year', p.year); sp.set('u_id', p.u_id); if (p.fileName) sp.set('fileName', p.fileName);
+  return '/api/brief?' + sp.toString();
+};
 
 const setCompareIds = (ids) => localStorage.setItem(COMPARE_KEY, JSON.stringify([...new Set(ids)].slice(0, COMPARE_MAX)));
 
@@ -534,22 +541,39 @@ function showBrief(u, year, dualWith = null) {
   if (!src) return;
   const otherYear = year === "2027" ? "2026" : "2027";
   const withBrief = state.unis.filter(x => (year === "2027" ? x.brief2027 : x.brief2026) && x.id !== u.id).sort(byRank);
+  // dualWith: null=單欄；"pick"=右欄顯示選校器；大學物件=右欄顯示該校簡章
+  const picking = dualWith === "pick";
+  const second = picking ? null : dualWith;
   $modalRoot.innerHTML = `
   <div class="modal-backdrop brief-backdrop" id="brief-backdrop">
     <div class="brief-panel">
       <div class="brief-bar">
-        <b>📖 ${esc(u.name)} · ${year} 招生簡章</b>
+        <span class="pane-tag">${dualWith ? "左欄" : "簡章"}</span>
+        <b>${esc(u.name)} · ${year} 招生簡章</b>
         ${u["brief" + otherYear] ? `<button class="chip-btn" id="brief-year">切換到 ${otherYear} 版</button>` : ""}
         <button class="chip-btn" id="brief-dual">${dualWith ? "退出對比" : "📚 雙欄對比"}</button>
+        ${dualWith && !picking ? `<button class="chip-btn" id="brief-swap">🔄 左右交換</button>` : ""}
         <a class="chip-btn" href="${esc(src)}" target="_blank" rel="noopener">⬇ 直接下載</a>
-        <button class="chip-btn close" id="brief-close">✕</button>
+        <span class="brief-hint">按 Esc 或「✕ 關閉」離開</span>
+        <button class="chip-btn close-big" id="brief-close">✕ 關閉</button>
       </div>
       <div class="brief-body ${dualWith ? "dual" : ""}" id="brief-body">
-        <iframe src="${esc(briefProxyUrl(u, year))}" title="${esc(u.name)} ${year} 簡章"></iframe>
-        ${dualWith ? `<div class="brief-second"><div class="brief-bar sub">
-            <select id="brief-pick">${withBrief.map(x => `<option value="${esc(x.id)}" ${x.id === dualWith.id ? "selected" : ""}>${esc(x.name)}</option>`).join("")}</select>
-            <button class="chip-btn" id="brief-second-close">✕</button></div>
-          <iframe src="${esc(briefProxyUrl(dualWith, year))}" title="對比簡章"></iframe></div>` : ""}
+        <div class="brief-pane">
+          <div class="iframe-wrap loading"><iframe src="${esc(briefProxyUrl(u, year))}" title="${esc(u.name)} ${year} 簡章"></iframe></div>
+        </div>
+        ${dualWith ? `
+        <div class="brief-pane">
+          <div class="brief-bar sub">
+            <span class="pane-tag">右欄</span>
+            ${picking
+              ? `<b style="font-size:.9rem">選擇要比較的大學</b>`
+              : `<select id="brief-pick">${withBrief.map(x => `<option value="${esc(x.id)}" ${x.id === second.id ? "selected" : ""}>${esc(x.name)}</option>`).join("")}</select>`}
+            <button class="chip-btn" id="brief-second-close">✕</button>
+          </div>
+          ${picking
+            ? `<div class="brief-pick-list" id="brief-pick-list"></div>`
+            : `<div class="iframe-wrap loading"><iframe src="${esc(briefProxyUrl(second, year))}" title="右欄簡章"></iframe></div>`}
+        </div>` : ""}
       </div>
     </div>
   </div>`;
@@ -557,12 +581,34 @@ function showBrief(u, year, dualWith = null) {
   document.getElementById("brief-close").onclick = close;
   document.getElementById("brief-backdrop").onclick = (e) => { if (e.target.id === "brief-backdrop") close(); };
   const yBtn = document.getElementById("brief-year");
-  if (yBtn) yBtn.onclick = () => showBrief(u, otherYear, dualWith && dualWith["brief" + otherYear] ? dualWith : null);
-  document.getElementById("brief-dual").onclick = () => showBrief(u, year, dualWith ? null : withBrief[0] || null);
+  if (yBtn) yBtn.onclick = () => showBrief(u, otherYear, dualWith && dualWith !== "pick" && dualWith["brief" + otherYear] ? dualWith : null);
+  document.getElementById("brief-dual").onclick = () => showBrief(u, year, dualWith ? null : "pick");
   const sc = document.getElementById("brief-second-close");
   if (sc) sc.onclick = () => showBrief(u, year, null);
+  const swap = document.getElementById("brief-swap");
+  if (swap) swap.onclick = () => showBrief(second, year, u);
   const pick = document.getElementById("brief-pick");
   if (pick) pick.onchange = () => showBrief(u, year, state.unis.find(x => x.id === pick.value));
+  // 右欄選校器：搜尋 + 列表
+  const pickList = document.getElementById("brief-pick-list");
+  if (pickList) {
+    let q = "";
+    const render = () => {
+      const hits = withBrief.filter(x => !q || (x.name + x.nameS + x.region).toLowerCase().includes(q));
+      pickList.innerHTML = `
+        <div style="padding:10px 12px;border-bottom:1px solid var(--border)">
+          <input type="search" id="bp-q" placeholder="搜尋大學（繁簡均可）…" style="width:100%;padding:9px 12px;border:1px solid var(--border);border-radius:9px;background:var(--bg);color:var(--text);font-size:.92rem">
+        </div>
+        ${hits.map(x => `<div class="pk-row" data-id="${esc(x.id)}"><div><b>${esc(x.name)}</b>
+          <span style="color:var(--muted);font-size:.8rem">${esc(x.region)} · ${x.rank2026 ? `軟科 ${x.rank2026.rank}` : "未設榜"}</span></div>
+          <span class="pk-action">選這所 →</span></div>`).join("") || '<div class="empty-tip">找不到</div>'}`;
+      pickList.querySelector("#bp-q").addEventListener("input", (e) => { q = e.target.value.trim().toLowerCase(); render(); pickList.querySelector("#bp-q").focus(); const inp = pickList.querySelector("#bp-q"); inp.setSelectionRange(inp.value.length, inp.value.length); });
+      pickList.querySelectorAll(".pk-row").forEach(el => el.onclick = () => showBrief(u, year, state.unis.find(x => x.id === el.dataset.id)));
+    };
+    render();
+  }
+  // iframe 載入指示
+  document.querySelectorAll(".iframe-wrap iframe").forEach(f => f.addEventListener("load", () => f.parentElement.classList.remove("loading")));
   const onKey = (e) => { if (e.key === "Escape") { close(); document.removeEventListener("keydown", onKey); } };
   document.addEventListener("keydown", onKey);
 }
