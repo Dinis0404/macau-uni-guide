@@ -107,6 +107,43 @@ const meta = {
 };
 
 fs.mkdirSync('data', { recursive: true });
+// ---- 更新日誌：與上一次的 universities.json 比對，記錄變化 ----
+const changes = [];
+const old = read('data/universities.json', []);
+const oldByS = new Map(old.map(u => [u.nameS, u]));
+for (const u of unis) {
+  const o = oldByS.get(u.nameS);
+  const name = t(u.nameS);
+  if (!o) { changes.push(`🆕 ${name}：新加入保送名單`); continue; }
+  if (!o.brief2027 && u.brief2027) changes.push(`📄 ${name}：公佈 2027 招生簡章`);
+  const om = (o.majors2027 || []).length, nm = (u.majors2027 || []).length;
+  if (!om && nm) changes.push(`📋 ${name}：公佈 2027 保送專業（${nm} 個）`);
+  else if (om && nm > om) changes.push(`📋 ${name}：保送專業 ${om} → ${nm} 個`);
+  if (o.quota2027 !== u.quota2027) changes.push(`🔢 ${name}：保送名額 ${o.quota2027 ?? '—'} → ${u.quota2027 ?? '—'}`);
+  if ((o.exam || null) !== (u.exam ? u.exam : null) && t(u.exam || '') !== (o.exam || '')) changes.push(`📝 ${name}：考核方式變更（${o.exam || '未標示'} → ${t(u.exam) || '未標示'}）`);
+  if ((o.houkong2025 ?? null) !== (u.houkong2025 ?? null)) changes.push(`🎓 ${name}：濠江 2025 保送人數更新為 ${u.houkong2025} 人`);
+  if ((o.rank2026?.rank ?? null) !== (u.rank2026?.rank ?? null) && u.rank2026) changes.push(`📊 ${name}：軟科 2026 排名 ${o.rank2026?.rank ?? '—'} → ${u.rank2026.rank}`);
+}
+const today = new Date().toISOString().slice(0, 10);
+const log = read('data/updatelog.json', []);
+const last = log[0];
+if (changes.length && (!last || last.date !== today || last.changes.join('|') !== changes.join('|'))) {
+  log.unshift({ date: today, at: new Date().toISOString(), counts: meta.counts, changes });
+  fs.writeFileSync('data/updatelog.json', JSON.stringify(log.slice(0, 120), null, 1));
+  console.log(`updatelog: 新增 ${changes.length} 條變化記錄`);
+} else if (!log.length) {
+  const seeded = [
+    `📄 ${unis.filter(u => u.brief2027).length} 所已公佈 2027 招生簡章`,
+    `📋 ${unis.filter(u => (u.majors2027 || []).length).length} 所已公佈 2027 保送專業`,
+    `🎓 濠江中學 2025 聯校保送數據載入（210 人 / 70 校）`,
+    `📊 軟科 2025 + 2026 排名載入（主榜及 7 個分榜）`,
+  ];
+  log.unshift({ date: today, at: new Date().toISOString(), counts: meta.counts, changes: seeded });
+  fs.writeFileSync('data/updatelog.json', JSON.stringify(log.slice(0, 120), null, 1));
+  console.log('updatelog: 建立初始記錄');
+} else {
+  console.log('updatelog: 無變化');
+}
 fs.writeFileSync('data/universities.json', JSON.stringify(unis, null, 1));
 fs.writeFileSync('data/rankings.json', JSON.stringify(rankings));
 fs.writeFileSync('data/meta.json', JSON.stringify(meta, null, 2));

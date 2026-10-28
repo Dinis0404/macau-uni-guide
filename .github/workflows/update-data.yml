@@ -2,8 +2,8 @@ name: update-data
 
 on:
   schedule:
-    # 每月 1 號 03:00 UTC（澳門時間 11:00）自動更新資料
-    - cron: "0 3 1 * *"
+    # 名單公佈期（至 11 月初）：每日 03:00 UTC（澳門 11:00）更新一次
+    - cron: "0 3 * * *"
   workflow_dispatch: {}
 
 permissions:
@@ -15,6 +15,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # 2026-11-07 之後，只在每月 1 號執行（名單公佈期才需要每日更新）
+      - name: 更新頻率守衛
+        run: |
+          d=$(date -u +%F); day=$(date -u +%-d)
+          if [[ "$d" > "2026-11-07" && "$day" != "1" ]]; then
+            echo "今天 ($d) 非每月更新日（每月 1 號），跳過"; exit 0
+          fi
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -25,10 +33,13 @@ jobs:
       - name: 抓取 DSEDJ 保送高校名單
         run: node scripts/fetch-dsedj.mjs
 
+      - name: 抓取 DSEDJ 保送專業
+        run: node scripts/fetch-majors.mjs
+
       - name: 抓取軟科大學排名
         run: node scripts/fetch-ruanke.mjs 2025,2026
 
-      - name: 合併資料
+      - name: 合併資料（含更新日誌）
         run: node scripts/build.mjs
 
       - name: 有變更才提交
@@ -39,6 +50,8 @@ jobs:
           if git diff --cached --quiet; then
             echo "資料無變更，跳過提交"
           else
-            git commit -m "chore(data): 自動更新名單與排名資料"
+            git commit -m "chore(data): 自動更新名單/專業/排名資料
+
+$(cat data/updatelog.json 2>/dev/null | head -40 || true)"
             git push
           fi
