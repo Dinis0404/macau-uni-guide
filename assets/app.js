@@ -62,6 +62,7 @@ function showModal(u) {
   if (u.brief2027) links.push(`<a class="btn btn-primary" href="${esc(u.brief2027)}" target="_blank" rel="noopener">📄 2027 招生簡章（PDF）</a>`);
   if (u.brief2026) links.push(`<a class="btn btn-outline" href="${esc(u.brief2026)}" target="_blank" rel="noopener">📄 2026 簡章（參考）</a>`);
   if (u.website) links.push(`<a class="btn btn-outline" href="${esc(u.website)}" target="_blank" rel="noopener">🔗 大學官網</a>`);
+  links.push(`<a class="btn btn-outline" id="add-compare" href="javascript:void(0)">⚖️ ${compareIds().includes(u.id) ? "已在對比 · 前往對比 →" : "加入對比"}</a>`);
   links.push(`<a class="btn btn-outline" href="https://www.shanghairanking.cn/rankings/bcur" target="_blank" rel="noopener">📊 軟科官網</a>`);
 
   const rkFmt = (rk) => !rk ? "未設榜" : rk.board === "主榜" ? `主榜第 ${rk.rank} 名`
@@ -86,9 +87,17 @@ function showModal(u) {
       <p class="disclaim">名額與考核要求摘自 DSEDJ「2027 年保送高校名單」，可能隨官方更新而變動，報名前務必細閱招生簡章原文。</p>
     </div>
   </div>`;
-  const close = () => { $modalRoot.innerHTML = ""; if (location.hash.startsWith("#/uni/")) location.hash = "#/list"; };
+  const close = () => { $modalRoot.innerHTML = ""; if (location.hash.startsWith("#/uni/")) location.hash = state.lastListRoute || "#/list"; };
   document.getElementById("modal-close").onclick = close;
   document.getElementById("modal-backdrop").onclick = (e) => { if (e.target.id === "modal-backdrop") close(); };
+  const cmpBtn = document.getElementById("add-compare");
+  cmpBtn.onclick = () => {
+    const ids = compareIds();
+    if (ids.includes(u.id)) { location.hash = "#/compare"; return; }
+    if (ids.length >= COMPARE_MAX) { cmpBtn.textContent = "⚠️ 對比最多 4 所，請先移除"; return; }
+    setCompareIds([...ids, u.id]);
+    cmpBtn.textContent = "✓ 已加入 · 前往對比 →";
+  };
   const onKey = (e) => { if (e.key === "Escape") { close(); document.removeEventListener("keydown", onKey); } };
   document.addEventListener("keydown", onKey);
 }
@@ -115,7 +124,7 @@ function pageHome() {
   <h2 class="section-title">🔥 2025 濠江中學保送去向 Top 10 <small>（聯校保送，來源：濠江中學官網）</small></h2>
   <div class="table-wrap"><table class="data">
     <thead><tr><th>#</th><th>大學</th><th>地區</th><th>2025 濠江保送</th><th>2027 名額</th><th>軟科 2026</th></tr></thead>
-    <tbody>${top.map((u, i) => `<tr class="uni-card" data-id="${esc(u.id)}" style="cursor:pointer">
+    <tbody>${top.map((u, i) => `<tr data-id="${esc(u.id)}" style="cursor:pointer">
       <td>${i + 1}</td><td><b>${esc(u.name)}</b></td><td>${esc(u.region)}</td>
       <td><b>${u.houkong2025} 人</b></td><td>${u.quota2027 ?? "—"}</td>
       <td>${u.rank2026 ? esc(u.rank2026.board === "主榜" ? `第 ${u.rank2026.rank} 名` : `${u.rank2026.board}第 ${u.rank2026.rank} 名`) : "未設榜"}</td>
@@ -187,7 +196,7 @@ function renderList() {
   bindCards();
 }
 function bindCards() {
-  document.querySelectorAll(".uni-card").forEach(el => {
+  document.querySelectorAll("[data-id]").forEach(el => {
     el.addEventListener("click", () => {
       const u = state.unis.find(x => x.id === el.dataset.id);
       if (u) { history.replaceState(null, "", "#/uni/" + u.id); showModal(u); }
@@ -240,6 +249,184 @@ function pageRankings() {
     render();
   });
   render();
+}
+
+/* ---------- 對比：localStorage 選擇 ---------- */
+const COMPARE_KEY = "macau-uni-compare";
+const COMPARE_MAX = 4;
+const compareIds = () => {
+  try {
+    const ids = JSON.parse(localStorage.getItem(COMPARE_KEY) || "[]");
+    return [...new Set(ids)].filter(id => state.unis.some(u => u.id === id)).slice(0, COMPARE_MAX);
+  } catch { return []; }
+};
+const setCompareIds = (ids) => localStorage.setItem(COMPARE_KEY, JSON.stringify([...new Set(ids)].slice(0, COMPARE_MAX)));
+const rankNum = (u) => {
+  const rk = u.rank2026 || u.rank2025 || {};
+  return rk.overall ?? rk.rank ?? 9999;
+};
+const byRank = (a, b) => rankNum(a) - rankNum(b);
+
+/* ---------- 頁面：總表 ---------- */
+const tableState = { q: "", sort: "rank", dir: 1 };
+function pageTable() {
+  $app.innerHTML = `
+  <h1 style="margin-top:6px">總表 <small style="color:var(--muted);font-size:.85rem">128 所高校全欄位一覽 · 點欄位標題排序</small></h1>
+  <div class="filter-bar">
+    <input type="search" id="t-q" placeholder="搜尋大學（繁簡均可）…" value="${esc(tableState.q)}">
+    <div class="result-count" id="t-count"></div>
+  </div>
+  <div class="table-wrap" style="max-height:74vh;overflow:auto"><table class="data big-table" id="big-table">
+    <thead><tr>
+      <th data-k="rank">軟科 2026</th><th data-k="name">大學</th><th data-k="region">地區</th>
+      <th>標籤</th><th data-k="quota">2027 名額</th><th data-k="exam">考核方式</th>
+      <th data-k="hk">濠江 2025</th><th>簡章</th>
+    </tr></thead>
+    <tbody id="t-body"></tbody>
+  </table></div>
+  <p style="color:var(--muted);font-size:.82rem">考核方式「見招生簡章」＝官方名單未標示統一考核，以簡章為準；「濠江 2025」為 2025 屆濠江中學內地聯校保送人數。點任何一行看完整詳情。</p>`;
+  const rerender = () => renderTable();
+  document.getElementById("t-q").addEventListener("input", e => { tableState.q = e.target.value; rerender(); });
+  document.querySelectorAll("#big-table th[data-k]").forEach(th =>
+    th.addEventListener("click", () => {
+      const k = th.dataset.k;
+      if (tableState.sort === k) tableState.dir *= -1;
+      else { tableState.sort = k; tableState.dir = k === "rank" ? 1 : -1; }
+      rerender();
+    }));
+  renderTable();
+}
+function renderTable() {
+  const q = tableState.q.trim().toLowerCase();
+  const cmp = {
+    rank: (a, b) => rankNum(a) - rankNum(b),
+    name: (a, b) => a.nameS.localeCompare(b.nameS, "zh-Hans"),
+    region: (a, b) => a.region.localeCompare(b.region, "zh-Hans") || rankNum(a) - rankNum(b),
+    quota: (a, b) => (a.quota2027 || 0) - (b.quota2027 || 0),
+    exam: (a, b) => (a.exam || "").localeCompare(b.exam || "", "zh-Hant") || rankNum(a) - rankNum(b),
+    hk: (a, b) => (a.houkong2025 ?? -1) - (b.houkong2025 ?? -1),
+  }[tableState.sort];
+  let list = state.unis.filter(u => !q || u.search.toLowerCase().includes(q)).sort(cmp);
+  if (tableState.dir === -1) list = list.slice().reverse();
+  document.getElementById("t-count").textContent = `共 ${list.length} 所`;
+  const sortMark = (k) => tableState.sort === k ? (tableState.dir === 1 ? " ▲" : " ▼") : "";
+  document.querySelectorAll("#big-table th[data-k]").forEach(th => {
+    const base = th.dataset.base || (th.dataset.base = th.textContent);
+    th.innerHTML = base + sortMark(th.dataset.k);
+  });
+  const rkTxt = (u) => {
+    const rk = u.rank2026 || u.rank2025;
+    if (!rk) return `<span style="color:var(--muted)">未設榜</span>`;
+    return rk.board === "主榜" ? `<b>${rk.rank}</b>` : `${rk.overall ?? "—"}<span style="color:var(--muted);font-size:.78rem">（${esc(rk.board)}${rk.rank}）</span>`;
+  };
+  document.getElementById("t-body").innerHTML = list.map(u => `
+    <tr data-id="${esc(u.id)}" style="cursor:pointer">
+      <td>${rkTxt(u)}</td>
+      <td><b>${esc(u.name)}</b></td>
+      <td>${esc(u.region)}</td>
+      <td>${tagHTML(u.tags) || "—"}</td>
+      <td><b>${u.quota2027 ?? "—"}</b></td>
+      <td style="font-size:.85rem">${u.exam ? esc(u.exam) : "見招生簡章"}</td>
+      <td>${u.houkong2025 != null ? `<b style="color:var(--primary)">${u.houkong2025}</b> 人` : `<span style="color:var(--muted)">暫無資料</span>`}</td>
+      <td style="white-space:nowrap">${u.brief2027 ? `<a href="${esc(u.brief2027)}" target="_blank" rel="noopener" class="mini-link" onclick="event.stopPropagation()">2027</a>` : ""} ${u.brief2026 ? `<a href="${esc(u.brief2026)}" target="_blank" rel="noopener" class="mini-link" onclick="event.stopPropagation()">2026</a>` : ""}${!u.brief2027 && !u.brief2026 ? "—" : ""}</td>
+    </tr>`).join("") || `<tr><td colspan="8" class="empty-tip">找不到符合的大學</td></tr>`;
+  bindCards();
+}
+
+/* ---------- 頁面：大學對比 ---------- */
+const COLORS = ["#0e7a5f", "#d35400", "#7d3c98", "#2e86c1"];
+const EXAM_FRIEND = { "面試": 70, "材料審核+面試": 60, "材料評價+面試考核": 60, "口試及面試": 60, "筆試及面試": 40, "專業考試": 30 };
+function radarVals(u) {
+  const r = rankNum(u) === 9999 ? null : rankNum(u);
+  return {
+    prestige: r ? Math.max(0, Math.round(100 * (1 - (r - 1) / 500))) : 0,
+    quota: u.quota2027 ? Math.round(100 * u.quota2027 / 130) : 0,
+    hk: u.houkong2025 != null ? Math.round(100 * u.houkong2025 / 16) : 0,
+    exam: u.exam ? (EXAM_FRIEND[u.exam] ?? 50) : 100,
+    naPrestige: !r, naHk: u.houkong2025 == null,
+  };
+}
+function drawRadarSVG(unis) {
+  const AXES = ["軟科聲望", "保送名額", "濠江人氣", "考核友好"];
+  const C = [230, 218], R = 150;
+  const pt = (i, v) => { const a = (-90 + i * 90) * Math.PI / 180; return [C[0] + (v / 100) * R * Math.cos(a), C[1] + (v / 100) * R * Math.sin(a)]; };
+  const ring = (g) => [0, 1, 2, 3].map(i => pt(i, g).map(n => n.toFixed(1)).join(",")).join(" ");
+  const axisLines = [0, 1, 2, 3].map(i => { const [x, y] = pt(i, 100); return `<line x1="${C[0]}" y1="${C[1]}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="var(--border)"/>`; }).join("");
+  const ringLabels = [25, 50, 75, 100].map(g => `<text x="${C[0] + 5}" y="${(C[1] - (g / 100) * R - 4).toFixed(1)}" font-size="10" fill="#9ab0aa">${g}</text>`).join("");
+  const axisLabels = [
+    `<text x="${C[0]}" y="${C[1] - R - 26}" text-anchor="middle" font-size="13" font-weight="600" fill="var(--text)">${AXES[0]}</text>`,
+    `<text x="${C[0] + R + 12}" y="${C[1] + 4}" text-anchor="start" font-size="13" font-weight="600" fill="var(--text)">${AXES[1]}</text>`,
+    `<text x="${C[0]}" y="${C[1] + R + 34}" text-anchor="middle" font-size="13" font-weight="600" fill="var(--text)">${AXES[2]}</text>`,
+    `<text x="${C[0] - R - 12}" y="${C[1] + 4}" text-anchor="end" font-size="13" font-weight="600" fill="var(--text)">${AXES[3]}</text>`,
+  ].join("");
+  const polys = unis.map((u, idx) => {
+    const v = radarVals(u);
+    const pts = [v.prestige, v.quota, v.hk, v.exam].map((val, i) => pt(i, val).map(n => n.toFixed(1)).join(",")).join(" ");
+    const dots = [v.prestige, v.quota, v.hk, v.exam].map((val, i) => { const [x, y] = pt(i, val); return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="3.5" fill="${COLORS[idx]}"/>`; }).join("");
+    return `<polygon points="${pts}" fill="${COLORS[idx]}" fill-opacity=".16" stroke="${COLORS[idx]}" stroke-width="2.5" stroke-linejoin="round"/>${dots}`;
+  }).join("");
+  return `<svg viewBox="0 0 460 470" style="width:100%;max-width:470px;display:block;margin:0 auto" role="img" aria-label="大學雷達對比圖">
+    ${[25, 50, 75, 100].map(g => `<polygon points="${ring(g)}" fill="none" stroke="var(--border)" stroke-width="1"/>`).join("")}
+    ${axisLines}${ringLabels}${polys}${axisLabels}
+  </svg>`;
+}
+function pageCompare() {
+  const unis = compareIds().map(id => state.unis.find(u => u.id === id)).filter(Boolean);
+  const slots = [0, 1, 2, 3].map(i => unis[i] ? unis[i].id : "");
+  const sorted = [...state.unis].sort(byRank);
+  $app.innerHTML = `
+  <h1 style="margin-top:6px">大學對比 <small style="color:var(--muted);font-size:.85rem">最多 4 所 · 雷達圖並排比較</small></h1>
+  <div class="filter-bar" style="position:static">
+    ${slots.map((id, i) => `<select data-slot="${i}" style="min-width:180px">
+      <option value="">選擇第 ${i + 1} 所…</option>
+      ${sorted.map(u => `<option value="${esc(u.id)}" ${id === u.id ? "selected" : ""}>${esc(u.name)}（${esc(u.region)}）</option>`).join("")}
+    </select>`).join("")}
+    <button class="btn btn-outline" id="cmp-clear" style="padding:8px 14px">清空</button>
+  </div>
+  <div id="cmp-body"></div>`;
+  document.querySelectorAll("select[data-slot]").forEach(sel =>
+    sel.addEventListener("change", () => {
+      const ids = compareIds();
+      const cur = ids[Number(sel.dataset.slot)];
+      if (cur) setCompareIds(ids.map(x => x === cur ? sel.value : x).filter(Boolean));
+      else if (sel.value) setCompareIds([...ids, sel.value]);
+      pageCompare();
+    }));
+  document.getElementById("cmp-clear").onclick = () => { setCompareIds([]); pageCompare(); };
+  const body = document.getElementById("cmp-body");
+  if (unis.length < 2) {
+    body.innerHTML = `<div class="empty-tip">至少選擇 2 所大學開始對比。<br>也可以在「高校列表」點開任何大學，按「⚖️ 加入對比」。<br><a class="btn btn-primary" style="margin-top:14px" href="#/list">去高校列表 →</a></div>`;
+    return;
+  }
+  body.innerHTML = `
+  <div class="compare-grid">
+    <div class="prose" style="padding:18px">${drawRadarSVG(unis)}
+      <p style="font-size:.76rem;color:var(--muted);margin:10px 0 0">各軸 0–100 標準化：聲望＝主榜名次（第1名＝100，第500名≈0）；名額以 130 為滿；濠江人氣以 16 人為滿；考核友好＝免試 100／面試 70／材料審核+面試 60／筆試及面試 40／專業考試 30。未設榜或暫無資料以 0 繪製，僅供粗略比較。</p>
+    </div>
+    <div class="legend-col">${unis.map((u, i) => `
+      <div class="legend-chip"><span class="dot" style="background:${COLORS[i]}"></span>
+        <b>${esc(u.name)}</b><span style="color:var(--muted);font-size:.82rem">${esc(u.region)}</span>
+        <button data-rm="${esc(u.id)}" title="移除">✕</button></div>`).join("")}
+      <div class="notice" style="margin-top:10px">雷達圖只是概覽——選校前請看下方逐項數據與招生簡章。</div>
+    </div>
+  </div>
+  <div class="table-wrap"><table class="data cmp-table"><thead><tr><th>項目</th>${unis.map(u => `<th>${esc(u.name)}</th>`).join("")}</tr></thead>
+  <tbody>
+    <tr><td>軟科 2026</td>${unis.map(u => { const rk = u.rank2026; return `<td>${rk ? `<b>${rk.rank}</b>${rk.board !== "主榜" ? ` <span style="color:var(--muted);font-size:.8rem">${esc(rk.board)}${rk.overall ? ` · 主榜線 ${rk.overall}` : ""}</span>` : ""}` : "未設榜"}</td>`; }).join("")}</tr>
+    <tr><td>軟科 2025</td>${unis.map(u => { const rk = u.rank2025; return `<td>${rk ? `<b>${rk.rank}</b>${rk.board !== "主榜" ? ` <span style="color:var(--muted);font-size:.8rem">${esc(rk.board)}${rk.overall ? ` · 主榜線 ${rk.overall}` : ""}</span>` : ""}` : "未設榜"}</td>`; }).join("")}</tr>
+    <tr><td>2027 保送名額</td>${unis.map(u => `<td><b>${u.quota2027 ?? "—"}</b></td>`).join("")}</tr>
+    <tr><td>考核方式</td>${unis.map(u => `<td>${u.exam ? esc(u.exam) : "見招生簡章"}</td>`).join("")}</tr>
+    <tr><td>另定要求</td>${unis.map(u => `<td style="font-size:.84rem">${u.extra ? esc(u.extra) : "—"}</td>`).join("")}</tr>
+    <tr><td>2025 濠江中學保送</td>${unis.map(u => `<td>${u.houkong2025 != null ? `<b style="color:var(--primary)">${u.houkong2025}</b> 人` : "暫無資料"}</td>`).join("")}</tr>
+    <tr><td>地區</td>${unis.map(u => `<td>${esc(u.region)}</td>`).join("")}</tr>
+    <tr><td>標籤</td>${unis.map(u => `<td>${tagHTML(u.tags) || "—"}</td>`).join("")}</tr>
+    <tr><td>簡章</td>${unis.map(u => `<td>${[u.brief2027 && `<a href="${esc(u.brief2027)}" target="_blank" rel="noopener">2027</a>`, u.brief2026 && `<a href="${esc(u.brief2026)}" target="_blank" rel="noopener">2026</a>`].filter(Boolean).join(" · ") || "—"}</td>`).join("")}</tr>
+    <tr><td>官網</td>${unis.map(u => `<td>${u.website ? `<a href="${esc(u.website)}" target="_blank" rel="noopener">連結</a>` : "—"}</td>`).join("")}</tr>
+    <tr><td>簡介</td>${unis.map(u => `<td style="font-size:.84rem">${esc(u.intro || "—")}</td>`).join("")}</tr>
+  </tbody></table></div>`;
+  body.querySelectorAll("[data-rm]").forEach(btn => btn.onclick = () => {
+    setCompareIds(compareIds().filter(x => x !== btn.dataset.rm)); pageCompare();
+  });
 }
 
 /* ---------- 頁面：保送流程 ---------- */
@@ -296,8 +483,10 @@ function router() {
   document.querySelectorAll("#nav a").forEach(a =>
     a.classList.toggle("active", a.dataset.route === "/" + route || (a.dataset.route === "/" && route === "")));
   $modalRoot.innerHTML = "";
-  if (hash.startsWith("#/uni/")) { pageList(); const u = state.unis.find(x => x.id === hash.slice(6)); if (u) showModal(u); return; }
-  if (hash.startsWith("#/list")) return pageList();
+  if (hash.startsWith("#/uni/")) { (state.lastListRoute === "#/table" ? pageTable() : pageList()); const u = state.unis.find(x => x.id === hash.slice(6)); if (u) showModal(u); return; }
+  if (hash.startsWith("#/list")) { state.lastListRoute = hash; return pageList(); }
+  if (hash.startsWith("#/table")) { state.lastListRoute = hash; return pageTable(); }
+  if (hash.startsWith("#/compare")) return pageCompare();
   if (hash.startsWith("#/rankings")) return pageRankings();
   if (hash.startsWith("#/faq")) return pageFaq();
   if (hash.startsWith("#/about")) return pageAbout();
