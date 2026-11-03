@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T08:01:10.735Z",
+  "generatedAt": "2026-11-03T02:35:58.079Z",
   "cycle": "2027",
   "counts": {
     "universities": 135,
@@ -8,8 +8,8 @@
     "withIntro": 135,
     "withRank2026": 121,
     "withHoukong": 77,
-    "withBrief2027": 28,
-    "withMajors": 32
+    "withBrief2027": 91,
+    "withMajors": 91
   },
   "sources": {
     "dsedj": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/index.jsp",

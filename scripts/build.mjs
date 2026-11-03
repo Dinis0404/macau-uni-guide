@@ -14,6 +14,8 @@ const intros = read('data/intros.json', {});
 const aliases = read('data/aliases.json', {}); // DSEDJ名 -> 軟科名
 const houkong = read('data/houkong-2025.json', {});
 const majors = read('data/raw/majors-2027.json', {});
+const oldPrev = read('data/universities.json', []);
+const oldByS = new Map(oldPrev.map(u => [u.nameS, u]));
 
 // ---- 載入軟科各榜 ----
 const YEARS = [2025, 2026];
@@ -71,7 +73,7 @@ const unis = dsedj.map(u => {
     houkong2025: hk,
     intro: meta?.intro || null,
     website: meta?.website || null,
-    brief2026: u.brief2026?.url || null,
+    brief2026: u.brief2026?.url || oldByS.get(u.nameS)?.brief2026 || null, // 2027 名單頁已移除 2026 欄，沿用舊連結
     brief2027: u.brief2027?.url || null,
     majors2027: (majors[u.nameS] || []).map(t),
     search: [...new Set(searchParts.filter(Boolean))].join(' '),
@@ -137,8 +139,6 @@ const meta = {
 fs.mkdirSync('data', { recursive: true });
 // ---- 更新日誌：與上一次的 universities.json 比對，記錄變化 ----
 const changes = [];
-const old = read('data/universities.json', []);
-const oldByS = new Map(old.map(u => [u.nameS, u]));
 for (const u of unis) {
   const o = oldByS.get(u.nameS);
   const name = t(u.nameS);
