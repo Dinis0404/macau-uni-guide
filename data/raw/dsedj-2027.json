@@ -21,27 +21,39 @@
     "exam": "面试",
     "extra": null,
     "brief2026": null,
-    "brief2027": null
+    "brief2027": {
+      "url": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110007&fileName=中国人民大学.pdf",
+      "u_id": "110007",
+      "fileName": "中国人民大学.pdf"
+    }
   },
   {
     "seq": 3,
     "region": "北京市",
     "nameS": "清华大学",
     "quota": 21,
-    "exam": null,
+    "exam": "笔试及面试",
     "extra": null,
     "brief2026": null,
-    "brief2027": null
+    "brief2027": {
+      "url": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110040&fileName=清华大学.pdf",
+      "u_id": "110040",
+      "fileName": "清华大学.pdf"
+    }
   },
   {
     "seq": 4,
     "region": "北京市",
     "nameS": "北京师范大学",
     "quota": 25,
-    "exam": null,
-    "extra": null,
+    "exam": "学校考核方式以面试为主，将视报名、考核情况酌情增加笔试，具体考核安排以届时通知为准。",
+    "extra": "学校根据考生中学成绩等学业表现、学校专家考核成绩，以及考生专业志愿等择优录取。",
     "brief2026": null,
-    "brief2027": null
+    "brief2027": {
+      "url": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110025&fileName=北京师范大学.pdf",
+      "u_id": "110025",
+      "fileName": "北京师范大学.pdf"
+    }
   },
   {
     "seq": 5,
@@ -51,7 +63,11 @@
     "exam": "面试",
     "extra": null,
     "brief2026": null,
-    "brief2027": null
+    "brief2027": {
+      "url": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110032&fileName=北京语言大学.pdf",
+      "u_id": "110032",
+      "fileName": "北京语言大学.pdf"
+    }
   },
   {
     "seq": 6,
@@ -103,7 +119,11 @@
     "exam": "面试",
     "extra": null,
     "brief2026": null,
-    "brief2027": null
+    "brief2027": {
+      "url": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110018&fileName=北京中医药大学.pdf",
+      "u_id": "110018",
+      "fileName": "北京中医药大学.pdf"
+    }
   },
   {
     "seq": 10,
@@ -155,17 +175,25 @@
     "exam": "口试及面试",
     "extra": "各专业原则上不超过1人",
     "brief2026": null,
-    "brief2027": null
+    "brief2027": {
+      "url": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110020&fileName=北京外国语大学.pdf",
+      "u_id": "110020",
+      "fileName": "北京外国语大学.pdf"
+    }
   },
   {
     "seq": 14,
     "region": "北京市",
     "nameS": "北京第二外国语学院",
     "quota": 5,
-    "exam": null,
+    "exam": "面试",
     "extra": null,
     "brief2026": null,
-    "brief2027": null
+    "brief2027": {
+      "url": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110028&fileName=北京第二外国语学院.pdf",
+      "u_id": "110028",
+      "fileName": "北京第二外国语学院.pdf"
+    }
   },
   {
     "seq": 15,
@@ -245,7 +273,11 @@
     "exam": "面试",
     "extra": null,
     "brief2026": null,
-    "brief2027": null
+    "brief2027": {
+      "url": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110034&fileName=北京体育大学.pdf",
+      "u_id": "110034",
+      "fileName": "北京体育大学.pdf"
+    }
   },
   {
     "seq": 21,
@@ -267,9 +299,13 @@
     "nameS": "北京交通大学",
     "quota": 10,
     "exam": "面试",
-    "extra": null,
+    "extra": "要求高中阶段有较好的数学、物理基础。",
     "brief2026": null,
-    "brief2027": null
+    "brief2027": {
+      "url": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110021&fileName=北京交通大学.pdf",
+      "u_id": "110021",
+      "fileName": "北京交通大学.pdf"
+    }
   },
   {
     "seq": 23,
@@ -293,7 +329,11 @@
     "exam": "面试",
     "extra": "考生报名时须通过初试考核，通过中国民航局及澳门民航局飞行员标准身体检查，并符合北航及澳门航空股份有限公司具体要求",
     "brief2026": null,
-    "brief2027": null
+    "brief2027": {
+      "url": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110026&fileName=北京航空航天大学.pdf",
+      "u_id": "110026",
+      "fileName": "北京航空航天大学.pdf"
+    }
   },
   {
     "seq": 25,
@@ -303,7 +343,11 @@
     "exam": "面试",
     "extra": null,
     "brief2026": null,
-    "brief2027": null
+    "brief2027": {
+      "url": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110070&fileName=天津大学.pdf",
+      "u_id": "110070",
+      "fileName": "天津大学.pdf"
+    }
   },
   {
     "seq": 26,
@@ -369,7 +413,11 @@
     "exam": "面试",
     "extra": "大连理工大学澳门保送生的招生将依据教育部、澳门特别行政区教育及青年发展局等有关招生规定执行。符合条件的考生由澳门特别行政区教育及青年发展局统一组织报名，并由大连理工大学组织对报名考生进行面试考核。",
     "brief2026": null,
-    "brief2027": null
+    "brief2027": {
+      "url": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110106&fileName=大连理工大学.pdf",
+      "u_id": "110106",
+      "fileName": "大连理工大学.pdf"
+    }
   },
   {
     "seq": 31,
@@ -460,10 +508,14 @@
     "region": "上海市",
     "nameS": "复旦大学",
     "quota": 30,
-    "exam": null,
+    "exam": "笔试及面试",
     "extra": null,
     "brief2026": null,
-    "brief2027": null
+    "brief2027": {
+      "url": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110065&fileName=复旦大学.pdf",
+      "u_id": "110065",
+      "fileName": "复旦大学.pdf"
+    }
   },
   {
     "seq": 38,
@@ -529,7 +581,11 @@
     "exam": "面试",
     "extra": null,
     "brief2026": null,
-    "brief2027": null
+    "brief2027": {
+      "url": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110068&fileName=华东理工大学.pdf",
+      "u_id": "110068",
+      "fileName": "华东理工大学.pdf"
+    }
   },
   {
     "seq": 43,
@@ -721,7 +777,11 @@
     "exam": "笔试及面试",
     "extra": null,
     "brief2026": null,
-    "brief2027": null
+    "brief2027": {
+      "url": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110139&fileName=浙江大学.pdf",
+      "u_id": "110139",
+      "fileName": "浙江大学.pdf"
+    }
   },
   {
     "seq": 57,
@@ -773,7 +833,11 @@
     "exam": "面试",
     "extra": null,
     "brief2026": null,
-    "brief2027": null
+    "brief2027": {
+      "url": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110141&fileName=浙江中医药大学.pdf",
+      "u_id": "110141",
+      "fileName": "浙江中医药大学.pdf"
+    }
   },
   {
     "seq": 61,
@@ -867,7 +931,11 @@
     "exam": "综合考核（含申请材料评审和面试考核）",
     "extra": null,
     "brief2026": null,
-    "brief2027": null
+    "brief2027": {
+      "url": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110160&fileName=厦门大学.pdf",
+      "u_id": "110160",
+      "fileName": "厦门大学.pdf"
+    }
   },
   {
     "seq": 68,
@@ -919,7 +987,11 @@
     "exam": "面试",
     "extra": "报考艺术类专业的考生，应具备相关专业的学习基础和学科发展潜质，须提前准备好美术类作品原件以及采用U盘存储的绘画过程视频或音乐类艺术表演视频等术科材料",
     "brief2026": null,
-    "brief2027": null
+    "brief2027": {
+      "url": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110153&fileName=福州大学.pdf",
+      "u_id": "110153",
+      "fileName": "福州大学.pdf"
+    }
   },
   {
     "seq": 72,
@@ -929,7 +1001,11 @@
     "exam": "面试",
     "extra": null,
     "brief2026": null,
-    "brief2027": null
+    "brief2027": {
+      "url": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110165&fileName=南昌大学.pdf",
+      "u_id": "110165",
+      "fileName": "南昌大学.pdf"
+    }
   },
   {
     "seq": 73,
@@ -964,10 +1040,14 @@
     "region": "山东省",
     "nameS": "中国海洋大学",
     "quota": 5,
-    "exam": null,
-    "extra": null,
+    "exam": "面试",
+    "extra": "参考平时成绩，全面衡量，择优录取",
     "brief2026": null,
-    "brief2027": null
+    "brief2027": {
+      "url": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110176&fileName=中国海洋大学.pdf",
+      "u_id": "110176",
+      "fileName": "中国海洋大学.pdf"
+    }
   },
   {
     "seq": 76,
@@ -1033,7 +1113,11 @@
     "exam": "面试",
     "extra": null,
     "brief2026": null,
-    "brief2027": null
+    "brief2027": {
+      "url": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110186&fileName=华中科技大学.pdf",
+      "u_id": "110186",
+      "fileName": "华中科技大学.pdf"
+    }
   },
   {
     "seq": 81,
@@ -1054,10 +1138,14 @@
     "region": "湖北省",
     "nameS": "湖北大学",
     "quota": 5,
-    "exam": null,
+    "exam": "面试",
     "extra": null,
     "brief2026": null,
-    "brief2027": null
+    "brief2027": {
+      "url": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110305&fileName=湖北大学.pdf",
+      "u_id": "110305",
+      "fileName": "湖北大学.pdf"
+    }
   },
   {
     "seq": 83,
@@ -1120,10 +1208,14 @@
     "region": "湖南省",
     "nameS": "中南大学",
     "quota": 25,
-    "exam": null,
+    "exam": "面试",
     "extra": null,
     "brief2026": null,
-    "brief2027": null
+    "brief2027": {
+      "url": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110195&fileName=中南大学.pdf",
+      "u_id": "110195",
+      "fileName": "中南大学.pdf"
+    }
   },
   {
     "seq": 88,
@@ -1133,7 +1225,11 @@
     "exam": "面试",
     "extra": "报考艺术类专业的考生须参加学校单独组织的术科测试且合格。",
     "brief2026": null,
-    "brief2027": null
+    "brief2027": {
+      "url": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110198&fileName=湖南师范大学.pdf",
+      "u_id": "110198",
+      "fileName": "湖南师范大学.pdf"
+    }
   },
   {
     "seq": 89,
@@ -1168,10 +1264,14 @@
     "region": "广东省",
     "nameS": "中山大学",
     "quota": 130,
-    "exam": null,
+    "exam": "笔试",
     "extra": null,
     "brief2026": null,
-    "brief2027": null
+    "brief2027": {
+      "url": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110201&fileName=中山大学.pdf",
+      "u_id": "110201",
+      "fileName": "中山大学.pdf"
+    }
   },
   {
     "seq": 92,
@@ -1181,7 +1281,11 @@
     "exam": "面试",
     "extra": null,
     "brief2026": null,
-    "brief2027": null
+    "brief2027": {
+      "url": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110205&fileName=华南理工大学.pdf",
+      "u_id": "110205",
+      "fileName": "华南理工大学.pdf"
+    }
   },
   {
     "seq": 93,
@@ -1205,7 +1309,11 @@
     "exam": "面试",
     "extra": null,
     "brief2026": null,
-    "brief2027": null
+    "brief2027": {
+      "url": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110202&fileName=南方医科大学.pdf",
+      "u_id": "110202",
+      "fileName": "南方医科大学.pdf"
+    }
   },
   {
     "seq": 95,
@@ -1285,7 +1393,11 @@
     "exam": "面试",
     "extra": null,
     "brief2026": null,
-    "brief2027": null
+    "brief2027": {
+      "url": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110209&fileName=广州中医药大学.pdf",
+      "u_id": "110209",
+      "fileName": "广州中医药大学.pdf"
+    }
   },
   {
     "seq": 101,
@@ -1295,7 +1407,11 @@
     "exam": "面试",
     "extra": null,
     "brief2026": null,
-    "brief2027": null
+    "brief2027": {
+      "url": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110218&fileName=深圳大学.pdf",
+      "u_id": "110218",
+      "fileName": "深圳大学.pdf"
+    }
   },
   {
     "seq": 102,
@@ -1372,10 +1488,14 @@
     "region": "广东省",
     "nameS": "哈尔滨工业大学（深圳）",
     "quota": 10,
-    "exam": null,
-    "extra": null,
+    "exam": "面试",
+    "extra": "每轮参加面试的所有考生需在本轮次第一位考生开始考试之前到达考场候考区。第一位考生开始考试15分钟后到场的，取消考试资格。",
     "brief2026": null,
-    "brief2027": null
+    "brief2027": {
+      "url": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110426&fileName=哈尔滨工业大学（深圳）.pdf",
+      "u_id": "110426",
+      "fileName": "哈尔滨工业大学（深圳）.pdf"
+    }
   },
   {
     "seq": 108,
@@ -1452,10 +1572,14 @@
     "region": "四川省",
     "nameS": "西南财经大学",
     "quota": 10,
-    "exam": null,
+    "exam": "面试",
     "extra": null,
     "brief2026": null,
-    "brief2027": null
+    "brief2027": {
+      "url": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110308&fileName=西南财经大学.pdf",
+      "u_id": "110308",
+      "fileName": "西南财经大学.pdf"
+    }
   },
   {
     "seq": 114,
@@ -1504,10 +1628,14 @@
     "region": "重庆市",
     "nameS": "西南大学",
     "quota": 15,
-    "exam": null,
+    "exam": "面试",
     "extra": null,
     "brief2026": null,
-    "brief2027": null
+    "brief2027": {
+      "url": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110085&fileName=西南大学.pdf",
+      "u_id": "110085",
+      "fileName": "西南大学.pdf"
+    }
   },
   {
     "seq": 118,
@@ -1528,20 +1656,28 @@
     "region": "重庆市",
     "nameS": "重庆大学",
     "quota": 5,
-    "exam": null,
+    "exam": "主要考查考生综合素质、学科特长、专业认知、学业规划及逻辑思维能力等方面。",
     "extra": null,
     "brief2026": null,
-    "brief2027": null
+    "brief2027": {
+      "url": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110087&fileName=重庆大学.pdf",
+      "u_id": "110087",
+      "fileName": "重庆大学.pdf"
+    }
   },
   {
     "seq": 120,
     "region": "陕西省",
     "nameS": "陕西师范大学",
     "quota": 4,
-    "exam": null,
+    "exam": "面试",
     "extra": null,
     "brief2026": null,
-    "brief2027": null
+    "brief2027": {
+      "url": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110266&fileName=陕西师范大学.pdf",
+      "u_id": "110266",
+      "fileName": "陕西师范大学.pdf"
+    }
   },
   {
     "seq": 121,
@@ -1579,7 +1715,11 @@
     "exam": "面试",
     "extra": null,
     "brief2026": null,
-    "brief2027": null
+    "brief2027": {
+      "url": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110265&fileName=长安大学.pdf",
+      "u_id": "110265",
+      "fileName": "长安大学.pdf"
+    }
   },
   {
     "seq": 124,
@@ -1614,10 +1754,14 @@
     "region": "陕西省",
     "nameS": "西北工业大学",
     "quota": 10,
-    "exam": null,
+    "exam": "面试",
     "extra": null,
     "brief2026": null,
-    "brief2027": null
+    "brief2027": {
+      "url": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110424&fileName=西北工业大学.pdf",
+      "u_id": "110424",
+      "fileName": "西北工业大学.pdf"
+    }
   },
   {
     "seq": 127,
@@ -1641,6 +1785,10 @@
     "exam": "面试",
     "extra": null,
     "brief2026": null,
-    "brief2027": null
+    "brief2027": {
+      "url": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/DownloadUniDoc.jsp?u_id=110256&fileName=云南师范大学.pdf",
+      "u_id": "110256",
+      "fileName": "云南师范大学.pdf"
+    }
   }
 ]
