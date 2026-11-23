@@ -810,6 +810,7 @@ function router() {
   if (hash.startsWith("#/compare")) return pageCompare();
   if (hash.startsWith("#/majors")) return pageMajors();
   if (hash.startsWith("#/updatelog")) return pageUpdatelog();
+  if (hash.startsWith("#/guide")) return window.pageGuide($app, state);
   if (hash.startsWith("#/other")) return pageOther();
   if (hash.startsWith("#/rankings")) return pageRankings();
   if (hash.startsWith("#/faq")) return pageFaq();

@@ -556,3 +556,18 @@ html[data-theme="light"] .cmp-table td.best { color: var(--primary); }
   .timeline { padding-left: 20px; }
   .prose { padding: 18px 16px; }
 }
+/* 深度指南 */
+.g-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+  margin-bottom: 12px; overflow: hidden; animation: fadeUp .4s ease both;
+}
+.g-head { padding: 13px 18px; cursor: pointer; display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: baseline; }
+.g-head:hover { background: rgba(35, 165, 128, .06); }
+.g-head b { font-size: 1.06rem; }
+.g-region { color: var(--muted); font-size: .85rem; }
+.g-body { display: none; padding: 4px 18px 16px; border-top: 1px dashed var(--border); }
+.g-card.open .g-body { display: block; }
+.g-sec { margin: 12px 0; }
+.g-sec h4 { margin: 0 0 6px; font-size: .9rem; color: var(--pd); }
+.g-sec p { margin: 0; font-size: .94rem; }
+@media (max-width: 760px) { .g-head { padding: 11px 12px; } .g-body { padding: 4px 12px 14px; } }
