@@ -10,3 +10,6 @@ parsed_rows_debug.json
 .DS_Store
 .vercel
 sr*.html
+
+# 內部參考資料（不公開）
+private/
